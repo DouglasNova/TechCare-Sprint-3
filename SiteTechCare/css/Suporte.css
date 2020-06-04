@@ -1,3 +1,17 @@
+.content{
+    margin-left: 250px;
+    background: url("../css/img/Img_Suporte.jpg");
+    background-position: center;
+    height: 100vh;
+    transition: 0.5s;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  #check:checked ~ .content{
+    margin-left: 60px;
+  }
+
 .arte{
     background: url("../css/img/Img_Suporte.jpg");
     margin: 0%;
