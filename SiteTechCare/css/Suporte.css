@@ -1,4 +1,9 @@
-.content{
+body {
+  max-width: 100%;
+  font-family: sans-serif;
+}
+
+/**.content{
     margin-left: 250px;
     background: url("../css/img/Img_Suporte.jpg");
     background-position: center;
@@ -6,20 +11,21 @@
     transition: 0.5s;
     background-size: cover;
     background-repeat: no-repeat;
+  }**/
+
+  .arte{
+    margin-left: 250px;
+    background-position: center;
+    height: 100vh;
+    transition: 0.5s;
+    background-size: cover;
+    background-repeat: no-repeat;
   }
 
-  #check:checked ~ .content{
+  #check:checked ~ .arte{
     margin-left: 60px;
   }
 
-.arte{
-    background: url("../css/img/Img_Suporte.jpg");
-    margin: 0%;
-    padding: 0%;
-    display: grid;
-    float: left;
-    background-size: cover;
-}
 
 .box{
     width: 110px;
