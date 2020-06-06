@@ -40,6 +40,8 @@
     border-radius: 2vw;
     background-color: white;
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.7);
+    font-size: 1.2rem;
+    text-align: center;
 }
 .quadro form button{
     width: 9vw;
@@ -53,10 +55,10 @@
     border-radius: 2vw;
     outline: none;
     font-size: 1.2rem;
-    box-shadow: 2px 2px 2px 2px #000;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.7);
 }
 form ::-webkit-input-placeholder{
-    color: black;
+    color: rgba(0, 0, 0, 0.7);
     text-align: center;
     font-size: 1.2rem;
 }
