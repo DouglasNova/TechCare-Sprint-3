@@ -20,7 +20,7 @@
 }
 .quadro h1{
     text-align: center;
-    color: 	#4682B4	;
+    color: 	#25aae1;
     padding-top: 2vh;
 }
 .content{
@@ -50,4 +50,10 @@
 }
 form ::-webkit-input-placeholder{
     color: rgba(255, 255, 255, 0.6)
+}
+.quadro form button:hover{
+    color: #25aae1;
+}
+.quadro form{
+    color: #25aae1;
 }
