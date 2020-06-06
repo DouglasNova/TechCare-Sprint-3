@@ -35,6 +35,8 @@
     border: 2px solid #1e272e;
     background: none;
     color: white;
+    outline: none;
+    border-radius: 2vw;
 }
 .quadro form button{
     width: 9vw;
@@ -53,7 +55,12 @@ form ::-webkit-input-placeholder{
 }
 .quadro form button:hover{
     color: #25aae1;
+    border-color: #25aae1;
 }
 .quadro form{
     color: #25aae1;
+}
+.quadro form input:focus{
+    border: 2px solid #25aae1;
+    border-radius: 2vw;
 }
