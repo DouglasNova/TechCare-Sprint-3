@@ -98,8 +98,11 @@ html, body {
 .corpo {
 	position: relative;
 }
+
+/*  Footer  */
+
 .footer{
-    background: #000025;
+    background: #192a56;
     color: #f4f4f4;
     position: absolute;
     bottom: 0;
@@ -154,21 +157,21 @@ html, body {
     display: inline;
 }
 .text {
-    background: #25aae1;
+    background: none;
     width: 355px;
     height: 30px;
-    box-shadow: 0 2px 8px 0 rgba(49, 196, 190, 0.75);  
 }
 @media only screen and (max-width: 700px) {
     .text { width: 285px; }
 }
 .newslatter input {
-    background: #25aae1;
+    background: #f1f1f1;
     width: 250px;
     height: 30px;
     padding: 0;
     border:none;
     font-size: 16px;
+    border-radius: 10px;
 }
 @media only screen and (max-width: 700px) {
     .newslatter input { width: 180px; }
@@ -182,9 +185,7 @@ html, body {
 }
 .newslatter img{
     width: 30px;
-
-    -webkit-filter: drop-shadow(2px 2px 3px #31c4be);
-    filter: drop-shadow(2px 2px 3px #31c4be);
+    margin: auto 10px;
 
 }
 
@@ -199,6 +200,7 @@ html, body {
     font-size: 16px;
     font-weight: 600; 
     cursor: pointer;   
+    border-radius: 5px;
 }
 .text .btn-hover:hover {
     background-position: 100% 0;
