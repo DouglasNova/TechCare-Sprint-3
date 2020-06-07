@@ -20,7 +20,7 @@ function login(){
 
   if(tem_arroba && tem_ponto){
       alert ('email Valido');
-     // window.location.href = "../index.html";
+      window.location.href = "../pages/DashBoard.html";
       
   }else {
       alert ('email invalido');
