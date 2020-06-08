@@ -1,9 +1,8 @@
-body,
-h1,
-p, h3 {
+body, h1, p, h3, html {
   margin: 0;
   padding: 0;
 }
+
 
 .nav-card {
   display: flex;
@@ -100,7 +99,7 @@ p, h3 {
 .header{
   position: relative !important;
 }
-
+  
 .title-pag-card h1{
   padding-top: 5%;
 }
