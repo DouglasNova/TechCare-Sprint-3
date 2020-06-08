@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="../css/Graficos.css" />
   <link rel="stylesheet" href="../css/Style.css" />
-  <link rel="icon" href="../css/img/favicon.ico" />
+  <link rel="stylesheet" href="../css/Dashboard_menu.css">
+  <link rel="icon" href="../css/img/favicon.ico"/>
   <script async="" src="../js/analytics.js"></script>
   <script src="../js/Chart.min.js"></script>
   <script src="../js/utils.js"></script>
@@ -15,6 +16,36 @@
 </head>
 
 <body>
+   <!-- Menu -->
+   <input type="checkbox" id="check">
+   <header>
+       <label for="check">
+           <i class="fas fa-bars" id="sidebar_btn"></i>
+       </label>
+       <center>
+           <div class="left_area">
+               <h3>Tech<span>Care</span></h3>
+           </div>
+       </center>
+       <div class="right_area">
+           <a href="../index.html" class="logout_btn">Logout</a>
+       </div>
+   </header>
+
+   <div class="sidebar">
+       <center>
+           <img src="../css/img/user.png" class="profile_image" alt="">
+           <h4>Usuário</h4>
+       </center>
+       <a class="Dashboard.html" ><i class="fa fa-desktop" aria-hidden="true"></i><span>Dashboard</span></a>
+       <a href="cadastro.html"><i class="fa fa-user-plus" aria-hidden="true"></i><span>Cadastro</span></a>
+       <a href="active" href="#"><i class="fa fa-bar-chart" aria-hidden="true"></i><span>Gráficos</span></a>
+       <a href="Suporte.html"><i class="fa fa-question-circle" aria-hidden="true"></i><span>Suporte</span></a>
+   </div>
+   <!-- Menu -->
+
+   <div class="content">
+
   <div class="corpo">
     <div class="container">
       <!-- não dar alt + shift + f que caga o site-->
@@ -86,7 +117,7 @@
     </div>
 
 
-
+  </div>
 
   </div>
 </body>
@@ -255,4 +286,7 @@
 
     window.myLine.update();
   });
+
+
+    
 </script>

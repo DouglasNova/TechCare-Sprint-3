@@ -1,6 +1,6 @@
 body,
 h1,
-p {
+p, h3 {
   margin: 0;
   padding: 0;
 }
@@ -8,8 +8,11 @@ p {
 .nav-card {
   display: flex;
   justify-content: space-around;
-  padding-top: 15%;
+  padding-top: 10%;
   text-align: center;
+  font-weight: bold;
+  font-size: 1.20em;
+  color: #25aae1;
 }
 .nav-card .card {
   background-color: linear-gradient(135deg, #bdc3c7, #ecf0f1);
@@ -27,6 +30,7 @@ p {
 
 .card:hover {
   box-shadow: inset 0 0 0 3px #25aae1;
+  
 }
 
 .card img {
@@ -35,12 +39,89 @@ p {
 }
 .show-case {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   background: linear-gradient(135deg, #25aae1, #ecf0f1);
   margin-top: 8%;
   height: 60vh;
   box-shadow: 5px 5px 20px 10px rgba(44, 44, 44, 0.3);
+
 }
 .show-case span {
-  font-size: 2em;
+  font-size: 1.70em;
+  font-weight: bold;
+}
+
+.show-case li+li{
+  padding-top: 2%;
+}
+
+
+.show-case h3 {
+  margin-top: 10%;
+}
+
+.covid{
+  padding: 5%;
+  font-weight: bolder;
+  
+}
+
+.covid span {
+  font-weight: bolder;
+
+}
+
+.covid .sub-title{
+  font-weight: bolder;
+
+} 
+.show-case .title{
+  font-weight: bold;
+  
+}
+.title-pag{
+  color: #fff;
+  text-align: center;
+
+}
+.title-pag-card{
+  height: 150px;
+  width: 380px;
+  background: #25aae1;
+  border-radius: 3px;
+  margin-top: 10%;
+  margin-left: 5%;
+  box-shadow: 0px 5px 2px 5px rgba(44, 44, 44, 0.3);
+  font-style: italic;
+
+}
+
+.header{
+  position: relative !important;
+}
+
+.title-pag-card h1{
+  padding-top: 5%;
+}
+
+.card-info{
+  height: 300px;
+  width: 300px;
+  background: #25aae1;
+  margin-left: 60%;
+  margin-top: -12%;
+  box-shadow: 0px 5px 2px 5px rgba(44, 44, 44, 0.3);
+  cursor: pointer;
+
+}
+
+.card-info h1{
+font-style: italic;
+padding-top: 5%;
+}
+
+.card-info p{
+  font-size: 1.30em;
+  font-weight: bolder;
+
 }
