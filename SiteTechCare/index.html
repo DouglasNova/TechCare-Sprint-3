@@ -18,27 +18,15 @@
                 <div class="logo">
                     <a href="#"><img src="css/img/logo.png" alt="Logo" width="150"></a>
                 </div>
-                <div class="nav" id="myTopnav">
-
-                    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                        <i class="fas fa-bars"></i>
-                    </a>
-                    <a class="active" href="#">
-                        Home
-                    </a>
-                    <a href="pages/Sobre.html">
-                        Sobre
-                    </a>
-                    <a href="pages/servico.html">
-                        Serviços
-                    </a>
-                    <a href="pages/contato.html">
-                        Contato
-                    </a>
-                    <a href="pages/login.html">
-                        Login
-                    </a>
-                </div>
+                <form class="nav" id="myTopnav">
+                    <ul class='topicos'>
+                        <li class='menu_li'> <a href="#" class='menu_a active'>HOME</a> </li>
+                        <li class='menu_li'> <a href="pages/Sobre.html" class='menu_a'>TECHCARE</a> </li>
+                        <li class='menu_li'> <a href="pages/servico.html" class='menu_a'>SERVIÇOS</a> </li>
+                        <li class='menu_li'> <a href="pages/contato.html" class='menu_a'>CONTATO</a> </li>
+                        <li class='menu_li'> <a href="pages/login.html" class='btn_login'>LOGIN</a> </li>
+                    </ul>
+                </form>
             </div>
         </div>
         <div class="Conteudo">
@@ -141,7 +129,7 @@
                     <div class="text">
 
 
-                        <input type="email" name="" id="">
+                        <input type="email" placeholder="Digite seu email">
 
                         <button onclick="newslatter()" class="btn-hover color-1">Assine</button>
 
