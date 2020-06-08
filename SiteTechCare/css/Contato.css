@@ -10,7 +10,7 @@ body{
     margin-left: 35vw;
     margin-right: 0;
     width: 30vw;
-    background-color: #25aae1;
+    background-color: #1c98ce;
 }
 .q1 form{
     width: 25vw;
@@ -21,7 +21,7 @@ body{
     height: 4vh;
     margin-bottom: 3vh;
     border-radius: 2vw;
-    border: 2px solid  	#000080;
+    border: 2px solid  	turquoise;
     outline: none;
     text-align: center;
     font-size: 1.2rem;
@@ -30,8 +30,8 @@ body{
 .q1 form textarea{
     width: 100%;
     margin-bottom: 3vh;
-    border-radius: 2vw;
-    border: 2px solid 	#000080;
+    border-radius: 10px;
+    border: 2px solid turquoise;
     outline: none;
 }
 .q1 h1{
@@ -54,7 +54,7 @@ body{
 .imagens img{
     width: 70%;
     margin-left: 15%;
-    border: 2px solid #000080;
+    border: 2px solid turquoise;
     border-radius: 50%;
 }
 .q1 h3{
@@ -75,30 +75,30 @@ body{
     margin-left: 7.5vw;
     outline: none;
     border-radius: 2vw;
-    border: 2px solid 	#000080;
+    border: 2px solid 	turquoise;
     outline: none;
     font-size: 1.2rem;
     background-color: white;
+
 }
 form ::-webkit-input-placeholder{
-    color: rgba(0, 0, 0, 0.7);
     text-align: center;
     font-size: 1.2rem;
 }
 .q1 form input:focus{
-    border: 2px solid turquoise;
+    border: 2px solid #000080;
     border-radius: 2vw;
 }
 .q1 form textarea:focus{
-    border: 2px solid turquoise;
-    border-radius: 2vw;
+    border: 2px solid #000080;
+    border-radius: 10px;
 }
 .q1 form button:hover{
-    color: turquoise;
-    border: 2px solid turquoise;
+    color: #000080;
+    border: 2px solid #000080;
 }
 .q1 img:hover{
-    border: 2px solid 	turquoise;
+    border: 2px solid 	#000080;
     border-radius: 50%;
 
 }
