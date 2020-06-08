@@ -1,118 +1,104 @@
-html, body{
-    margin: 0;
-    overflow: visible;
-}
 body{
     background: url(img/bgq2.jpg);
-    background-repeat: no-repeat;
     background-size: cover;
-    background-attachment: fixed;
 }
-.quadros{
-    margin-top: 7.5%;
-    width: 60%;
-    margin-left:20%;
-    min-height: 100px;
-    float: left;
-}
-.quadros .q_1{
-    width: 40%;
-    height: 85vh;
-    background-color: rgba(163, 241, 241, 0.4);
-    float: left;
-    min-width: 100px;
-}
-.q_1 ul{
-    margin-left: 30%;
-    margin-top: 20%;
-    float: left;
-}
-.q_1 ul li{
-    list-style: none;
-    margin-left: 0;
-}
-.q_1 ul li img{
-    height: 13vh;
-    border: solid 3px #25aae1;
-    border-radius: 50%;
-    margin-bottom: 3vh;
-}
-.q_1 ul li img:hover{
-    border-color: #40E495;
-}
-
-.quadros .q_2{
-    background-color: rgba(163, 241, 241, 0.4);
-    width: 60%;
-    height: 85vh;
-    float: left;
-}
-.quadros .q_2 form input{
-    border: 3px solid #25aae1;
-    border-radius: 6vh;
-    margin-bottom: 2vh;
-    color: black;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 1rem;
-}
-.q_2 form{
-    margin-right: 10%;
-    float: right;
-    width: 80%;
-}
-form input{
-    border-radius: 3vh;
-    background-color: rgba(255, 255, 255, 0);
-    height: 3vh;
+.quadro{
     width: 100%;
-}
-.quadro .q_2 .space_1{
-    width: 100%;
-    margin-top: 45px;
-
-}
-form b{
-    color: midnightblue;
-    font-size: 1.5rem;
-}
-.q_2 form button{
-    border: 3px solid #25aae1;
-    border-radius: 5vh;
-    background-color: rgba(255, 255, 255, 0);
-    width: 25%;
-    min-width: 100px;
-    height: 5vh;
-    margin-left: 40%;
-}
-.q_2 form button:hover{
-    border: 1.5px solid #40E495;
-}
-.q_2 form .msg{
     height: 15vh;
 }
-.q_2 form{
-    margin-top: 20px;
+.q1{
+    margin-left: 35vw;
+    margin-right: 0;
+    width: 30vw;
+    background-color: #25aae1;
 }
-.q_2 h1{
-    color: midnightblue;
+.q1 form{
+    width: 25vw;
+    margin-left: 2.5vw;
+}
+.q1 form input{
+    width: 100%;
+    height: 4vh;
+    margin-bottom: 3vh;
+    border-radius: 2vw;
+    border: 2px solid  	#000080;
+    outline: none;
     text-align: center;
-    font-size: 2rem;
+    font-size: 1.2rem;
 }
-.env{
-    color: midnightblue;
-}
-.env:hover{
-    color: #40E495;
-}
-.f{
+
+.q1 form textarea{
     width: 100%;
-    height: 100px;
-    float: left;
+    margin-bottom: 3vh;
+    border-radius: 2vw;
+    border: 2px solid 	#000080;
+    outline: none;
 }
-.q_2 h1{
-    margin-bottom: 0px;
+.q1 h1{
+    color: white;
+    text-align: center;
+    font-size: 2.2rem;
+    margin-top: 3vh;
 }
-.space{
-    width: 100%;
-    height: 200px;
+.Conteudo{
+    padding-bottom: 200px;
+}
+.q1 h3{
+    color: white;
+    text-align: center;
+}
+.q2{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.imagens img{
+    width: 70%;
+    margin-left: 15%;
+    border: 2px solid turquoise;
+    border-radius: 50%;
+}
+.q1 h3{
+    text-align: center;
+    font-size: 1.3rem;
+}
+.imagens{
+    margin-bottom: 3vh;
+}
+.q1 form label{
+    color: white;
+    font-size: 1.5rem;
+
+}
+.q1 form button{
+    width: 10vw;
+    height: 5vh;
+    margin-left: 7.5vw;
+    outline: none;
+    border-radius: 2vw;
+    border: 2px solid 	#000080;
+    outline: none;
+    font-size: 1.2rem;
+    background-color: white;
+}
+form ::-webkit-input-placeholder{
+    color: rgba(0, 0, 0, 0.7);
+    text-align: center;
+    font-size: 1.2rem;
+}
+.q1 form input:focus{
+    border: 2px solid #008B8B;
+    border-radius: 2vw;
+}
+.q1 form textarea:focus{
+    border: 2px solid #008B8B;
+    border-radius: 2vw;
+}
+.q1 form button:hover{
+    color: turquoise;
+    border: 2px solid #008B8B;
+}
+.q1 img:hover{
+    border: 2px solid 	#000080;
+    border-radius: 50%;
+
 }
