@@ -18,6 +18,7 @@ p, h3 {
   background-color: linear-gradient(135deg, #bdc3c7, #ecf0f1);
   height: 40vh;
   width: 20vw;
+  border: #25aae1 0.1px solid;
   border-radius: 10px;
   box-shadow: 5px 5px 20px 5px rgba(44, 44, 44, 0.3);
   cursor: pointer;
@@ -86,14 +87,14 @@ p, h3 {
 }
 .title-pag-card{
   height: 150px;
-  width: 380px;
+  width: 400px;
   background: #25aae1;
   border-radius: 3px;
+  border: #fff 0.1px solid;
   margin-top: 10%;
   margin-left: 5%;
   box-shadow: 0px 5px 2px 5px rgba(44, 44, 44, 0.3);
   font-style: italic;
-
 }
 
 .header{
@@ -106,12 +107,13 @@ p, h3 {
 
 .card-info{
   height: 300px;
-  width: 300px;
+  width: 500px;
   background: #25aae1;
-  margin-left: 60%;
+  margin-left: 55%;
   margin-top: -12%;
   box-shadow: 0px 5px 2px 5px rgba(44, 44, 44, 0.3);
-  cursor: pointer;
+  border: #fff 0.1px solid;
+  border-radius: 3px;
 
 }
 
