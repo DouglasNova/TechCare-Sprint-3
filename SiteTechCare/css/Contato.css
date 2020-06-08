@@ -54,7 +54,7 @@ body{
 .imagens img{
     width: 70%;
     margin-left: 15%;
-    border: 2px solid turquoise;
+    border: 2px solid #000080;
     border-radius: 50%;
 }
 .q1 h3{
@@ -86,19 +86,19 @@ form ::-webkit-input-placeholder{
     font-size: 1.2rem;
 }
 .q1 form input:focus{
-    border: 2px solid #008B8B;
+    border: 2px solid turquoise;
     border-radius: 2vw;
 }
 .q1 form textarea:focus{
-    border: 2px solid #008B8B;
+    border: 2px solid turquoise;
     border-radius: 2vw;
 }
 .q1 form button:hover{
     color: turquoise;
-    border: 2px solid #008B8B;
+    border: 2px solid turquoise;
 }
 .q1 img:hover{
-    border: 2px solid 	#000080;
+    border: 2px solid 	turquoise;
     border-radius: 50%;
 
 }
