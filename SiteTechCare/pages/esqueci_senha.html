@@ -10,46 +10,33 @@
     <title>Esqueci minha senha</title>
 </head>
 
-<body> 
-    
-    <div class="header">
-        <div class="container">
-            <div class="logo">
-                <a href="../index.html"><img src="../css/img/logo.png" alt="Logo" width="150"></a>
-            </div>
-            <div class="nav" id="myTopnav">
-
-                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                    <i class="fas fa-bars"></i>
-                </a>
-                <a href="../index.html">
-                    Home
-                </a>
-                <a href="../pages/Sobre.html">
-                    Sobre
-                </a>
-                <a href="../pages/servico.html">
-                    Serviços
-                </a>
-                <a href="../pages/contato.html">
-                    Contato
-                </a>
-                <a class="active" href="login.html">
-                    Login
-                </a>
+<body>
+    <div class="corpo">
+        <div class="header">
+            <div class="container">
+                <div class="logo">
+                    <a href="#"><img src="../css/img/logo.png" alt="Logo" width="150"></a>
+                </div>
+                <form class="nav" id="myTopnav">
+                    <ul class='topicos'>
+                        <li class='menu_li'> <a href="../index.html" class='menu_a active'>HOME</a> </li>
+                        <li class='menu_li'> <a href="#" class='menu_a'>TECHCARE</a> </li>
+                        <li class='menu_li'> <a href="servico.html" class='menu_a'>SERVIÇOS</a> </li>
+                        <li class='menu_li'> <a href="contato.html" class='menu_a'>CONTATO</a> </li>
+                        <li class='menu_li'> <a href="login.html" class='btn_login'>LOGIN</a> </li>
+                    </ul>
+                </form>
             </div>
         </div>
-    </div>
+        <div class="Conteudo">
+            <div id="div_esqueci" class="box2">
+                <h1>Esqueci minha senha</h1>
+                <input type="text" placeholder="Email" id="mensagem">
+                <input onclick="enviar()" href="" type="submit" name="" value="Enviar">
+            </div>
+        </div>
 
-<div class="Conteudo">
-    <div id="div_esqueci" class="box2">
-        <h1>Esqueci minha senha</h1>
-        <input type="text" placeholder="Email"  id="mensagem" >
-        <input onclick="enviar()" href="" type="submit" name="" value="Enviar">
-    </div>
-</div>
-
-    <div class="footer">
+        <div class="footer">
             <div class="container">
                 <div class="logoFooter">
                     <a href="../index.html"><img src="../css/img/logo.png" alt="Logo" width="150"></a>
@@ -74,30 +61,32 @@
                     <br>
                     <ul>
                         <li><a href="https://www.instagram.com/techcare_adsa/"><img src="../css/img/insta.png"></a></li>
-                        <li><a href="https://www.facebook.com/groups/242411177001759"><img src="../css/img/face.png"></a></li>
+                        <li><a href="https://www.facebook.com/groups/242411177001759"><img
+                                    src="../css/img/face.png"></a></li>
                         <li><a href="https://twitter.com/TechCar38115432"><img src="../css/img/twitter.png"></a></li>
-                        <li><a href="https://www.linkedin.com/feed/?trk=onboarding-landing"><img src="../css/img/linkedin.png"></a></li>
+                        <li><a href="https://www.linkedin.com/feed/?trk=onboarding-landing"><img
+                                    src="../css/img/linkedin.png"></a></li>
                     </ul>
                 </div>
             </div>
-        </div> 
+        </div>
 </body>
 
 </html>
 
 <script>
     function enviar() {
-var tem_arroba = mensagem.value;
-var tem_ponto = mensagem.value; 
+        var tem_arroba = mensagem.value;
+        var tem_ponto = mensagem.value;
 
-tem_arroba = tem_arroba.indexOf('@') > 0;
-tem_ponto = tem_ponto.indexOf('.') > 0;
+        tem_arroba = tem_arroba.indexOf('@') > 0;
+        tem_ponto = tem_ponto.indexOf('.') > 0;
 
-if(tem_arroba && tem_ponto){
-    alert ('email enviado com sucesso');
-}else {
-    alert ('email invalido');
-}
+        if (tem_arroba && tem_ponto) {
+            alert('email enviado com sucesso');
+        } else {
+            alert('email invalido');
+        }
 
-}
+    }
 </script>

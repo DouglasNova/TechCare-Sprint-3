@@ -26,13 +26,13 @@ html, body {
 }
 
 .header {
-    background: #2f3640;
+    background: #f4f4f4;
     position: fixed;
     height: 77px;
     width: 100%;
     font-size: large;
     z-index: 999999999999;
-    box-shadow: 0px 5px 10px -5px #000;
+    box-shadow: 0 3px 7px -5px #000;
 }
 
 .header .logo {
@@ -42,7 +42,7 @@ html, body {
 }
 
 .header ul {
-    margin: 20px auto;
+    margin: 10px auto;
     margin-left: 35vw;
 }
 
@@ -61,7 +61,7 @@ html, body {
 }
 
 a.menu_a {
-    color: #dcdde1;
+    color: gray;
     text-decoration: none;
     position: relative;
 }
@@ -78,6 +78,7 @@ a.menu_a {
 
 .btn_login:hover {
     transform: scale(1.1);
+    transition: 0.3s;
 }
 
 a.menu_a::after {
@@ -103,7 +104,7 @@ a.menu_a:hover::after {
 }
 
 .active {
-    color: #fff !important;
+    color: #42c5e6 !important;
 }
 
 

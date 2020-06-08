@@ -15,6 +15,8 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-top: 100px;
+    padding-bottom: 400px;
 }
 
 .card_box {
@@ -48,7 +50,6 @@ body{
     bottom: -2px;
     transform: skew(2deg, 2deg);
     z-index: -1;
-    background: blue;
 }
 
 .card_box .box:nth-child(1)::before {
@@ -67,6 +68,11 @@ body{
     position: relative;
     padding: 20px;
     text-align: justify;
+}
+
+.content ul {
+    margin: 5px auto;
+    margin-left: -20px;
 }
 
 .box .content img {
@@ -88,6 +94,7 @@ body{
 .box:hover {
     transform: scale(1.05);
     transition: 0.5s;
+    cursor: pointer;
 } 
 
 .box:hover .content h3 {
