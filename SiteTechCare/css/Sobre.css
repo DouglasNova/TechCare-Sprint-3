@@ -77,18 +77,18 @@ body{
 
 .box .content img {
     position: absolute;
-    top: -10vh;
+    top: -5vh;
     right: 2vw;
     margin: 0;
     padding: 0;
-    height: 15vh;
+    height: 12vh;
     min-height: 10vh;
     color: rgba(255, 255, 255, 0.3);
     transition: 0.5s;
 }
 
 .box:hover .content img {
-    top: -15vh;
+    top: -9vh;
 } 
 
 .box:hover {
