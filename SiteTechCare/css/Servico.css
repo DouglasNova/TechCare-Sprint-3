@@ -7,6 +7,12 @@
   margin-top: -10px;
 }
 
+.header ul {
+  margin-top: -10px;
+  padding-top: 10px;
+  padding-left: 40px;
+}
+
 
 .nav-card {
   display: flex;
