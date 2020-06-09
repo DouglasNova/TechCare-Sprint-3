@@ -30,6 +30,7 @@ body{
 }
 
 .q1 form textarea{
+    resize: none;
     font-size: 1.2rem;
     width: 100%;
     margin-bottom: 3vh;
