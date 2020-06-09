@@ -8,15 +8,31 @@ canvas {
 }
 .corpo{
     position: relative;
+    padding-top: 70px;
 }
 .container{
     min-width: 1074px;
 }
-.combo{
-    margin-top: 75px;
-    width: 300px;
-    height: 30px;
+ .combo{
+    width: 350px;
+    height: 40px;
+    font-size: 24px;
     margin-left: 10px;
+    border: none;
+    border-radius: 0;
+    background-color: #485761;
+    color: #fff;
+   
+} 
+.combo:active{
+    border: none;
+}
+.combo:hover{
+    border: none;
+    background-color: #ff00ff;
+}
+.combo:focus{
+    border: none;
 }
 .cardContainer{
     width: 100%;
