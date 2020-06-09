@@ -12,10 +12,16 @@ canvas {
 .container{
     min-width: 1074px;
 }
+.combo{
+    margin-top: 75px;
+    width: 300px;
+    height: 30px;
+    margin-left: 10px;
+}
 .cardContainer{
     width: 100%;
-    padding-top: 75px;
     display: flex;
+    padding-top: 10px;
     justify-content: space-around;
 
 
@@ -182,3 +188,9 @@ canvas {
     padding-left: 40%;
 
 }
+
+
+
+
+
+
