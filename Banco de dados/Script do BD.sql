@@ -40,8 +40,8 @@ idDados int,
 fkSensor int, 
 foreign key (fkSensor) references Sensor (idSensor),
 primary key (idDados, fkSensor),
-Umidade varchar (3), 
-Temperatura varchar (2), 
+Umidade Double (10,2), 
+Temperatura Double (10,2), 
 Data_dados date, 
 Hora time
 );
