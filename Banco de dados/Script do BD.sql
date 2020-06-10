@@ -47,14 +47,29 @@ fkAla int,
 foreign key (fkAla) references Ala (idAla)
 );
 
+insert into Sensor values 
+    (null, 1),
+    (null, 2);
+
 create table Dados_do_sensor(
-idDados int, 
+ID_dados_rows int primary key auto_increment,
 fkSensor int, 
 foreign key (fkSensor) references Sensor (idSensor),
-primary key (idDados, fkSensor),
-Umidade Double (10,2), 
-Temperatura Double (10,2), 
+Umidade Decimal (10,2), 
+Temperatura Decimal (10,2), 
 Data_hora datetime
 );
+
+insert into dados_do_sensor values
+    (null, 1, 58, 21, 050420201330);
+    
+    insert into dados_do_sensor values
+    (null, 1, 49, 23, 070620201345),
+    (null, 1, 75, 32, 070620201355),
+    (null, 2, 58, 18, 070620201400),
+    (null, 2, 10, 25, 070620202019),
+    (null, 2, 100, 27, 080620201510);
+
+select * from dados_do_sensor;
 
 

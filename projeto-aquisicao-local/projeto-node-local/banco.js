@@ -1,9 +1,9 @@
 const configuracoes = {
     banco: {
-        server: "testexyzwtrtwr.database.windows.net",
-        user: "adminbandtec",
-        password: "b@ndtec2018",
-        database: "gf2018",
+        server: "servertechcare11a.database.windows.net",
+        user: "adminlocal",
+        password: "#Gftechcare",
+        database: "bdTechCare",
         options: {
             encrypt: true
         },
