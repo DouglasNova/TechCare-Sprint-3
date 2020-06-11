@@ -89,11 +89,11 @@ function registrar_leitura(temperatura, umidade) {
     banco.conectar().then(() => {
 
         return banco.sql.query(`
-        INSERT into Dados_do_sensor (Umidade, Temperatura, momento)
+        INSERT into Dados_do_sensor (Umidade, Temperatura, Data_hora)
         values (${umidade}, ${temperatura}, CONVERT(Datetime, '${agora()}', 120));
         
         delete from Dados_do_sensor where ID_dados_rows not in 
-        (select top ${registros_mantidos_tabela_leitura} ID_dados_rows from Dados_do_sensor order by id desc);`)
+        (select top ${registros_mantidos_tabela_leitura} ID_dados_rows from Dados_do_sensor order by ID_dados_rows desc);`)
         .then(() => {
             console.log('Registro inserido com sucesso!');
         });
