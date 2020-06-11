@@ -8,14 +8,36 @@ canvas {
 }
 .corpo{
     position: relative;
+    padding-top: 70px;
 }
 .container{
     min-width: 1074px;
 }
+ .combo{
+    width: 350px;
+    height: 40px;
+    font-size: 24px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 0;
+    background-color: #485761;
+    color: #fff;
+   
+} 
+.combo:active{
+    border: none;
+}
+.combo:hover{
+    border: none;
+    background-color: #ff00ff;
+}
+.combo:focus{
+    border: none;
+}
 .cardContainer{
     width: 100%;
-    padding-top: 75px;
     display: flex;
+    padding-top: 10px;
     justify-content: space-around;
 
 
@@ -142,3 +164,13 @@ canvas {
 
 
 
+<<<<<<< HEAD
+=======
+}
+
+
+
+
+
+
+>>>>>>> edf4cd713e69a6b0ead7af068463763a001d7249

@@ -6,12 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="../css/Graficos.css" />
   <link rel="stylesheet" href="../css/Dashboard_menu.css">
-  <link rel="icon" href="../css/img/favicon.ico"/>
+  <link rel="icon" href="../css/img/favicon.ico" />
   <script async="" src="../js/analytics.js"></script>
   <script src="../js/Chart.min.js"></script>
   <script src="../js/utils.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<<<<<<< HEAD:SiteTechCare/pages/graficos.html
+=======
+
+>>>>>>> edf4cd713e69a6b0ead7af068463763a001d7249:SiteTechCare/pages/Dashboard/graficos.html
   <title>ala</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -19,6 +23,7 @@
 </head>
 
 <body>
+<<<<<<< HEAD:SiteTechCare/pages/graficos.html
    <!-- Menu -->
    <input type="checkbox" id="check">
    <header>
@@ -69,59 +74,133 @@
           <div class="grid item1">Temperatura Maxima</div>
           <div class="grid item2">
             <img src="../css/img/sun.png" alt="" />
-          </div>
-          <div class="grid item3">28°C</div>
-        </div>
-        <div class="card CS2">
-          <div class="grid item1">Temperatura Minima</div>
-          <div class="grid item2">
-            <img src="../css/img/thermometer.png" alt="" />
-          </div>
-          <div class="grid item3">10°C</div>
-        </div>
-        <div class="card CS3">
-          <div class="grid item1">Temperatura Media</div>
-          <div class="grid item2">
-            <img src="../css/img/thermometer (1).png" alt="" />
-          </div>
-          <div class="grid item3">20°C</div>
-        </div>
-        <div class="card CS4">
-          <div class="grid item1">Temperatura Media atual</div>
-          <div class="grid item2">
-            <img src="../css/img/thermometer (1).png" alt="" />
-          </div>
-          <div class="grid item3">25°C</div>
-        </div>
-        <div class="card CS5">
-          <div class="grid item1">Umidade Media atual</div>
-          <div class="grid item2">
-            <img src="../css/img/humidity.png" alt="" />
-          </div>
-          <div class="grid item3">60%</div>
-        </div>
+=======
+  <!-- Menu -->
+  <input type="checkbox" id="check">
+  <header>
+    <label for="check">
+      <i class="fas fa-bars" id="sidebar_btn"></i>
+    </label>
+    <center>
+      <div class="left_area">
+        <h3>Tech<span>Care</span></h3>
       </div>
-      <div class="graficoContainer">
-        <div class="grafico temperatura">
-          <div>
-            <div class="chartjs-size-monitor">
-              <div class="chartjs-size-monitor-expand">
-                <div class=""></div>
-              </div>
-              <div class="chartjs-size-monitor-shrink">
-                <div class=""></div>
-              </div>
+    </center>
+    <div class="right_area">
+      <a href="../index.html" class="logout_btn">Logout</a>
+    </div>
+  </header>
+
+  <div class="sidebar">
+    <center>
+      <img src="../css/img/user.png" class="profile_image" alt="">
+      <h4>Usuário</h4>
+    </center>
+    <a href="Dashboard.html"><i class="fa fa-desktop" aria-hidden="true"></i><span>Dashboard</span></a>
+    <a href="cadastro.html"><i class="fa fa-user-plus" aria-hidden="true"></i><span>Cadastro</span></a>
+    <a class="active" href="#"><i class="fa fa-bar-chart" aria-hidden="true"></i><span>Gráficos</span></a>
+    <a href="Suporte.html"><i class="fa fa-question-circle" aria-hidden="true"></i><span>Suporte</span></a>
+  </div>
+  <!-- Menu -->
+
+  <div class="content">
+
+    <div class="corpo">
+      <div class="container">
+        <!-- não dar alt + shift + f que caga o site-->
+        <select class="combo" name="cars" id="cars">
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="mercedes">Mercedes</option>
+          <option value="audi">Audi</option>
+        </select>
+        <div class="cardContainer">
+          <div class="card CS1">
+            <div class="grid item1">Temperatura Maxima</div>
+            <div class="grid item2">
+              <img src="../css/img/sun.png" alt="" />
             </div>
-            <canvas id="canvas" style="display: block; width: 1008px; height: 504px;" width="1008" height="504"
-              class="chartjs-render-monitor"></canvas>
+            <div class="grid item3">28°C</div>
+>>>>>>> edf4cd713e69a6b0ead7af068463763a001d7249:SiteTechCare/pages/Dashboard/graficos.html
+          </div>
+          <div class="card CS2">
+            <div class="grid item1">Temperatura Minima</div>
+            <div class="grid item2">
+              <img src="../css/img/thermometer.png" alt="" />
+            </div>
+            <div class="grid item3">10°C</div>
+          </div>
+          <div class="card CS3">
+            <div class="grid item1">Temperatura Media</div>
+            <div class="grid item2">
+              <img src="../css/img/thermometer (1).png" alt="" />
+            </div>
+            <div class="grid item3">20°C</div>
+          </div>
+          <div class="card CS4">
+            <div class="grid item1">Temperatura Media atual</div>
+            <div class="grid item2">
+              <img src="../css/img/thermometer (1).png" alt="" />
+            </div>
+            <div class="grid item3">25°C</div>
+          </div>
+          <div class="card CS5">
+            <div class="grid item1">Umidade Media atual</div>
+            <div class="grid item2">
+              <img src="../css/img/humidity.png" alt="" />
+            </div>
+            <div class="grid item3">60%</div>
           </div>
         </div>
-        <div class="grafico umidade"></div>
+        <div class="graficoContainer">
+          <div class="grafico temperatura">
+            <div>
+              <div class="chartjs-size-monitor">
+                <div class="chartjs-size-monitor-expand">
+                  <div class=""></div>
+                </div>
+                <div class="chartjs-size-monitor-shrink">
+                  <div class=""></div>
+                </div>
+              </div>
+              <canvas id="canvas" style="display: block; width: 1008px; height: 504px;" width="1008" height="504"
+                class="chartjs-render-monitor"></canvas>
+            </div>
+          </div>
+          <div class="grafico umidade"></div>
+        </div>
       </div>
+<<<<<<< HEAD:SiteTechCare/pages/graficos.html
     </div>
    
+=======
+      <div class="container-card-info">
 
-  </div>
+        <div class="card-info">
+          <div class="title-card">Ala 1</div><span class="text-card">Temperatura <span class="values-card">23°C</span>
+            <br><br> Umidade <br> <span class="values-card">60%</span></span>
+        </div>
+
+        <div class="card-info">
+          <div class="title-card">Ala 2</div><span class="text-card">Temperatura <span class="values-card">25°C</span>
+            <br><br> Umidade <br> <span class="values-card">52%</span></span>
+        </div>
+
+        <div class="card-info">
+          <div class="title-card">Ala 3</div><span class="text-card">Temperatura <span class="values-card">20°C</span>
+            <br><br> Umidade <br><span class="values-card">70%</span></span>
+        </div>
+
+        <div class="card-info">
+          <div class="title-card">Ala 4</div><span class="text-card">Temperatura <span class="values-card">21°C</span>
+            <br><br> Umidade <br> <span class="values-card">49%</span></span>
+        </div>
+
+      </div>
+
+>>>>>>> edf4cd713e69a6b0ead7af068463763a001d7249:SiteTechCare/pages/Dashboard/graficos.html
+
+    </div>
 
   </div>
 </body>
@@ -292,5 +371,5 @@
   });
 
 
-    
+
 </script>

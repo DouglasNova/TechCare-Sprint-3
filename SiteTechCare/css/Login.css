@@ -8,6 +8,11 @@ body{
     
 }
 
+.header ul {
+    
+    margin-right: 35vw;
+}
+
 .box{
     width: 300px;
     padding: 40px;

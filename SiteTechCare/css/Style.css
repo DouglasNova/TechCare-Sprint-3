@@ -106,36 +106,6 @@ a.menu_a:hover::after {
     color: #42c5e6 !important;
 }
 
-
-/* @media only screen and (max-width: 950px) {
-    .nav{padding: 10px;}
-    .nav a:not(:first-child) {display: none;}
-    .nav a.icon { display: block;}
-}
-@media only screen and (max-width: 950px) {
-    .nav.responsive {
-        position: relative;
-        padding: 56px 0 0 0;
-    }
-    .nav.responsive a.icon {
-        position: absolute;
-        top: 0;
-        right: 0;
-    }
-    .nav.responsive {
-        background: #000025;
-        float: none;
-    }
-    .nav.responsive a {
-        color: #fff;
-        display: block; 
-        text-align: left; 
-    }
-    .nav.responsive a:active{
-        background: #25aae1;
-    }
-} */
-
 /* Conteudo */
 
 .Conteudo {
@@ -222,6 +192,7 @@ a.menu_a:hover::after {
     border:none;
     font-size: 16px;
     border-radius: 10px;
+    outline: none;
 }
 @media only screen and (max-width: 700px) {
     .newslatter input { width: 180px; }
