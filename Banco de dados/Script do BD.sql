@@ -1,5 +1,6 @@
 create database TechCare;
 use TechCare;
+
 Create table Hospital(
 idHospital int primary key auto_increment,
 Nome_Hospital varchar(45), 
