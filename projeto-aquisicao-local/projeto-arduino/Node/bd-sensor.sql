@@ -1,5 +1,5 @@
-create database sensor;
-use sensor;
+create database sensor_teste;
+use sensor_teste;
 
 create table medidas (
     ID_medidas int primary key auto_increment,
