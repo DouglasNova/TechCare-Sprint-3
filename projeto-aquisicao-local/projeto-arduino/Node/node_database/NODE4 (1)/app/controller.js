@@ -81,9 +81,9 @@ router.get('/luminosity', (request, response, next) => {
         temperature = ArduinoDataTemp.List[ArduinoDataTemp.List.length - 1];
         Humidity = ArduinoDataHumidity.List[ArduinoDataHumidity.List.length - 1];
         
-        var sql = "INSERT INTO medidas(Humd,Humd_value,Temp,Temp_value) VALUES(?) ";
+        var sql = "INSERT INTO Dados_do_sensor(Umidade, Temperatura) VALUES(?) ";
 
-        var values = ['temperatura', temperature, 'umidade', Humidity];
+        var values = [Humidity, temperature];
 
         db.query(sql, [values], function (err, result) {
             if (err) throw err;
