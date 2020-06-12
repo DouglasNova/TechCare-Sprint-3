@@ -80,6 +80,7 @@ router.get('/luminosity', (request, response, next) => {
     router.post('/sendData', (request, response) => {
         temperature = ArduinoDataTemp.List[ArduinoDataTemp.List.length - 1];
         Humidity = ArduinoDataHumidity.List[ArduinoDataHumidity.List.length - 1];
+        //luminosidade = ArduinoDataLuminosity.List[ArduinoDataLuminosity.List.length -1]
         
         var sql = "INSERT INTO Dados_do_sensor(Umidade, Temperatura) VALUES(?) ";
 
