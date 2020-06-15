@@ -133,6 +133,14 @@ canvas {
     display: grid;
 
 }
+
+.cardContainer .card:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+
 .cardContainer .card.CS1{
     background-image: linear-gradient(to right, #af0000, #be0c09, #cd1713, #dc201d, #eb2826, #f2312e, #f83937, #ff413f, #ff4b49, #ff5352, #ff5c5b, #ff6464);
 }

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+    <h2>Informe quantos leitos possui o hospital</h2>
+    <input placeholder="Quantidade" id="leitos"> <button onclick="simular()">Simular</button>
+    <div id="resultado"></div>
+</center>
+</body>
+</html>
+
+<script>
+function simular(){
+let qtLeitos = Number(leitos.value)
+let qtEnfermeiroLeito = qtLeitos / 4
+let remuneracaoEnfermeiro = qtEnfermeiroLeito * 3150
+resultado.innerHTML =`${remuneracaoEnfermeiro.toFixed(2)} gasto mensal com profissionais  `
+
+}
+
+
+
+</script>
