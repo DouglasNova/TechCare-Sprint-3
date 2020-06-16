@@ -4,12 +4,70 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DashBoard</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Doughnut Chart</title>
+    <script async="" src="./Doughnut Chart_files/analytics.js.download"></script>
+    <script src="./Doughnut Chart_files/Chart.min.js.download"></script>
+    <script src="./Doughnut Chart_files/utils.js.download"></script>
     <link rel="stylesheet" href="../../css/Dashboard_menu.css">
     <link rel="stylesheet" href="../../css/Dashboard.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
     <link rel="icon" href="../../css/img/favicon.ico">
+    <style>
+        canvas {
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+        }
+    </style>
+    <style type="text/css">
+        /* Chart.js */
+        @keyframes chartjs-render-animation {
+            from {
+                opacity: .99
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        .chartjs-render-monitor {
+            animation: chartjs-render-animation 1ms
+        }
+
+        .chartjs-size-monitor,
+        .chartjs-size-monitor-expand,
+        .chartjs-size-monitor-shrink {
+            position: absolute;
+            direction: ltr;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+            pointer-events: none;
+            visibility: hidden;
+            z-index: -1
+        }
+
+        .chartjs-size-monitor-expand>div {
+            position: absolute;
+            width: 1000000px;
+            height: 1000000px;
+            left: 0;
+            top: 0
+        }
+
+        .chartjs-size-monitor-shrink>div {
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            left: 0;
+            top: 0
+        }
+    </style>
 </head>
 
 <body>
@@ -46,6 +104,7 @@
 
     <div class="content"></div>
     <div class="alertas">
+
         <div class="card-1">
             <h3>Alas estáveis</h3>
             <br>
@@ -64,29 +123,77 @@
 
     </div>
     <div class="graficos">
-        <div id="alas">
-            <h2>Alas do hospital</h2>
-
-        </div>
-        <div id="grafico_pizza">
-            <h1>GRÁFICO PIZZA</h1>
+        <div class="alas">
+            <b id="filtro_title">Filtro:</b>
+            <select onchange="escolher_ala()" id="selecionar_alas">
+                <option value="0">Mostrar tudo</option>
+                <option value="1">Alas estáveis</option>
+                <option value="2">Alas instáveis</option>
+                <option value="3">Alas críticas</option>
+            </select>
+            <span id="title_alas">Alas</span>
+            <span id="alas">Quantidade de alas: <b id="qtd_alas"></b></span>
+            <div id="campo_alas" class="quadro">
+            </div>
         </div>
     </div>
 
-    <script>
 
-        // Gerar quantidade de alas
-
-        let alas_ok = parseInt(Math.random() * 33 + 1);
-        let alas_interm = parseInt(Math.random() * 33 + 1);
-        let alas_criticas = parseInt(Math.random() * 33 + 1);
-
-        qtd_alas_ok.innerHTML = alas_ok;
-        qtd_alas_interm.innerHTML = alas_interm;
-        qtd_alas_crt.innerHTML = alas_criticas;
-
-    </script>
 
 </body>
 
 </html>
+
+<script>
+
+    // Gerar quantidade de alas
+
+    let alas_ok = parseInt(Math.random() * 33 + 1);
+    let alas_interm = parseInt(Math.random() * 33 + 1);
+    let alas_criticas = parseInt(Math.random() * 33 + 1);
+    let alas_totais = alas_ok + alas_interm + alas_criticas;
+
+    // Inserindo os valores dentro do HTML
+    qtd_alas.innerHTML = alas_totais;
+    qtd_alas_ok.innerHTML = alas_ok;
+    qtd_alas_interm.innerHTML = alas_interm;
+    qtd_alas_crt.innerHTML = alas_criticas;
+
+    // Criando uma automação para inserir alas
+
+    for (let contador_ok = 1; contador_ok <= alas_ok; contador_ok++) {
+        campo_alas.innerHTML += `<span id="ala_ok" style="color: #6ab04c">Ala ${contador_ok}</span>`;
+    }
+
+    for (let contador_interm = 1; contador_interm <= alas_interm; contador_interm++) {
+        campo_alas.innerHTML += `<span id="ala_interm" style="color: #f9ca24">Ala ${contador_interm}</span>`;
+    }
+
+    for (let contador_critico = 1; contador_critico <= alas_criticas; contador_critico++) {
+        campo_alas.innerHTML += `<span id="ala_crit" style="color: #eb4d4b">Ala ${contador_critico}</span>`;
+    }
+
+    function escolher_ala() {
+        var escolha = selecionar_alas.value;
+
+        if (escolha == 0) {
+            ala_ok.style.display = 'block';
+            ala_interm.style.display = 'block';
+            ala_crit.style.display = 'block';
+        } else if (escolha == 1) {
+            ala_ok.style.display = 'block';
+            ala_interm.style.display = 'none';
+            ala_crit.style.display = 'none';
+        } else if (escolha == 2) {
+            ala_ok.style.display = 'none';
+            ala_interm.style.display = 'block';
+            ala_crit.style.display = 'none';
+        } else {
+            ala_ok.style.display = 'none';
+            ala_interm.style.display = 'none';
+            ala_crit.style.display = 'blcok';
+        }
+    }
+
+
+</script>

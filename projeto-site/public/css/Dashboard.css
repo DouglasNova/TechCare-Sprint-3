@@ -27,6 +27,10 @@ body {
     width: 85vw;
   }
 
+  #check:checked ~ .alas {
+    width: 90vw;
+  }
+
   /* Faróis de alerta */
 
   .alertas {
@@ -80,7 +84,7 @@ body {
   /* Farol amarelo */
   
   .card-2 {
-    margin: 100px 0 0 350px;
+    margin: 100px 0 0 375px;
     width: 250px;
     height: 70px;
     background: #f9ca24;
@@ -149,35 +153,51 @@ body {
     width: 75vw;
     max-width: 85vw;
     max-width: 100vw;
-    height: 150vh;
+    height: 110vh;
     transition: 0.5s;
     padding: 100px;
-    display: flex;
+  }
 
+  .alas {
+    background: #636e72;
+    width: 75vw;
+    height: 100vh;
+    text-align: center;
+    padding: 20px;
+  }
+
+  #title_alas {
+    font-size: 250%;
+    font-weight: 700;
+    color: #f5f5f5;
   }
 
   #alas {
-    background: #636e72;
-    width: 50vw;
-    height: 100vh;
-    text-align: center;
+    float: right;
+    padding-right: 50px;
+    font-size: 170%;
     color: #f5f5f5;
   }
 
-  #alas h2 {
-    font-size: 250%;
+  .quadro {
+    margin-top: 100px;
   }
 
-  #grafico_pizza {
-    margin-left: 2vw;
-    background: #636e72;
-    width: 30vw;
-    height: 50vh;
-    text-align: center;
+  .quadro span {
+    margin: auto 10px;
+    columns: #1e272e;
+  }
+
+  #filtro_title {
+    float: left;
+    font-size: 150%;
     color: #f5f5f5;
   }
 
-  #grafico_pizza:hover {
-    transform: scale(1.1);
-    transition: 0.5s;
+  #selecionar_alas {
+    float: left;
+    margin-left: 10px;
+    width: 10vw;
+    height: 3vh;
+    font-size: 110%;
   }
