@@ -20,7 +20,7 @@ require('events').EventEmitter.defaultMaxListeners = 15;
 
 
 
-const registros_mantidos_tabela_leitura = 8;
+const registros_mantidos_tabela_leitura = 50;
 
 
 function iniciar_escuta() {
@@ -82,6 +82,11 @@ function iniciar_escuta() {
 // e faz um insert no banco de dados
 function registrar_leitura(temperatura, umidade) {
 
+    let chave_estr = parseInt(Math.random() * 13 + 1)
+    if (chave_estr < 6) {
+        chave_estr = 6;
+    }
+
     console.log('\nIniciando inclusão de novo registro...');
     console.log(`temperatura: ${temperatura}`);
     console.log(`umidade: ${umidade}`);
@@ -89,8 +94,8 @@ function registrar_leitura(temperatura, umidade) {
     banco.conectar().then(() => {
 
         return banco.sql.query(`
-        INSERT into Dados_do_sensor (Umidade, Temperatura, Data_hora)
-        values (${umidade}, ${temperatura}, CONVERT(Datetime, '${agora()}', 120));
+        INSERT into Dados_do_sensor (fkSensor, Umidade, Temperatura, Data_hora)
+        values (${chave_estr}, ${umidade}, ${temperatura}, CONVERT(Datetime, '${agora()}', 120));
         
         delete from Dados_do_sensor where ID_dados_rows not in 
         (select top ${registros_mantidos_tabela_leitura} ID_dados_rows from Dados_do_sensor order by ID_dados_rows desc);`)

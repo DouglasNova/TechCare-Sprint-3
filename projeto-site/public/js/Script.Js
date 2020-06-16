@@ -8,27 +8,7 @@ function myFunction() {
 }
 const cards = document.querySelectorAll(".card");
 
-//Script do Login
-
-// function login(){
-
-//   var tem_arroba = mensagem.value;
-//   var tem_ponto = mensagem.value; 
-  
-//   tem_arroba = tem_arroba.indexOf('@') > 0;
-//   tem_ponto = tem_ponto.indexOf('.') > 0;
-
-//   if(tem_arroba && tem_ponto){
-//       alert ('email Valido');
-//       window.location.href = "../pages/DashBoard.html";
-      
-//   }else {
-//       alert ('email invalido');
-//   }
-
-// }
-
-// teste
+//Script do Login com banco
 
 function entrar() {
   var formulario = new URLSearchParams(new FormData(login));
