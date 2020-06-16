@@ -32,10 +32,10 @@
 
         <div class="Conteudo">
             <div id="div_inicio">
-                <form id="login" class="box" action="../pages/Dashboard/DashBoard.html" method="post">
+                <form id="login" class="box" onsubmit="return entrar()">
                     <h1>Login</h1>
-                    <input type="text" name="" placeholder="Email" id="mensagem" required>
-                    <input type="password" name="" placeholder="Senha" id="senha" required>
+                    <input type="text" name="login" placeholder="Email" id="mensagem" required>
+                    <input type="password" name="senha" placeholder="Senha" id="senha" required>
                     <input href="../pages/Dashboard/DashBoard.html" id="pagina" type="submit" name="" value="Login" onclick="login()">
                     <a href="esqueci_senha.html">Esqueci minha senha</a>
                 </form>

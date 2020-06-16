@@ -82,17 +82,12 @@ router.get('/luminosity', (request, response, next) => {
         Humidity = ArduinoDataHumidity.List[ArduinoDataHumidity.List.length - 1];
         //luminosidade = ArduinoDataLuminosity.List[ArduinoDataLuminosity.List.length -1]
 
-        let agora = new Date();
-        let dia = new Date(agora).getDate();
-        let mes = new Date(agora).getMonth() + 1;
-        let ano = new Date(agora).getFullYear();
+        momento = new Date();
 
-        let data_ano = ano + '-' + mes + '-' + dia;
-        let momento = new Date(agora).getHours() + ':' + new Date(agora).getMinutes() + ':' + new Date(agora).getSeconds();
-        
-        var sql = "INSERT INTO Dados_do_sensor(Umidade, Temperatura, Data_hora) VALUES(?) ";
+        let chave_estr = parseInt(Math.random() * 2 + 1)
+        var sql = `INSERT INTO Dados_do_sensor(fkSensor, Umidade, Temperatura, Data_hora) VALUES(?) `;
 
-        var values = [Humidity, temperature, data_ano];
+        var values = [chave_estr, Humidity, temperature, momento];
 
         db.query(sql, [values], function (err, result) {
             if (err) throw err;

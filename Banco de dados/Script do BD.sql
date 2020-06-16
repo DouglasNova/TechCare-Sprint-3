@@ -59,11 +59,9 @@ Umidade Decimal (10,2),
 Temperatura Decimal (10,2), 
 Data_hora datetime
 );
-
-insert into dados_do_sensor values
-    (null, 1, 58, 21, 050420201330);
     
     insert into dados_do_sensor values
+    (null, 1, 58, 21, 050420201330),
     (null, 1, 49, 23, 070620201345),
     (null, 1, 75, 32, 070620201355),
     (null, 2, 58, 18, 070620201400),
