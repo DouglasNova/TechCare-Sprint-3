@@ -85,6 +85,7 @@ router.get('/luminosity', (request, response, next) => {
         momento = new Date();
 
         let chave_estr = parseInt(Math.random() * 2 + 1)
+        
         var sql = `INSERT INTO Dados_do_sensor(fkSensor, Umidade, Temperatura, Data_hora) VALUES(?) `;
 
         var values = [chave_estr, Humidity, temperature, momento];
