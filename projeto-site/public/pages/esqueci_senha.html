@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/Login.css ">
+    <link rel="stylesheet" href="../css/Style.css">
+    <link rel="icon" href="../css/img/favicon.ico">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Esqueci minha senha</title>
+</head>
+
+<body>
+    <div class="corpo">
+        <div class="header">
+            <div class="container">
+                <div class="logo">
+                    <a href="#"><img src="../css/img/logo.png" alt="Logo" width="150"></a>
+                </div>
+                <form class="nav" id="myTopnav">
+                    <ul class='topicos'>
+                        <li class='menu_li'> <a href="../index.html" class='menu_a'>HOME</a> </li>
+                        <li class='menu_li'> <a href="../pages/Sobre.html" class='menu_a'>TECHCARE</a> </li>
+                        <li class='menu_li'> <a href="servico.html" class='menu_a'>SERVIÇOS</a> </li>
+                        <li class='menu_li'> <a href="contato.html" class='menu_a'>CONTATO</a> </li>
+                        <li class='menu_li'> <a href="login.html" class='btn_login'>LOGIN</a> </li>
+                    </ul>
+                </form>
+            </div>
+        </div>
+        <div class="Conteudo">
+            <div id="div_esqueci" class="box2">
+                <h1>Esqueci minha senha</h1>
+                <input type="text" placeholder="Email" id="mensagem">
+                <input onclick="enviar()" href="" type="submit" name="" value="Enviar">
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="container">
+                <div class="logoFooter">
+                    <a href="../index.html"><img src="../css/img/logo.png" alt="Logo" width="150"></a>
+                </div>
+                <div class="navFooter">
+                    <ul>
+                        <li><i class="fa fa-github-square fa-2x" aria-hidden="true"></i><a href="https://github.com/DouglasNova/TechCare-Sprint-3"> Acesse nosso Git</a></li>
+                    </ul>
+                </div>
+
+                <div class="newslatter">
+                    <b> Assine nossa newslatter</b> <br>
+                    <div class="text">
+
+
+                        <input type="email" placeholder="Digite seu email">
+
+                        <button class="btn-hover color-1">Assine</button>
+
+                    </div>
+                    <br>
+                    <ul>
+                        <li><a href="https://www.instagram.com/techcare_adsa/"><img src="../css/img/insta.png"></a></li>
+                        <li><a href="https://www.facebook.com/groups/242411177001759"><img
+                                    src="../css/img/face.png"></a></li>
+                        <li><a href="https://twitter.com/TechCar38115432"><img src="../css/img/twitter.png"></a></li>
+                        <li><a href="https://www.linkedin.com/feed/?trk=onboarding-landing"><img
+                                    src="../css/img/linkedin.png"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>
+
+<script>
+    function enviar() {
+        var tem_arroba = mensagem.value;
+        var tem_ponto = mensagem.value;
+
+        tem_arroba = tem_arroba.indexOf('@') > 0;
+        tem_ponto = tem_ponto.indexOf('.') > 0;
+
+        if (tem_arroba && tem_ponto) {
+            alert('email enviado com sucesso');
+        } else {
+            alert('email invalido');
+        }
+
+    }
+</script>

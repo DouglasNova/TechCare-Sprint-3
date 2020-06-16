@@ -1,0 +1,149 @@
+html, body {
+    margin: 0;
+    width: 100%;
+}
+
+body{
+    background: #f4f4f4;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.showcase {
+    height: 60vh;
+    width: 100%;
+    min-width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+    padding-bottom: 400px;
+}
+
+.card_box {
+    position: relative;
+    width: 65%;
+    min-width: 45%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(26px, 1fr));
+    grid-template-rows: auto;
+    grid-gap: 0 60px;
+}
+
+.card_box .box {
+    position: relative;
+    height: 50vh;
+    width: 100%;
+    min-width: 60%;
+    background: #dfe6e9;
+    display: flex;
+    box-shadow: 0px 15px 30px -5px #000000bd;
+    justify-content: center;
+    align-items: center;
+}
+
+.card_box .box::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    left: -2px;
+    bottom: -2px;
+    transform: skew(2deg, 2deg);
+    z-index: -1;
+}
+
+.card_box .box:nth-child(1)::before {
+    background: linear-gradient(315deg, #4ab0a6, #42c5e6);
+}
+
+.card_box .box:nth-child(2)::before {
+    background: linear-gradient(315deg, #4ab0a6, #42c5e6);
+}
+
+.card_box .box:nth-child(3)::before {
+    background: linear-gradient(315deg, #4ab0a6, #42c5e6);
+}
+
+.content {
+    position: relative;
+    padding: 20px;
+    text-align: justify;
+}
+
+.content ul {
+    margin: 5px auto;
+    margin-left: -20px;
+}
+
+.box .content img {
+    position: absolute;
+    top: -5vh;
+    right: 2vw;
+    margin: 0;
+    padding: 0;
+    height: 12vh;
+    min-height: 10vh;
+    color: rgba(255, 255, 255, 0.3);
+    transition: 0.5s;
+}
+
+.box:hover .content img {
+    top: -9vh;
+} 
+
+.box:hover {
+    transform: scale(1.05);
+    transition: 0.5s;
+    cursor: pointer;
+} 
+
+.box:hover .content h3 {
+    color: #f5f5f5;
+} 
+
+.box:hover .content p {
+    color: #f5f5f5;
+} 
+
+.box:hover .content li {
+    color: #f5f5f5;
+} 
+
+.box .content h3 {
+    margin: 0 0 2vh;
+    padding: 0;
+    font-size: 2rem;    
+    font-weight: 500;
+    color: #4ab0a6;
+}
+
+.box .content p {
+    margin: 0;
+    padding: 0;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.box .content li {
+    margin: 0;
+    padding: 0;
+    font-size: 1.2rem;
+    list-style: circle;
+}
+
+.title_sobre {
+    margin-top: 10vh;
+    margin-left: 400px;
+    float: left;
+    background: #4ab0a6 ;
+    color: #fff;
+    width: 15vw;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 5px 7px 5px -5px #000;
+}
+
+.title_sobre h1 {
+    margin: 0;
+}

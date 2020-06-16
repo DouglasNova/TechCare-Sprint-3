@@ -1,12 +1,151 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-  <title>Express</title>
-  <link rel="stylesheet" href="/stylesheets/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/Style.css">
+    <link rel="stylesheet" href="css/Home.css">
+    <link rel="icon" href="css/img/favicon.ico">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>home</title>
 </head>
 
 <body>
-  HTML funcionando! te juro!
+    <div class="corpo">
+        <div class="header">
+            <div class="container">
+                <div class="logo">
+                    <a href="#"><img src="css/img/logo.png" alt="Logo" width="150"></a>
+                </div>
+                <form class="nav" id="myTopnav">
+                    <ul class='topicos'>
+                        <li class='menu_li'> <a href="#" class='menu_a active'>HOME</a> </li>
+                        <li class='menu_li'> <a href="pages/Sobre.html" class='menu_a'>TECHCARE</a> </li>
+                        <li class='menu_li'> <a href="pages/servico.html" class='menu_a'>SERVIÇOS</a> </li>
+                        <li class='menu_li'> <a href="pages/contato.html" class='menu_a'>CONTATO</a> </li>
+                        <li class='menu_li'> <a href="pages/login.html" class='btn_login'>LOGIN</a> </li>
+                    </ul>
+                </form>
+            </div>
+        </div>
+        <div class="Conteudo">
+            <div class="top">
+                <div class="img">
+                    <img src="css/img/FundoHome.png">
+                </div>
+
+                <div class="sobre">
+                    <h1>TechCare</h1>
+                    TechCare soluções para combate a doenças em alas hospitalares. conheça mais sobre nossa empresa<br> <br>
+                    <button class="btn-hover color-1" onclick="window.location.href='pages/Sobre.html'">Conhecer!</button>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="boxesContainer">
+                <div class="boxes B1">
+                    <h1>Login</h1>
+                    já é cadastrado e quer acessar a dashboard? Faça o login e o acesse!
+                    <div class="end">
+                        <button class="btn-hover  color-1" onclick="window.location.href='pages/login.html'">Login</button>
+                    </div>
+                </div>
+                <div class="boxes B2">
+                    <h1>Serviços</h1>
+                    Não conhece nossa solução? Acesse nossos serviços agora!
+                    <div class="end">
+                        <button class="btn-hover  color-1" onclick="window.location.href='pages/servico.html'">Serviços</button>
+                    </div>
+                </div>
+                <div class="boxes B3">
+                    <h1>Contato</h1>
+                    Entre em contato conosco e nos conte o que precisa ou peça um orçamento
+                    <div class="end">
+                        <button class="btn-hover  color-1" onclick="window.location.href='pages/contato.html'">Contato</button>
+                    </div>
+                </div>
+                <div class="faixa"></div>
+            </div>
+
+            <div class="cards">
+                <div class="cardContainer">
+                    <div class="card">
+                        <div class="side front">
+                            <div class="img img1"></div>
+                            <div class="info">
+                                <h2>Sensores</h2>
+                                <p>
+                                    Os melhores sensores do mercado para captação de dados para te dar mais
+                                    confiaça e segurança na hora de contratar nossos serviços em um momento tão dificil
+                                    que o mundo esta passando
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cardContainer">
+                    <div class="card">
+                        <div class="side front">
+                            <div class="img img2"></div>
+                            <div class="info">
+                                <h2>Software</h2>
+                                <p>Os melhores Dev para fazer os melhores Software que não iram te deixar na mão</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cardContainer">
+                    <div class="card">
+                        <div class="side front">
+                            <div class="img img3"></div>
+                            <div class="info">
+                                <h2>High Quality</h2>
+                                <p>Tudo isso com a Qualidade que somente a TechCare pode te oferecer, Não perca mais
+                                    tempo! e seja mais um dos nossos varios clientes que confiam no nosso trabalho</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="container">
+                <div class="logoFooter">
+                    <img src="css/img/logo.png" alt="Logo" width="150">
+                </div>
+                <div class="navFooter">
+                    <ul>
+                        <li><i class="fa fa-github-square fa-2x" aria-hidden="true"></i><a href="https://github.com/DouglasNova/TechCare-Sprint-3"> Acesse nosso Git</a></li>
+                    </ul>
+                </div>
+
+                <div class="newslatter">
+                    <b> Assine nossa newslatter</b> <br>
+                    <div class="text">
+
+
+                        <input type="email" placeholder="Digite seu email">
+
+                        <button class="btn-hover color-1">Assine</button>
+
+                    </div>
+                    <br>
+                    <ul>
+                        <li><a href="https://www.instagram.com/techcare_adsa/"><img src="css/img/insta.png"></a></li>
+                        <li><a href="https://www.facebook.com/groups/242411177001759"><img src="css/img/face.png"></a></li>
+                        <li><a href="https://twitter.com/TechCar38115432"><img src="css/img/twitter.png"></a></li>
+                        <li><a href="https://www.linkedin.com/feed/?trk=onboarding-landing"><img src="css/img/linkedin.png"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
+<script src="js/Script.Js"></script>
