@@ -86,58 +86,69 @@
 </html>
 <script>
 
-    // Parâmetros
+    setInterval(() => {
 
-    // Gerar quantidade de alas
-    let maxalas = 42;
-    // Temperatura padrão
-    let temp = 0;
-    // Umidade padrão
-    let umid = 0;
+        campo_alas.innerHTML = '';
 
-    // Quantidade de cada tipo de ala
 
-    // Alas estáveis
-    let vr_alas_ok = 0;
+        // Parâmetros
 
-    // Alas instáveis
-    let vr_alas_interm = 0;
+        // Gerar quantidade de alas
+        let maxalas = 42;
+        // Temperatura padrão
+        let temp = 0;
+        // Umidade padrão
+        let umid = 0;
 
-    // Alas críticas
-    let vr_alas_criticas = 0;
+        // Quantidade de cada tipo de ala
 
-    // Criando uma automação para inserir alas
+        // Alas estáveis
+        let vr_alas_ok = 0;
 
-    for (let contador = 1; contador <= maxalas; contador++) {  // Aqui o for está criando a quantidade de alas utilziando um contador e um let pra parâmetrisar a quantidade de alas.
-        temp = parseInt(Math.random() * 35 + 1);               // Aqui as variáveis temp (temperatura) e umid (umidade) são criadas aleatóriamente toda vez que o for é executado.
-        umid = parseInt(Math.random() * 100 + 1);
+        // Alas instáveis
+        let vr_alas_interm = 0;
 
-        if (temp >= 18 && temp <= 30 || umid >= 50 && umid <= 60) { // Se os valores de temp e umid estiverem dentro dos parâmetros ideais, a função para no if
-            campo_alas.innerHTML += `<div class="alas_ok">Ala ${contador}</div>`; // Esta linha cria um card com um número de ala e cor de background referente ao seu status.
-            ++vr_alas_ok; // Aqui o JS está registrando que foi criada uma ala "ok"
-        } else if (temp >= 15 && temp <= 33 || umid >= 30 && umid <= 80) {
-            campo_alas.innerHTML += `<div class="alas_interms">Ala ${contador}</div>`; // Se os valores de temp e umid estiverem fora dos parâmetros ideais, mas não tão longe deles,a função para no else if.
-            ++vr_alas_interm; // Aqui o JS está registrando que foi criada uma ala "instável"
-        } else {
-            campo_alas.innerHTML += `<div class="alas_crits">Ala ${contador}</div>`; // Se os valores de temp e umid estiverem totalmente fora dos parâmetros ideais, a função "cai" no else.
-            ++vr_alas_criticas; // Aqui o JS está registrando que foi criada uma ala "crítica"
+        // Alas críticas
+        let vr_alas_criticas = 0;
+
+        // Criando uma automação para inserir alas
+
+        for (let contador = 1; contador <= maxalas; contador++) {  // Aqui o for está criando a quantidade de alas utilziando um contador e um let pra parâmetrisar a quantidade de alas.
+            temp = parseInt(Math.random() * 35 + 1);               // Aqui as variáveis temp (temperatura) e umid (umidade) são criadas aleatóriamente toda vez que o for é executado.
+            umid = parseInt(Math.random() * 100 + 1);
+
+            if (temp >= 18 && temp <= 30 || umid >= 50 && umid <= 60) { // Se os valores de temp e umid estiverem dentro dos parâmetros ideais, a função para no if
+                campo_alas.innerHTML += `<div class="alas_ok">Ala ${contador}</div>`; // Esta linha cria um card com um número de ala e cor de background referente ao seu status.
+                ++vr_alas_ok; // Aqui o JS está registrando que foi criada uma ala "ok"
+            } else if (temp >= 15 && temp <= 33 || umid >= 30 && umid <= 80) {
+                campo_alas.innerHTML += `<div class="alas_interms">Ala ${contador}</div>`; // Se os valores de temp e umid estiverem fora dos parâmetros ideais, mas não tão longe deles,a função para no else if.
+                ++vr_alas_interm; // Aqui o JS está registrando que foi criada uma ala "instável"
+            } else {
+                campo_alas.innerHTML += `<div class="alas_crits">Ala ${contador}</div>`; // Se os valores de temp e umid estiverem totalmente fora dos parâmetros ideais, a função "cai" no else.
+                ++vr_alas_criticas; // Aqui o JS está registrando que foi criada uma ala "crítica"
+            }
         }
-    }
 
-    // Inserindo os valores dentro do HTML
+        // Inserindo os valores dentro do HTML
 
-    let alas_totais = vr_alas_ok + vr_alas_interm + vr_alas_criticas; // Variável que registra a quantidade total de alas que foram criadas
+        let alas_totais = vr_alas_ok + vr_alas_interm + vr_alas_criticas; // Variável que registra a quantidade total de alas que foram criadas
 
-    qtd_alas.innerHTML = alas_totais; // Entre a linha 135 e 138, o JS está inserindo os valores das variáveis dentro do HTML
-    qtd_alas_ok.innerHTML = vr_alas_ok;
-    qtd_alas_interm.innerHTML = vr_alas_interm;
-    qtd_alas_crt.innerHTML = vr_alas_criticas;
+        qtd_alas.innerHTML = alas_totais; // Entre a linha 135 e 138, o JS está inserindo os valores das variáveis dentro do HTML
+        qtd_alas_ok.innerHTML = vr_alas_ok;
+        qtd_alas_interm.innerHTML = vr_alas_interm;
+        qtd_alas_crt.innerHTML = vr_alas_criticas;
 
-    // Filtro de exibição
 
-    let lista_ok = document.getElementsByClassName('alas_ok');
-    let lista_interm = document.getElementsByClassName('alas_interms');
-    let lista_crit = document.getElementsByClassName('alas_crits');
+
+
+    }, 60000) // Exibindo novos valores à cada minuto
+
+    
+        // Filtro de exibição
+
+        let lista_ok = document.getElementsByClassName('alas_ok');
+        let lista_interm = document.getElementsByClassName('alas_interms');
+        let lista_crit = document.getElementsByClassName('alas_crits');
 
     function escolher_ala() {
         var escolha = Number(document.getElementById('selecionar_alas').value); // Aqui o JS cria uma var com um valor referente à escolha do usuário.
@@ -184,6 +195,7 @@
             }
         }
     }
+
 
     // Logoff
 
