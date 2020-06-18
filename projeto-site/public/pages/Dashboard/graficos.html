@@ -53,54 +53,19 @@
       <div class="container">
         <!-- combobox-->
         <div class="select-box">
-          <div class="options-container">
-            <div class="option">
-              <input type="radio" class="radio" id="automobiles" name="category" />
-              <label for="automobiles">Automobiles</label>
-            </div>
+          <div class="options-container" id="selctAla">
 
-            <div class="option">
-              <input type="radio" class="radio" id="film" name="category" />
-              <label for="film">Film & Animation</label>
-            </div>
-
-            <div class="option">
-              <input type="radio" class="radio" id="science" name="category" />
-              <label for="science">Science & Technology</label>
-            </div>
-
-            <div class="option">
-              <input type="radio" class="radio" id="art" name="category" />
-              <label for="art">Art</label>
-            </div>
-
-            <div class="option">
-              <input type="radio" class="radio" id="music" name="category" />
-              <label for="music">Music</label>
-            </div>
-
-            <div class="option">
-              <input type="radio" class="radio" id="travel" name="category" />
-              <label for="travel">Travel & Events</label>
-            </div>
-
-            <div class="option">
-              <input type="radio" class="radio" id="sports" name="category" />
-              <label for="sports">Sports</label>
-            </div>
-
-            <div class="option">
-              <input type="radio" class="radio" id="news" name="category" />
-              <label for="news">News & Politics</label>
-            </div>
-
-            <div class="option">
-              <input type="radio" class="radio" id="tutorials" name="category" />
-              <label for="tutorials">Tutorials</label>
-            </div>
           </div>
           <div class="selected">
-            Select Video Category
+            Selecionar ala
+          </div>
+        </div>
+        <div class="select-box2" id='box2'>
+          <div class="options-container2" id="selctSensor">
+
+          </div>
+          <div class="selected2">
+            Selecionar Sensor
           </div>
         </div>
         <!-- fim combobox-->
@@ -127,14 +92,14 @@
             <div class="grid item3">20°C</div>
           </div>
           <div class="card CS4">
-            <div class="grid item1">Temperatura Media atual</div>
+            <div class="grid item1">Temperatura Media alas</div>
             <div class="grid item2">
               <img src="../../css/img/thermometer (1).png" alt="" />
             </div>
             <div class="grid item3">25°C</div>
           </div>
           <div class="card CS5">
-            <div class="grid item1">Umidade Media atual</div>
+            <div class="grid item1">Umidade Media</div>
             <div class="grid item2">
               <img src="../../css/img/humidity.png" alt="" />
             </div>
@@ -143,7 +108,7 @@
         </div>
         <div class="graficoContainer">
           <div class="grafico temperatura">
-            <div style="width:75%;">
+            <div>
               <div id="div_aguarde">Dados sendo obtidos...</div>
               <canvas id="canvas_grafico"></canvas>
             </div>
@@ -185,31 +150,63 @@
 <script>
   const selected = document.querySelector(".selected");
   const optionsContainer = document.querySelector(".options-container");
-
-  const optionsList = document.querySelectorAll(".option");
-
   selected.addEventListener("click", () => {
     optionsContainer.classList.toggle("active");
   });
 
-  optionsList.forEach(o => {
-    o.addEventListener("click", () => {
-      selected.innerHTML = o.querySelector("label").innerHTML;
-      optionsContainer.classList.remove("active");
-    });
+
+  const selected2 = document.querySelector(".selected2");
+  const optionsContainer2 = document.querySelector(".options-container2");
+  selected2.addEventListener("click", () => {
+    optionsContainer2.classList.toggle("active2");
   });
 
 
 
+  function combobox() {
+
+    var optionsList = document.querySelectorAll(".option");
 
 
 
-  window.onload = obterDadosGrafico;
+
+
+    optionsList.forEach(o => {
+      o.addEventListener("click", () => {
+        selected.innerHTML = o.querySelector("label").innerHTML;
+        optionsContainer.classList.remove("active");
+      });
+    });
+
+
+  }
+  function combobox2() {
+
+
+    var optionsList2 = document.querySelectorAll(".option2");
+
+
+    optionsList2.forEach(o2 => {
+      o2.addEventListener("click", () => {
+        selected2.innerHTML = o2.querySelector("label").innerHTML;
+        optionsContainer2.classList.remove("active2");
+      });
+    });
+  }
+
+
+
+  window.onload = escolherAla;
 
   //verificar_autenticacao();
 
   // neste JSON tem que ser 'labels', 'datasets' etc, 
   // porque é o padrão do Chart.js
+  var preset = {
+    ala: '', sensor: '', hospital: ''
+  }
+  var ala = {}
+  var sensor = {}
   var dados = {
     labels: [],
     datasets: [
@@ -231,6 +228,69 @@
       }
     ]
   };
+
+  function escolherAla() {
+    fetch('/leituras/ala', { cache: 'no-store' }).then(function (response) {
+      if (response.ok) {
+        response.json().then(function (novoRegistro) {
+
+          console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
+          ala = novoRegistro
+          for (var cont = 1; cont <= ala.length; cont++) {
+            selctAla.innerHTML += ` <div class="option" onclick="queroAla('${cont}')">
+                                      <input type="radio" class="radio"  name="category" />
+                                      <label for="Ala ${cont}">Ala ${cont}</label>
+                                    </div>
+                                    `
+          }
+          
+          combobox()
+
+
+
+        });
+      } else {
+        console.error('Nenhum dado encontrado ou erro na API');
+
+      }
+    })
+      .catch(function (error) {
+        console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+      });
+  }
+
+  function queroAla(dado) {
+    preset.ala = ala[Number(dado) -1].idAla
+    fetch('/leituras/sensor', { cache: 'no-store' }).then(function (response) {
+      if (response.ok) {
+        response.json().then(function (novoRegistro) {
+          selctSensor.innerHTML = ''
+          console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
+          for (var cont = 1; cont <= novoRegistro.length; cont++) {
+            if (novoRegistro[cont - 1].fkAla == preset.ala) {
+              selctSensor.innerHTML += ` <div class="option2" oninput='queroAla(${cont - 1})'>
+                                      <input type="radio" class="radio"  name="category" />
+                                      <label for="Sensor ${cont}">Sensor ${cont}</label>
+                                    </div>
+                                    `
+            }
+          }
+
+          combobox2();
+          box2.style.display = 'flex';
+          obterDadosGrafico()
+
+        });
+      } else {
+        console.error('Nenhum dado encontrado ou erro na API');
+
+      }
+    })
+      .catch(function (error) {
+        console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+      });
+  }
+
 
 
   // só mexer se quiser alterar o tempo de atualização
