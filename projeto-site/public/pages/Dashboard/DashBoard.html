@@ -10,60 +10,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
     <link rel="icon" href="../../css/img/favicon.ico">
-    <style>
-        canvas {
-            -moz-user-select: none;
-            -webkit-user-select: none;
-            -ms-user-select: none;
-        }
-    </style>
-    <style type="text/css">
-        /* Chart.js */
-        @keyframes chartjs-render-animation {
-            from {
-                opacity: .99
-            }
-
-            to {
-                opacity: 1
-            }
-        }
-
-        .chartjs-render-monitor {
-            animation: chartjs-render-animation 1ms
-        }
-
-        .chartjs-size-monitor,
-        .chartjs-size-monitor-expand,
-        .chartjs-size-monitor-shrink {
-            position: absolute;
-            direction: ltr;
-            left: 0;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            overflow: hidden;
-            pointer-events: none;
-            visibility: hidden;
-            z-index: -1
-        }
-
-        .chartjs-size-monitor-expand>div {
-            position: absolute;
-            width: 1000000px;
-            height: 1000000px;
-            left: 0;
-            top: 0
-        }
-
-        .chartjs-size-monitor-shrink>div {
-            position: absolute;
-            width: 200%;
-            height: 200%;
-            left: 0;
-            top: 0
-        }
-    </style>
 </head>
 
 <body>
@@ -81,14 +27,16 @@
             </div>
         </center>
         <div class="right_area">
-            <a href="../../index.html" class="logout_btn">Logout</a>
+            <a onclick="logoff()" href="../../index.html" class="logout_btn">Logout</a>
         </div>
     </header>
 
     <div class="sidebar">
         <center>
             <img src="../../css/img/user.png" class="profile_image" alt="">
-            <h4>Usuário</h4>
+            <div class="user_name">
+                <b id="b_usuario"></b>
+            </div>
         </center>
         <a class="active" href="#"><i class="fa fa-desktop" aria-hidden="true"></i><span>Dashboard</span></a>
         <a href="cadastro.html"><i class="fa fa-user-plus" aria-hidden="true"></i><span>Cadastro</span></a>
@@ -133,73 +81,134 @@
             </div>
         </div>
     </div>
-
-
-
 </body>
 
 </html>
-
 <script>
 
     // Parâmetros
 
+    // Gerar quantidade de alas
     let maxalas = 42;
+    // Temperatura padrão
     let temp = 0;
+    // Umidade padrão
     let umid = 0;
 
-    // Gerar quantidade de alas
+    // Quantidade de cada tipo de ala
 
+    // Alas estáveis
     let vr_alas_ok = 0;
+
+    // Alas instáveis
     let vr_alas_interm = 0;
+
+    // Alas críticas
     let vr_alas_criticas = 0;
 
     // Criando uma automação para inserir alas
 
-    for (let contador = 0; contador < maxalas; contador++) {
-        temp = parseInt(Math.random() * 35 + 1);
+    for (let contador = 1; contador <= maxalas; contador++) {  // Aqui o for está criando a quantidade de alas utilziando um contador e um let pra parâmetrisar a quantidade de alas.
+        temp = parseInt(Math.random() * 35 + 1);               // Aqui as variáveis temp (temperatura) e umid (umidade) são criadas aleatóriamente toda vez que o for é executado.
         umid = parseInt(Math.random() * 100 + 1);
 
-        if (temp >= 18 && temp <= 30 || umid >= 50 && umid <= 60) {
-            campo_alas.innerHTML += `<div class="alas_ok" id="ala_tp1">Ala ${++vr_alas_ok}</div>`;
+        if (temp >= 18 && temp <= 30 || umid >= 50 && umid <= 60) { // Se os valores de temp e umid estiverem dentro dos parâmetros ideais, a função para no if
+            campo_alas.innerHTML += `<div class="alas_ok">Ala ${contador}</div>`; // Esta linha cria um card com um número de ala e cor de background referente ao seu status.
+            ++vr_alas_ok; // Aqui o JS está registrando que foi criada uma ala "ok"
         } else if (temp >= 15 && temp <= 33 || umid >= 30 && umid <= 80) {
-            campo_alas.innerHTML += `<div class="alas_interms" id="ala_tp2">Ala ${++vr_alas_interm}</div>`;
+            campo_alas.innerHTML += `<div class="alas_interms">Ala ${contador}</div>`; // Se os valores de temp e umid estiverem fora dos parâmetros ideais, mas não tão longe deles,a função para no else if.
+            ++vr_alas_interm; // Aqui o JS está registrando que foi criada uma ala "instável"
         } else {
-            campo_alas.innerHTML += `<div class="alas_crits" id="ala_tp3">Ala ${++vr_alas_criticas}</div>`;
+            campo_alas.innerHTML += `<div class="alas_crits">Ala ${contador}</div>`; // Se os valores de temp e umid estiverem totalmente fora dos parâmetros ideais, a função "cai" no else.
+            ++vr_alas_criticas; // Aqui o JS está registrando que foi criada uma ala "crítica"
         }
     }
 
     // Inserindo os valores dentro do HTML
-    
-    let alas_totais = vr_alas_ok + vr_alas_interm + vr_alas_criticas;
-    qtd_alas.innerHTML = alas_totais;
+
+    let alas_totais = vr_alas_ok + vr_alas_interm + vr_alas_criticas; // Variável que registra a quantidade total de alas que foram criadas
+
+    qtd_alas.innerHTML = alas_totais; // Entre a linha 135 e 138, o JS está inserindo os valores das variáveis dentro do HTML
     qtd_alas_ok.innerHTML = vr_alas_ok;
     qtd_alas_interm.innerHTML = vr_alas_interm;
     qtd_alas_crt.innerHTML = vr_alas_criticas;
 
     // Filtro de exibição
 
-    function escolher_ala() {
-        var escolha = selecionar_alas.value;
+    let lista_ok = document.getElementsByClassName('alas_ok');
+    let lista_interm = document.getElementsByClassName('alas_interms');
+    let lista_crit = document.getElementsByClassName('alas_crits');
 
-        if (escolha == 0) {
-            document.getElementById('ala_tp1').style.display = 'block';
-            document.getElementById('ala_tp2').style.display = 'block';
-            document.getElementById('ala_tp3').style.display = 'block';
-        } else if (escolha == 1) {
-            document.getElementById('ala_tp1').style.display = 'block';
-            document.getElementById('ala_tp2').style.display = 'none';
-            document.getElementById('ala_tp3').style.display = 'none';
-        } else if (escolha == 2) {
-            document.getElementById('ala_tp1').style.display = 'none';
-            document.getElementById('ala_tp2').style.display = 'block';
-            document.getElementById('ala_tp3').style.display = 'none';
-        } else {
-            document.getElementById('ala_tp1').style.display = 'none';
-            document.getElementById('ala_tp2').style.display = 'none';
-            document.getElementById('ala_tp3').style.display = 'block';
+    function escolher_ala() {
+        var escolha = Number(document.getElementById('selecionar_alas').value); // Aqui o JS cria uma var com um valor referente à escolha do usuário.
+
+        if (escolha == 0) { // Se ele escolher "mostrar tudo", o JS torna todos os tipos de alas visíveis.
+            for (let contador = 0; contador < lista_ok.length; contador++) {
+                lista_ok[contador].style.display = 'block';
+            }
+            for (let contador = 0; contador < lista_interm.length; contador++) {
+                lista_interm[contador].style.display = 'block';
+            }
+            for (let contador = 0; contador < lista_crit.length; contador++) {
+                lista_crit[contador].style.display = 'block';
+            }
+        } else if (escolha == 1) { // Se ele escolher "alas estáveis", o JS exibe apenas as alas que estão dentro dos parâmetros (background verde).
+            for (let contador = 0; contador < lista_ok.length; contador++) {
+                lista_ok[contador].style.display = 'block';
+            }
+            for (let contador = 0; contador < lista_interm.length; contador++) {
+                lista_interm[contador].style.display = 'none';
+            }
+            for (let contador = 0; contador < lista_crit.length; contador++) {
+                lista_crit[contador].style.display = 'none';
+            }
+        } else if (escolha == 2) { // Se ele escolher "alas instáveis", o JS exibe apenas as alas que estão um pouco fora dos parâmetros (background amarelo).
+            for (let contador = 0; contador < lista_ok.length; contador++) {
+                lista_ok[contador].style.display = 'none';
+            }
+            for (let contador = 0; contador < lista_interm.length; contador++) {
+                lista_interm[contador].style.display = 'block';
+            }
+            for (let contador = 0; contador < lista_crit.length; contador++) {
+                lista_crit[contador].style.display = 'none';
+            }
+        } else { // Se ele escolher "alas críticas", o JS exibe apenas as alas que estão muito fora dos parâmetros (background vermelho).
+            for (let contador = 0; contador < lista_ok.length; contador++) {
+                lista_ok[contador].style.display = 'none';
+            }
+            for (let contador = 0; contador < lista_interm.length; contador++) {
+                lista_interm[contador].style.display = 'none';
+            }
+            for (let contador = 0; contador < lista_crit.length; contador++) {
+                lista_crit[contador].style.display = 'block';
+            }
         }
     }
+
+    // Logoff
+
+    function logoff() {
+        finalizar_sessao();
+        sessionStorage.clear();
+        redirecionar_login();
+    }
+
+    function finalizar_sessao() {
+        fetch(`/usuarios/sair/${login_usuario}`, { cache: 'no-store' });
+    }
+
+    function verificar_autenticacao() {
+        login_usuario = sessionStorage.login_usuario_meuapp;
+        nome_usuario = sessionStorage.nome_usuario_meuapp;
+
+        if (login_usuario == undefined) {
+            redirecionar_login();
+        } else {
+            document.getElementById('b_usuario').innerHTML = nome_usuario;
+        }
+    }
+
+    verificar_autenticacao();
 
 
 </script>
