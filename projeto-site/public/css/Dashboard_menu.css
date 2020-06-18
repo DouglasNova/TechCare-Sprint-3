@@ -88,6 +88,11 @@ body{
     transition: 0.5s;
     transition-property: background;
   }
+
+  .user_name {
+    margin-bottom: 30px;
+    color: #f5f5f5;
+  }
   
   .sidebar a::after{
     content: "";

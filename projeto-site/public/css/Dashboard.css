@@ -200,4 +200,90 @@ body {
     width: 10vw;
     height: 3vh;
     font-size: 110%;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background: #f5f5f5;
+    color: #1e272e;
+    font-weight: 600;
+  }
+
+  .option_container {
+    background: #f5f5f5;
+    color: #1e272e;
+    opacity: 0;
+    outline: none;
+    overflow: hidden;
+    position: absolute;
+    font-weight: 600;
+  }
+
+  .quadro {
+    display: block;
+    width: 100%;
+    height: 80%;
+    padding: 20px;
+  }
+
+  .alas_ok {
+    color: #1e272e;
+    background-color: #6ab04c;
+    margin: 10px;
+    width: 5vw;
+    padding: 40px;
+    font-size: 140%;
+    font-weight: bold;
+    border-radius: 15px;
+    box-shadow: 7px 7px 7px -5px #000;
+    cursor: pointer;
+    outline: none;
+    float: left;
+  }
+
+  .alas_interms {
+    color: #1e272e;
+    background-color: #f9ca24;
+    margin: 10px;
+    width: 5vw;
+    padding: 40px;
+    font-size: 140%;
+    font-weight: bold;
+    border-radius: 15px;
+    box-shadow: 7px 7px 7px -5px #000;
+    cursor: pointer;
+    outline: none;
+    float: left;
+  }
+
+  .alas_crits {
+    color: #1e272e;
+    background-color: #eb4d4b;
+    margin: 10px;
+    width: 5vw;
+    padding: 40px;
+    font-size: 140%;
+    font-weight: bold;
+    border-radius: 15px;
+    box-shadow: 7px 7px 7px -5px #000;
+    cursor: pointer;
+    outline: none;
+    float: left;
+  }
+
+  .alas_ok:hover {
+    transform: scale(1.3);
+    box-shadow: 0px 0px 15px 5px #f5f5f5;
+    transition: 0.3s;
+  }
+
+  .alas_interms:hover {
+    transform: scale(1.3);
+    box-shadow: 0px 0px 15px 5px #f5f5f5;
+    transition: 0.3s;
+  }
+
+  .alas_crits:hover {
+    transform: scale(1.3);
+    box-shadow: 0px 0px 15px 5px #f5f5f5;
+    transition: 0.3s;
   }

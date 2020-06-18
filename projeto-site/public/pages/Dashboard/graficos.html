@@ -38,7 +38,9 @@
   <div class="sidebar">
     <center>
       <img src="../../css/img/user.png" class="profile_image" alt="">
-      <h4>Usuário</h4>
+      <div class="user_name">
+        <b id="b_usuario"></b>
+      </div>
     </center>
     <a href="Dashboard.html"><i class="fa fa-desktop" aria-hidden="true"></i><span>Dashboard</span></a>
     <a href="cadastro.html"><i class="fa fa-user-plus" aria-hidden="true"></i><span>Cadastro</span></a>
@@ -412,6 +414,32 @@
 
     setTimeout(atualizarGrafico, 5000);
   }
+
+  // Logoff
+
+  function logoff() {
+    finalizar_sessao();
+    sessionStorage.clear();
+    redirecionar_login();
+  }
+
+  function finalizar_sessao() {
+    fetch(`/usuarios/sair/${login_usuario}`, { cache: 'no-store' });
+  }
+
+  function verificar_autenticacao() {
+    login_usuario = sessionStorage.login_usuario_meuapp;
+    nome_usuario = sessionStorage.nome_usuario_meuapp;
+
+    if (login_usuario == undefined) {
+      redirecionar_login();
+    } else {
+      document.getElementById('b_usuario').innerHTML = nome_usuario;
+    }
+  }
+
+  verificar_autenticacao();
+
 
 
 

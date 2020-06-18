@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +13,7 @@
     <script src="../../js/cadastro.js"></script>
     <link rel="icon" href="../../css/img/favicon.ico">
 </head>
+
 <body>
     <input type="checkbox" id="check">
     <header>
@@ -31,10 +33,14 @@
     <div class="sidebar">
         <center>
             <img src="../../css/img/user.png" class="profile_image" alt="">
-            <h4>Usuário</h4>
+            <div class="user_name">
+                <b id="b_usuario"></b>
+            </div>
+        </center>
         </center>
         <a href="DashBoard.html"><i class="fa fa-desktop" aria-hidden="true"></i><span>Dashboard</span></a>
-        <a  class="active"  href="cadastro.html"><i class="fa fa-user-plus" aria-hidden="true"></i><span>Cadastro</span></a>
+        <a class="active" href="cadastro.html"><i class="fa fa-user-plus"
+                aria-hidden="true"></i><span>Cadastro</span></a>
         <a href="graficos.html"><i class="fa fa-bar-chart" aria-hidden="true"></i><span>Gráficos</span></a>
         <a href="Suporte.html"><i class="fa fa-question-circle" aria-hidden="true"></i><span>Suporte</span></a>
     </div>
@@ -59,4 +65,34 @@
     </div>
 
 </body>
+
 </html>
+
+<script>
+    
+    // Logoff
+
+    function logoff() {
+        finalizar_sessao();
+        sessionStorage.clear();
+        redirecionar_login();
+    }
+
+    function finalizar_sessao() {
+        fetch(`/usuarios/sair/${login_usuario}`, { cache: 'no-store' });
+    }
+
+    function verificar_autenticacao() {
+        login_usuario = sessionStorage.login_usuario_meuapp;
+        nome_usuario = sessionStorage.nome_usuario_meuapp;
+
+        if (login_usuario == undefined) {
+            redirecionar_login();
+        } else {
+            document.getElementById('b_usuario').innerHTML = nome_usuario;
+        }
+    }
+
+    verificar_autenticacao();
+    
+</script>
