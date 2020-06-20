@@ -46,20 +46,28 @@
     </div>
     <div class="content">
         <div class="space"></div>
+        <div style="margin: auto;">
+        <ul id="mensagemErro" class="erros" style="list-style: none;padding: 0;">
+
+        </ul>
+        <p class="sucesso" id="sucesso">
+    
+        </p>
+       </div>      
         <div class="quadro">
             <h1>Cadastre-se</h1>
-            <form action="">
+            <form>
                 <label for="nome">Nome:</label> <br>
                 <input id="nome" placeholder="Nome Completo" type="text" maxlength="45" autofocus> <br>
                 <label for="email">Email:</label>
-                <input placeholder="exemplo@xxxx.com.br" id="email" type="email" maxlength="60" minlength="20">
+                <input placeholder="exemplo@xxxx.com.br" id="email" type="email" maxlength="60">
                 <label for="senha">Senha:</label>
-                <input placeholder="senha" id="senha" type="password" maxlength="20" minlength="8">
-                <label for="r_senha">Repetir Senha:</label>
-                <input placeholder="senha" id="r_senha" type="password" maxlength="20" minlength="8">
+                <input placeholder="senha" id="senha" type="password" maxlength="20">
+                <label for="c_senha">Repetir Senha:</label>
+                <input placeholder="senha" id="c_senha" type="password" maxlength="20">
                 <label for="cpf">CPF:</label>
-                <input data-js="cpf" placeholder="xxx.xxx.xxx-xx" id="cpf" type="text" minlength="11" maxlength="11">
-                <button onclick="func_0()" type="submit">Cadastrar</button>
+                <input data-js="cpf" placeholder="xxx.xxx.xxx-xx" id="cpf" type="text" maxlength="12">
+                <button type="button" onclick="enviaCadastro()">Cadastrar</button>
             </form>
         </div>
     </div>
