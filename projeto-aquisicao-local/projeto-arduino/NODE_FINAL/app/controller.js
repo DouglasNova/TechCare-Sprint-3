@@ -6,6 +6,11 @@ const { ArduinoDataLuminosity} = require('./serialLuminosidity')
 const db = require('./database')
 const router = express.Router();
 
+const path = require('path');
+
+router.get('/inserir', (req, res, next) =>{
+    res.sendFile(path.join(__dirname+'/index.html'))
+})
 
 router.get('/', (request, response, next) => {
 
