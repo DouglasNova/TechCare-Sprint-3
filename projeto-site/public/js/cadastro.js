@@ -31,7 +31,7 @@ function validaCadastro(){
     if(senha.value !== c_senha.value){
         erros.push("A senha e a confirmação de senha devem ser iguais.")
     }
-    if((!cpf.value.length == 12) || (cpf.value.search("-") == -1) || (cpf.value[celular.value.length - 3 != "-"])){
+    if((!cpf.value.length == 12) || (cpf.value.search("-") == -1) || (cpf.value[cpf.value.length - 3 != "-"])){
         erros.push("O formato de CPF é 000000000-00")
     }
     return erros
