@@ -91,11 +91,11 @@ router.get('/estatisticas/:tipo', function (req, res, next) {
 				for (let i = 0; i < resultado.length; i++) {
 					const temp = resultado[i].temp_media;
 					const umid = resultado[i].umid_media;
-					if (tipo==1 && (temp >= 18 && temp <= 30) && (umid >= 50 && umid <= 79)) {
+					if (tipo==1 && (temp >= 18 && temp <= 30) && (umid >= 50 && umid <= 74)) {
 						resultadoFiltrado.push(resultado[i]);
-					} else if (tipo == 2 && (temp >= 14 || temp <= 35 || umid <= 40 || umid >= 89)) {
+					} else if (tipo == 2 && (((temp >= 14 && temp < 18) || (temp > 30 && temp <= 35)) || ((umid >= 40 && umid < 50) || (umid > 74 && umid <= 75)))) {
 						resultadoFiltrado.push(resultado[i]);
-					} else if (tipo == 3 && (tempo >= 10 || temp <= 25 || umid <= 30 || umid >= 99)) {
+					} else if (tipo == 3 && (((temp >= 0 && temp < 14) || (temp > 35 && temp <= 40)) || ((umid >= 35 && umid < 40) || (umid > 75 && umid <= 80)))) {
 						resultadoFiltrado.push(resultado[i]);
 					}
 				}
