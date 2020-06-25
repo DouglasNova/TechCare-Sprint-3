@@ -32,7 +32,7 @@
 
     <div class="sidebar">
         <center>
-            <img src="../../css/img/user.png" class="profile_image" alt="">
+            <img id="img_perfil" src="../../css/img/user.png" class="profile_image" alt="">
             <div class="user_name">
                 <b id="b_usuario"></b>
             </div>
@@ -47,27 +47,35 @@
     <div class="content">
         <div class="space"></div>
         <div style="margin: auto;">
-        <ul id="mensagemErro" class="erros" style="list-style: none;padding: 0;">
+            <ul id="mensagemErro" class="erros" style="list-style: none;padding: 0;">
 
-        </ul>
-        <p class="sucesso" id="sucesso">
-    
-        </p>
-       </div>      
+            </ul>
+            <p class="sucesso" id="sucesso">
+
+            </p>
+        </div>
         <div class="quadro">
             <h1>Cadastre-se</h1>
-            <form>
-                <label for="nome">Nome:</label> <br>
-                <input id="nome" placeholder="Nome Completo" type="text" maxlength="45" autofocus> <br>
-                <label for="email">Email:</label>
-                <input placeholder="exemplo@xxxx.com.br" id="email" type="email" maxlength="60">
-                <label for="senha">Senha:</label>
-                <input placeholder="senha" id="senha" type="password" maxlength="20">
+            <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
+                <label>Nome:</label> <br>
+                <input placeholder="Nome Completo" name="Nome_Func" type="text" maxlength="45" autofocus> <br>
+
+                <label>Email:</label>
+                <input placeholder="exemplo@xxxx.com.br" name="Email_func" type="text" maxlength="60">
+
+                <label>Senha:</label>
+                <input placeholder="senha" name="Senha" type="password" maxlength="20">
+
                 <label for="c_senha">Repetir Senha:</label>
                 <input placeholder="senha" id="c_senha" type="password" maxlength="20">
-                <label for="cpf">CPF:</label>
-                <input data-js="cpf" placeholder="xxx.xxx.xxx-xx" id="cpf" type="text" maxlength="12">
-                <button type="button" onclick="enviaCadastro()">Cadastrar</button>
+
+                <label>CPF:</label>
+                <input placeholder="xxx.xxx.xxx-xx" name="CPF" type="text" maxlength="12">
+
+                <label>Foto do perfil:</label>
+                <input placeholder="URL..." name="foto_perfil" type="text">
+
+                <input id="btn_entrar" type="submit" value="Cadastrar">
             </form>
         </div>
     </div>
@@ -76,8 +84,38 @@
 
 </html>
 
+<script src="../../js/Script.Js"></script>
+
+<script src="../../funcoes.js"></script>
+
 <script>
-    
+
+    // Cadastro
+
+    function cadastrar() {
+        var formulario = new URLSearchParams(new FormData(form_cadastro));
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            body: formulario
+        }).then(function (response) {
+            
+            if (response.ok) {
+
+                alert('Usuário cadastrado com suceso!')
+
+                window.location.href='cadastro.html';
+
+            } else {
+
+                alert('Erro de cadastro!')
+
+            }
+        });
+
+        return false;
+    }
+
+
     // Logoff
 
     function logoff() {
@@ -93,14 +131,18 @@
     function verificar_autenticacao() {
         login_usuario = sessionStorage.login_usuario_meuapp;
         nome_usuario = sessionStorage.nome_usuario_meuapp;
+        foto_user = sessionStorage.foto_user_meuapp;
 
         if (login_usuario == undefined) {
             redirecionar_login();
         } else {
             document.getElementById('b_usuario').innerHTML = nome_usuario;
+            document.getElementById('img_perfil').src = foto_user;
         }
     }
 
     verificar_autenticacao();
-    
+
+
+
 </script>
