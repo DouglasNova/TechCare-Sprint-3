@@ -77,7 +77,7 @@ router.get('/luminosity', (request, response, next) => {
 		averageHour: isNaN(averageHour) ? 0 : averageHour
     });
 });
-    router.get('/sendData', function(request, response, next) {
+setTimeout(function() { router.get('/sendData', function(request, response, next) {
 
     temperature = ArduinoDataTemp.List[ArduinoDataTemp.List.length -1];
     Humidity = ArduinoDataHumidity.List[ArduinoDataHumidity.List.length -1];
@@ -99,7 +99,7 @@ router.get('/luminosity', (request, response, next) => {
 
     response.sendStatus(200);
 
-});
+});}, 1000);
 
 
 module.exports = router;
