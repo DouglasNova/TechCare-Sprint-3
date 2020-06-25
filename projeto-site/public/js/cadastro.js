@@ -1,21 +1,22 @@
-function enviaCadastro() {
-    sucesso.innerHTML = ''
-    var erros = validaCadastro();
-    mensagemErro.innerHTML = '';
-    if (erros.length > 0) {
-        for (var a = 0; a < erros.length; a++) {
-            var erro = erros[a];
-            var li = document.createElement("li");
-            li.innerHTML = erro;
-            mensagemErro.appendChild(li);
+// function enviaCadastro() {
+//     sucesso.innerHTML = ''
+//     var erros = validaCadastro();
+//     mensagemErro.innerHTML = '';
+//     if (erros.length > 0) {
+//         for (var a = 0; a < erros.length; a++) {
+//             var erro = erros[a];
+//             var li = document.createElement("li");
+//             li.innerHTML = erro;
+//             mensagemErro.appendChild(li);
 
-        }
-    }
-    else {
-        sucesso.style.display = 'block'
-        sucesso.innerHTML = 'Cadastro Criado com sucesso!'
-    }
-}
+//         }
+//     }
+//     else {
+//         sucesso.style.display = 'block'
+//         sucesso.innerHTML = 'Cadastro Criado com sucesso!'
+//     }
+// }
+
 function validaCadastro(){
     var erros = []
     if(!nome.value){
@@ -31,7 +32,7 @@ function validaCadastro(){
     if(senha.value !== c_senha.value){
         erros.push("A senha e a confirmação de senha devem ser iguais.")
     }
-    if((!cpf.value.length == 12) || (cpf.value.search("-") == -1) || (cpf.value[celular.value.length - 3 != "-"])){
+    if((!cpf.value.length == 12) || (cpf.value.search("-") == -1) || (cpf.value[cpf.value.length - 3 != "-"])){
         erros.push("O formato de CPF é 000000000-00")
     }
     return erros

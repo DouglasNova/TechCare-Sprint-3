@@ -1,6 +1,6 @@
 .quadro{
     width: 30vw;
-    height: 85vh;
+    min-height: 70vh;
     background-color:	#008B8B	;
     margin-top: 10vh;
     position: relative;
@@ -92,7 +92,7 @@ form ::-webkit-input-placeholder{
     list-style: none;
     font-size: 1rem;
     width: 100%;
-    background-color: #8B1A1A;
+    background-color: #eb4d4b;
     margin-bottom: 2vh;
     margin-left: 0;
     align-self: center;

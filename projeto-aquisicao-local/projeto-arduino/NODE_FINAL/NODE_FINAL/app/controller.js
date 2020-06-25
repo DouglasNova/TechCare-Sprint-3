@@ -6,6 +6,11 @@ const { ArduinoDataLuminosity} = require('./serialLuminosidity')
 const db = require('./database')
 const router = express.Router();
 
+const path = require('path');
+
+router.get('/inserir', (req, res, next) =>{
+    res.sendFile(path.join(__dirname+'/index.html'))
+})
 
 router.get('/', (request, response, next) => {
 
@@ -83,10 +88,8 @@ setTimeout(function() { router.get('/sendData', function(request, response, next
     Humidity = ArduinoDataHumidity.List[ArduinoDataHumidity.List.length -1];
     //luminosidade = ArduinoDataLuminosity.List[ArduinoDataLuminosity.List.length -1]
     
-    let fkChave = parseInt(Math.random() * 13 + 1);
-    if(fkChave < 6){
-        fkChave = 6;
-    };
+    let fkChave = parseInt(Math.random() * 63 + 1);
+    
     var sql = `insert into Dados_do_sensor(fkSensor, Temperatura, Umidade, data_Hora) values (${fkChave}, ${temperature}, ${Humidity}, '${new Date().toLocaleDateString()} ${new Date().toLocaleTimeString()}')`;
     console.log(sql)
     // var values= [['fkSensor', 1], ['Temperatura',temperature], ['Umidade',Humidity], ['Data_hora', `${new Date().toLocaleDateString()} ${new Date().toLocaleTimeString()}`]];

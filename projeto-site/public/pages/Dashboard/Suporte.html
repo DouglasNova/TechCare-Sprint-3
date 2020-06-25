@@ -32,11 +32,10 @@
 
     <div class="sidebar">
         <center>
-            <img src="../../css/img/user.png" class="profile_image" alt="">
+            <img id="img_perfil" src="../../css/img/user.png" class="profile_image" alt="">
             <div class="user_name">
                 <b id="b_usuario"></b>
             </div>
-        </center>
         </center>
         <a href="../Dashboard/DashBoard.html"><i class="fa fa-desktop" aria-hidden="true"></i><span>Dashboard</span></a>
         <a href="../Dashboard/cadastro.html"><i class="fa fa-user-plus" aria-hidden="true"></i><span>Cadastro</span></a>
@@ -81,11 +80,13 @@
     function verificar_autenticacao() {
         login_usuario = sessionStorage.login_usuario_meuapp;
         nome_usuario = sessionStorage.nome_usuario_meuapp;
+        foto_user = sessionStorage.foto_user_meuapp;
 
         if (login_usuario == undefined) {
             redirecionar_login();
         } else {
             document.getElementById('b_usuario').innerHTML = nome_usuario;
+            document.getElementById('img_perfil').src = foto_user;
         }
     }
 

@@ -22,7 +22,8 @@ function entrar() {
           resposta.json().then(json => {
 
               sessionStorage.login_usuario_meuapp = json.Email_func;
-              sessionStorage.nome_usuario_meuapp = json.Nome_Funcionario;
+              sessionStorage.nome_usuario_meuapp = json.Nome_Func;
+              sessionStorage.foto_user_meuapp = json.foto_perfil;
               
               window.location.href = '../pages/Dashboard/DashBoard.html';
           });
