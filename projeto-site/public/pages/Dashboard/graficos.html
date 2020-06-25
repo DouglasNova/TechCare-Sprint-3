@@ -207,10 +207,10 @@
 
   // neste JSON tem que ser 'labels', 'datasets' etc, 
   // porque é o padrão do Chart.js
-  var preset = {
-    ala: '', sensor: '', hospital: ''
+
+  var ala = {
+    sensores: []
   }
-  var ala = {}
   var sensor = {}
   var dados = {
     labels: [],
@@ -240,8 +240,8 @@
         response.json().then(function (novoRegistro) {
 
           console.log(`Dados recebidos sobre as alas: ${JSON.stringify(novoRegistro)}`);
-          ala = novoRegistro
-          for (var cont = 0; cont < ala.length; cont++) {
+
+          for (var cont = 0; cont < novoRegistro.length; cont++) {
             const id = novoRegistro[cont].idAla;
             selctAla.innerHTML += ` <div class="option" onclick="atualizarSensores('${id}')">
                                       <input type="radio" class="radio"  name="category" />
@@ -271,9 +271,13 @@
       if (response.ok) {
         response.json().then(function (novoRegistro) {
           selctSensor.innerHTML = ''
+          var selecionar = {
+            sensores: []
+          }
           console.log(`Dados recebidos de Sensores: ${JSON.stringify(novoRegistro)}`);
           for (var cont = 0; cont < novoRegistro.length; cont++) {
             const id = novoRegistro[cont].idSensor;
+            selecionar.sensores.push(id);
             selctSensor.innerHTML += ` <div class="option2" onclick='idSensor = ${id}; obterDadosGrafico();'>
                                       <input type="radio" class="radio"  name="category" />
                                       <label for="Sensor ${id}">Sensor ${id}</label>
@@ -283,7 +287,9 @@
 
           combobox2();
           box2.style.display = 'flex';
-
+          idSensor = ' '
+          idSensor = selecionar.sensores;
+          obterDadosGrafico();
 
         });
       } else {
@@ -437,31 +443,31 @@
 
   // Logoff
 
-  function logoff() {
-        finalizar_sessao();
-        sessionStorage.clear();
-        redirecionar_login();
-    }
-
-    function finalizar_sessao() {
-        fetch(`/usuarios/sair/${login_usuario}`, { cache: 'no-store' });
-    }
-
-    function verificar_autenticacao() {
-        login_usuario = sessionStorage.login_usuario_meuapp;
-        nome_usuario = sessionStorage.nome_usuario_meuapp;
-        foto_user = sessionStorage.foto_user_meuapp;
-
-        if (login_usuario == undefined) {
-            redirecionar_login();
-        } else {
-            document.getElementById('b_usuario').innerHTML = nome_usuario;
-            document.getElementById('img_perfil').src = foto_user;
-        }
-    }
-
-    verificar_autenticacao();
-
+  /*  function logoff() {
+         finalizar_sessao();
+         sessionStorage.clear();
+         redirecionar_login();
+     }
+ 
+     function finalizar_sessao() {
+         fetch(`/usuarios/sair/${login_usuario}`, { cache: 'no-store' });
+     }
+ 
+     function verificar_autenticacao() {
+         login_usuario = sessionStorage.login_usuario_meuapp;
+         nome_usuario = sessionStorage.nome_usuario_meuapp;
+         foto_user = sessionStorage.foto_user_meuapp;
+ 
+         if (login_usuario == undefined) {
+             redirecionar_login();
+         } else {
+             document.getElementById('b_usuario').innerHTML = nome_usuario;
+             document.getElementById('img_perfil').src = foto_user;
+         }
+     }
+ 
+     verificar_autenticacao();
+  */
 
 
 
