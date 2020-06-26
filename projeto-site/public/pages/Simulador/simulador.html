@@ -4,25 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../../css/simulador.css">
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 <body>
-    <center>
-    <h2>Informe quantos leitos possui o hospital</h2>
-    <input placeholder="Quantidade" id="leitos"> <button onclick="simular()">Simular</button>
-    <div id="resultado"></div>
-</center>
+    <div class="container">
+    <h1 class="title-simulador">Simulador</h1>
+    <h2 class="sub-title">Informe quantos leitos possui o hospital</h2>
+    <input class="input" placeholder="Quantidade" id="leitos"><button class="btn" onclick="simular()">Simular</button>
+    <!-- <div id="resultado"></div>
+    <div id="gasto_para_monitorar"></div> -->
+    </div>
+
+
+
+    <!-- inicio faixa -->
+
+    <div class="middle">
+        <div class="counting-sec">  
+            <div class="inner-width">
+
+
+                <div class="col">
+                    <i class="fas fa-briefcase"></i>
+                    <div id="resultado" class="num">0</div>  
+                    gasto mensal com enfermeiros       
+                   </div>
+  
+                   
+                <div class="col">
+                    <i class="fas fa-user-nurse"></i>
+                  <div id="gasto_para_monitorar" class="num">0</div>  
+                  Gasto mensal com enfermeiros somente para monitorar a ala     
+                 </div>
+                 
+                
+                 <!-- <div class="col">
+                  <i class="fas fa-search-dollar"></i>  
+                  <div class="num">687</div>  
+                  Sells      
+                 </div>
+  
+                 <div class="col">
+                  <i class="fas fa-object-group"></i> 
+                  <div class="num">84</div>  
+                  Templates      
+                 </div> -->
+            </div>
+        </div>
+    </div>
+
+      <!-- termino faixa -->
+
+
+
 </body>
 </html>
 
 <script>
 function simular(){
+
 let qtLeitos = Number(leitos.value)
-let qtEnfermeiroLeito = qtLeitos / 4
-let remuneracaoEnfermeiro = qtEnfermeiroLeito * 3150
-resultado.innerHTML =`${remuneracaoEnfermeiro.toFixed(2)} gasto mensal com profissionais  `
+let qtEnfermeiroLeito = qtLeitos / 4 // Média de 1 enfermeiro para cada 4 leitos
+let remuneracaoEnfermeiro = qtEnfermeiroLeito * 3150 // média salárial de um enfermeiro, multiplicada pela quantidade de profissionais no hospital
+let gasto_mensal_monitoramento = qtEnfermeiroLeito * 286.24 // salário hora do enfermeiro multiplicado pelo tempo gasto mês monitorando alas 
 
+$(".num").counterUp({delay:10,time:1000})
+resultado.innerHTML = remuneracaoEnfermeiro.toFixed(2)
+gasto_para_monitorar.innerHTML =  gasto_mensal_monitoramento.toFixed(2)
 }
-
-
-
 </script>
