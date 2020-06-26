@@ -14,53 +14,58 @@
 
 </head>
 <body>
+
     <div class="container">
+        <div class="img1"><img src="../../css/img/simulador6.svg" alt=""></div>
+
+    <div class="container-simulador">
     <h1 class="title-simulador">Simulador</h1>
     <h2 class="sub-title">Informe quantos leitos possui o hospital</h2>
     <input class="input" placeholder="Quantidade" id="leitos"><button class="btn" onclick="simular()">Simular</button>
-    <!-- <div id="resultado"></div>
-    <div id="gasto_para_monitorar"></div> -->
     </div>
 
 
+  <!-- inicio faixa -->
 
-    <!-- inicio faixa -->
-
-    <div class="middle">
-        <div class="counting-sec">  
-            <div class="inner-width">
-
-
-                <div class="col">
-                    <i class="fas fa-briefcase"></i>
-                    <div id="resultado" class="num">0</div>  
-                    gasto mensal com enfermeiros       
-                   </div>
-  
-                   
-                <div class="col">
-                    <i class="fas fa-user-nurse"></i>
-                  <div id="gasto_para_monitorar" class="num">0</div>  
-                  Gasto mensal com enfermeiros somente para monitorar a ala     
-                 </div>
-                 
-                
-                 <!-- <div class="col">
-                  <i class="fas fa-search-dollar"></i>  
-                  <div class="num">687</div>  
-                  Sells      
-                 </div>
-  
-                 <div class="col">
-                  <i class="fas fa-object-group"></i> 
-                  <div class="num">84</div>  
-                  Templates      
-                 </div> -->
+  <div class="faixa">
+    <div class="container-card">  
+            <div class="card-icon">
+                <i class="fas fa-briefcase"></i>
+                <div id="resultado_calculo" style="display: block;">
+               <div>R$ <span id="resultado" class="num">0</span></div>
+                gasto mensal com enfermeiros  
+            </div>     
+               </div>
+            <div class="card-icon">
+                <i class="fas fa-user-nurse"></i>
+                <div id="resultado_calculo" style="display: block;">
+            <div>R$ <span id="gasto_para_monitorar" class="num">0</span></div>
+              Gasto mensal com enfermeiros somente para monitorar a ala     
             </div>
-        </div>
+             </div>
+             
+            
+              <div class="card-icon">
+                <i class="fas fa-search-dollar"></i>  
+             <div id="resultado_calculo" style="display: block;">
+             <div><span id="porcentagem_mensal" class="num">0</span>%</div>
+              Do gasto mensal com pagamento de salário, é para monitorar alas      
+             </div>
+            </div>
+<!--            
+             <div class="card-icon">
+              <i class="fas fa-object-group"></i> 
+              <div class="num">84</div>  
+              Templates      
+             </div> -->
     </div>
+</div>
 
-      <!-- termino faixa -->
+
+  <!-- termino faixa -->
+
+
+</div>
 
 
 
@@ -69,14 +74,18 @@
 
 <script>
 function simular(){
+let qtLeitos = Number(leitos.value);
+let qtEnfermeiroLeito = qtLeitos / 4; // Média de 1 enfermeiro para cada 4 leitos 
+let remuneracaoEnfermeiro = qtEnfermeiroLeito * 3150; // média salárial de um enfermeiro, multiplicada pela quantidade de profissionais no hospital
+let gasto_mensal_monitoramento = qtEnfermeiroLeito * 286.24; // salário hora do enfermeiro multiplicado pelo tempo gasto mês monitorando alas 
+let gasto_porcetagem_monitoramento = (gasto_mensal_monitoramento / remuneracaoEnfermeiro) * 100; 
 
-let qtLeitos = Number(leitos.value)
-let qtEnfermeiroLeito = qtLeitos / 4 // Média de 1 enfermeiro para cada 4 leitos
-let remuneracaoEnfermeiro = qtEnfermeiroLeito * 3150 // média salárial de um enfermeiro, multiplicada pela quantidade de profissionais no hospital
-let gasto_mensal_monitoramento = qtEnfermeiroLeito * 286.24 // salário hora do enfermeiro multiplicado pelo tempo gasto mês monitorando alas 
+ // Divisão do valor pago para enfermeiros monitorar a ala, pelo valor total gasto com salário dos enfermeiros. Multiplicando esse valor por 100 obtemos a porcentagem paga para enfermeiros monitorar alas
+$(".num").counterUp({delay:8,time:1000});
+porcentagem_mensal.innerHTML = gasto_porcetagem_monitoramento.toFixed(2);
+resultado.innerHTML = remuneracaoEnfermeiro.toFixed(2);
+gasto_para_monitorar.innerHTML =  gasto_mensal_monitoramento.toFixed(2);
 
-$(".num").counterUp({delay:10,time:1000})
-resultado.innerHTML = remuneracaoEnfermeiro.toFixed(2)
-gasto_para_monitorar.innerHTML =  gasto_mensal_monitoramento.toFixed(2)
-}
+resultado_calculo.style.display = 'block';
+};
 </script>

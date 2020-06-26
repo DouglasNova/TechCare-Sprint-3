@@ -2,61 +2,66 @@ body, html{
     margin: 0;
     padding: 0;
 }
-/* body{
-    background-image: url(../../css/img/simulador2.jpg);
+body{
+    
+    background-image: url(../css/img/simulador5.png);
     background-repeat: no-repeat;
-    background-size: 800px;
-    background-position-x: center;
-    background-position-y: 35%;
-     background-attachment:fixed; 
-} */
-
-.container{
-    text-align: center; 
-
+     /* background-size: 750px; */
 }
 
-.container .title-simulador{
 
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 554px 1fr;
+}
+
+.container-simulador{
+    margin-top: 15%;
+    text-align: center;
+    height: 400px;
+    width: 430px;
+    background: rgba(41, 170, 226, 0.6);
+}
+
+.title-simulador{
+    margin-top: 25%;
+}
+
+.img1 img{
+    height: 400px;
+    margin-left: 25%;
+}
+
+.img1{
+    grid-column: span 2;
 }
 
 
 /* inicio faixa */
 
-.middle{
-    width: 100%;
-    /* transform: translateY(-50%); */
+.faixa{
+    grid-column: span 3;
 }
 
-.counting-sec{
-    /* padding: 40px 0; */
-    width: 100%;
+.container-card{
     height: 200px;
-    margin-top: 20%;
-    background: linear-gradient(90deg, #3c6382, #82ccdd);
-}
-
-
-.inner-width{
-    margin: auto;
+    width: 100%;
     display: flex;
+    background: #192a56;
 }
 
-.col{
+.card-icon{
     flex:1;
     text-align: center;
-    /* padding: 20px; */
     color: #fff;
-    text-transform: uppercase;
+    margin: 2%;
 }
 
-.col i{
-    font-size: 40px;
-    color: #333;
+.card-icon i{
+    font-size: 60px;
+    color: #fff;
 }
 
-.num{
-    margin: 20px 0;
-}
 
 /* término faixa */
