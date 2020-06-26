@@ -21,7 +21,7 @@ router.get('/ultimas/:sensor', function (req, res, next) {
 						d.Data_hora,
 						FORMAT(d.Data_hora,'HH:mm:ss') as momento_grafico 
 						from Dados_do_sensor d,  Sensor s
-						where s.idSensor = ${sensor} 
+						where s.idSensor in (${sensor}) 
 						and d.fkSensor = s.idSensor 
 						 order by d.ID_dados_rows desc`;
 
@@ -52,7 +52,7 @@ router.get('/tempo-real/:sensor', function (req, res, next) {
 						d.Data_hora,
 						FORMAT(d.Data_hora,'HH:mm:ss') as momento_grafico 
 						from Dados_do_sensor d,  Sensor s
-						where s.idSensor = ${sensor} 
+						where s.idSensor in (${sensor})
 						and d.fkSensor = s.idSensor 
 						 order by d.ID_dados_rows desc`;
 
