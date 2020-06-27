@@ -163,4 +163,15 @@ router.get('/dadosSensor', function (req, res, next) {
 });
 
 
+
+
+/* 
+SELECT avg(Temperatura)
+FROM (select top 7 d.Temperatura
+      from Dados_do_sensor d,  Sensor s
+	  where s.idSensor in (1, 2, 3) 
+	  and d.fkSensor = s.idSensor 
+	  order by d.ID_dados_rows desc
+      
+     )q; */
 module.exports = router;

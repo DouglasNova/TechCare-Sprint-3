@@ -4,15 +4,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Graficos</title>
   <link rel="stylesheet" href="../../css/Graficos.css" />
   <link rel="stylesheet" href="../../css/Dashboard_menu.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="icon" href="../../css/img/favicon.ico" />
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <title>ala</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
   <script type="text/javascript" src="https://www.chartjs.org/dist/2.8.0/Chart.min.js"></script>
   <script type="text/javascript" src="https://www.chartjs.org/samples/latest/utils.js"></script>
 
@@ -94,31 +95,91 @@
             <div class="grid item3">20°C</div>
           </div>
           <div class="card CS4">
-            <div class="grid item1">Temperatura Media alas</div>
+            <div class="grid item1">Temperatura Atual </div>
             <div class="grid item2">
               <img src="../../css/img/thermometer (1).png" alt="" />
             </div>
-            <div class="grid item3">25°C</div>
+            <div class="grid item3"><span id="TAtual"></span>°C</div>
           </div>
           <div class="card CS5">
-            <div class="grid item1">Umidade Media</div>
+            <div class="grid item1">Umidade Atual</div>
             <div class="grid item2">
               <img src="../../css/img/humidity.png" alt="" />
             </div>
-            <div class="grid item3">60%</div>
+            <div class="grid item3"><span id="UAtual"></span>%</div>
           </div>
         </div>
         <div class="graficoContainer">
           <div class="grafico temperatura">
             <div>
-              <div id="div_aguarde">Selecione a ala</div>
+              <div id="div_aguarde">
+                <h3>Selecione a ala</h3>
+              </div>
               <canvas id="canvas_grafico"></canvas>
             </div>
           </div>
-          <div class="grafico umidade"></div>
+          <div class="grafico Quartil">
+            <div class="lt-grid-container">
+              <div class="lt-Quartil branco">
+                <h2>Quartil</h2>
+              </div>
+              <div class="lt-Umidade branco">
+                <h3>Umidade</h3>
+              </div>
+              <div class="lt-TIA Amarelo">
+                <h3>a</h3>
+              </div>
+              <div class="lt-UIA Amarelo">
+                <h3>a</h3>
+              </div>
+              <div class="lt-TIdeal verde">
+                <h3>a</h3>
+              </div>
+              <div class="lt-UIdeal verde">
+                <h3>a</h3>
+              </div>
+              <div class="lt-TIB Amarelo">
+                <h3>a</h3>
+              </div>
+              <div class="lt-UIB Amarelo">
+                <h3>a</h3>
+              </div>
+              <div class="lt-Temp branco">
+                <h3>Temperatura</h3>
+              </div>
+              <div class="lt-TMin vermelho">
+                <h3>a</h3>
+              </div>
+              <div class="lt-UMin vermelho">
+                <h3>a</h3>
+              </div>
+              <div class="lt-TMax vermelho">
+                <h3>a</h3>
+              </div>
+              <div class="lt-UMax vermelho">
+                <h3>a</h3>
+              </div>
+              <div class="lt-CriticaMax branco">
+                <h3>Critica</h3>
+              </div>
+              <div class="lt-CriticaMin branco">
+                <h3>Critica</h3>
+              </div>
+              <div class="lt-Estavel branco">
+                <h3>Estável</h3>
+              </div>
+              <div class="lt-InstavelA branco">
+                <h3>Instável</h3>
+              </div>
+              <div class="lt-InstavelB branco">
+                <h3>Instável</h3>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+    <br>
     <!-- <div class="container-card-info">
 
         <div class="card-info">
@@ -243,7 +304,7 @@
 
           for (var cont = 0; cont < novoRegistro.length; cont++) {
             const id = novoRegistro[cont].idAla;
-            selctAla.innerHTML += ` <div class="option" onclick="atualizarSensores('${id}')">
+            selctAla.innerHTML += ` <div id='ala_${id}' class="option" onclick="atualizarSensores('${id}')">
                                       <input type="radio" class="radio"  name="category" />
                                       <label for="Ala ${id}">Ala ${id}</label>
                                     </div>
@@ -251,7 +312,9 @@
           }
 
           combobox()
-
+          if(sessionStorage.idAla != undefined){
+            document.getElementById(`ala_${sessionStorage.idAla}`).click()
+          }
 
 
         });
@@ -327,6 +390,8 @@
           dados.datasets[1].data.push(novoRegistro.Umidade); // incluir uma nova leitura de umidade
           window.grafico_linha.update();
 
+          TAtual.innerHTML = novoRegistro.Temperatura.toFixed(1)
+          UAtual.innerHTML = novoRegistro.Umidade.toFixed(1)
           setTimeout(atualizarGrafico, 5000);
         });
       } else {
@@ -411,6 +476,8 @@
 
             dados.datasets[0].data.push(registro.Temperatura);
             dados.datasets[1].data.push(registro.Umidade);
+            TAtual.innerHTML = registro.Temperatura.toFixed(1)
+            UAtual.innerHTML = registro.Umidade.toFixed(1)
           }
           console.log(JSON.stringify(dados));
 
@@ -448,16 +515,16 @@
          sessionStorage.clear();
          redirecionar_login();
      }
- 
+
      function finalizar_sessao() {
          fetch(`/usuarios/sair/${login_usuario}`, { cache: 'no-store' });
      }
- 
+
      function verificar_autenticacao() {
          login_usuario = sessionStorage.login_usuario_meuapp;
          nome_usuario = sessionStorage.nome_usuario_meuapp;
          foto_user = sessionStorage.foto_user_meuapp;
- 
+
          if (login_usuario == undefined) {
              redirecionar_login();
          } else {
@@ -465,7 +532,7 @@
              document.getElementById('img_perfil').src = foto_user;
          }
      }
- 
+
      verificar_autenticacao();
   */
 

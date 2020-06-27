@@ -126,15 +126,16 @@
                         const temp = registro.temp_media;
                         const umid = registro.umid_media;
                         const id = registro.idAla;
+                        const funcao = `onclick='verGraficos(${id})'`
 
                         if ((temp >= 18 && temp <= 30) && (umid >= 50 && umid <= 74)) { // Se os valores de temp e umid estiverem dentro dos parâmetros ideais, a função para no if
-                            campo_alas.innerHTML += `<div class="alas_ok">Ala ${id}</div>`; // Esta linha cria um card com um número de ala e cor de background referente ao seu status.
+                            campo_alas.innerHTML += `<div  ${funcao} class="alas_ok">Ala ${id}</div>`; // Esta linha cria um card com um número de ala e cor de background referente ao seu status.
                             ++vr_alas_ok; // Aqui o JS está registrando que foi criada uma ala "ok"
                         } else if (((temp >= 14 && temp < 18) || (temp > 30 && temp <= 35)) || ((umid >= 40 && umid < 50) || (umid > 74 && umid <= 75))) {
-                            campo_alas.innerHTML += `<div class="alas_interms">Ala ${id}</div>`; // Se os valores de temp e umid estiverem fora dos parâmetros ideais, mas não tão longe deles,a função para no else if.
+                            campo_alas.innerHTML += `<div ${funcao} class="alas_interms">Ala ${id}</div>`; // Se os valores de temp e umid estiverem fora dos parâmetros ideais, mas não tão longe deles,a função para no else if.
                             ++vr_alas_interm; // Aqui o JS está registrando que foi criada uma ala "instável"
                         } else {
-                            campo_alas.innerHTML += `<div class="alas_crits">Ala ${id}</div>`; // Se os valores de temp e umid estiverem totalmente fora dos parâmetros ideais, a função "cai" no else.
+                            campo_alas.innerHTML += `<div ${funcao} class="alas_crits">Ala ${id}</div>`; // Se os valores de temp e umid estiverem totalmente fora dos parâmetros ideais, a função "cai" no else.
                             ++vr_alas_criticas; // Aqui o JS está registrando que foi criada uma ala "crítica"
                         }
 
@@ -189,5 +190,9 @@
 
     verificar_autenticacao();
 
+    function verGraficos(idAla){
+        sessionStorage.idAla = idAla;
+        window.location.href = 'graficos.html'
+    }
 
 </script>

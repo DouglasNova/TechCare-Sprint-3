@@ -238,8 +238,7 @@ canvas {
 }
 
 .cardContainer .card:hover{
-    transform: scale(1.1);
-    cursor: pointer;
+    transform: scale(1.03);
     transition: 0.2s;
 }
 
@@ -300,12 +299,106 @@ canvas {
 .graficoContainer .grafico.temperatura{
 
     background:#010134;
-    width: 58%;
+    width: 64%;
 
 }
-.graficoContainer .grafico.umidade{
-    width: 38%;
+.graficoContainer .grafico.Quartil{
+    width: 32%;
+    padding: 0.5%;
+    background:#010134;
+    
 }
+
+#div_aguarde{
+    color: #fff;
+}
+
+#check:checked ~ .content{
+    margin-left: 60px;
+  }
+  
+  #check:checked ~ .graficos{
+    margin-left: 60px;
+    width: 84.9vw;
+  }
+ 
+  #check:checked ~ .alertas{
+    margin-left: 60px;
+    width: 85vw;
+  }
+
+  #check:checked ~ .alas {
+    width: 90vw;
+  }
+
+
+
+
+
+  .lt-grid-container {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 1px 1px;
+  }
+  
+  .lt-grid-container h2, h3{
+      margin: 8px 0;
+  }
+  .Amarelo{
+      background-color: #cc0;
+  }
+  .verde{
+      background-color: #090;
+  }
+  .vermelho{
+      background-color: #c00;
+  }
+  .branco{
+      color: #fff;
+  }
+
+  .lt-Umidade { grid-area: 2 / 3 / 3 / 3;  }
+  
+  .lt-TIA { grid-area: 4 / 2 / 5 / 2; }
+  
+  .lt-UIA { grid-area: 4 / 3 / 5 / 3; }
+  
+  .lt-TIdeal { grid-area: 5 / 2 / 6 / 2; }
+  
+  .lt-UIdeal { grid-area: 5 / 3 / 6 / 3; }
+  
+  .lt-TIB { grid-area: 6 / 2 / 7 / 2; }
+  
+  .lt-UIB { grid-area: 6 / 3 / 7 / 3; }
+  
+  .lt-Temp { grid-area: 2 / 2 / 3 / 2; }
+  
+  .lt-TMin { grid-area: 7 / 2 / 8 / 2; }
+  
+  .lt-UMin { grid-area: 7 / 3 / 8 / 3; }
+  
+  .lt-TMax { grid-area: 3 / 2 / 4 / 2; }
+  
+  .lt-UMax { grid-area: 3 / 3 / 4 / 3; }
+  
+  .lt-Quartil { grid-area: 1 / 1 / 1 / 4; }
+  
+  .lt-CriticaMax { grid-area: 3 / 1 / 4 / 1; }
+
+  .lt-CriticaMin { grid-area: 7 / 1 / 8 / 1; }
+
+  .lt-Estavel { grid-area: 5 / 1 / 6 / 1; }
+
+  .lt-InstavelA { grid-area: 4 / 1 / 5 / 1; }
+
+  .lt-InstavelB { grid-area: 6 / 1 / 7 / 1; }
+  
+
+
+
 /* Chart.js */
 @keyframes chartjs-render-animation {
     from {
