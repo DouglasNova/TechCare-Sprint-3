@@ -51,13 +51,13 @@ router.get('/switch', (request, response, next) => {
     let averageHour = (sumHour / ArduinoDataSwitch.ListHour.length).toFixed(2);
 
     response.json({
-        data: ArduinoDataSwitch.List,
-        total: ArduinoDataSwitch.List.length,
-        average: isNaN(average) ? 0 : average,
-        dataHour: ArduinoDataSwitch.ListHour,
-        totalHour: ArduinoDataSwitch.ListHour.length,
-        averageHour: isNaN(averageHour) ? 0 : averageHour
-    });
+       data: ArduinoDataSwitch.List,
+       total: ArduinoDataSwitch.List.length,
+       average: isNaN(average) ? 0 : average,
+       dataHour: ArduinoDataSwitch.ListHour,
+       totalHour: ArduinoDataSwitch.ListHour.length,
+      averageHour: isNaN(averageHour) ? 0 : averageHour
+  });
 
 });
 
@@ -83,7 +83,7 @@ router.get('/luminosity', (request, response, next) => {
         
         var sql = "INSERT INTO medidas(Humd,Humd_value,Temp,Temp_value) VALUES(?) ";
 
-        var values = ['temperatura', temperature, 'umidade', Humidity];
+        var values = ['umidade', Humidity,'temperatura', temperature, ];
 
         db.query(sql, [values], function (err, result) {
             if (err) throw err;
