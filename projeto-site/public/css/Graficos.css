@@ -193,6 +193,7 @@ canvas {
     flex-direction: column;
     padding-left: 10px;  
     display: none;
+    float: left;
 
 }
   
@@ -209,8 +210,22 @@ canvas {
     order: 1;
     z-index: 9999999;
 }
-
-
+#carregando{
+    display: none;
+    float: left;
+}
+#carregando img{
+    height: 45px;
+    
+}
+#error{
+    display: none;
+    font-size:45px;
+    color:red
+}
+#error i{
+    margin-left: 10px;
+}
 
 
 
@@ -232,7 +247,7 @@ canvas {
     font-weight: bold;
     text-shadow: 3px 2px 5px #000;   /*  Serve para colocar uma sombra no texto do card */
     border-radius: 3px;
-    box-shadow: 2px 2px 5px 3px #000015;
+    box-shadow: 3px 3px 3px 2px #0d161d;
     display: grid;
 
 }
@@ -297,7 +312,7 @@ canvas {
     
 }
 .graficoContainer .grafico.temperatura{
-
+    box-shadow: 3px 3px 3px 2px #0d161d;
     background:#010134;
     width: 64%;
 
@@ -306,7 +321,7 @@ canvas {
     width: 32%;
     padding: 0.5%;
     background:#010134;
-    
+    box-shadow: 3px 3px 3px 2px #0d161d;
 }
 
 #div_aguarde{
