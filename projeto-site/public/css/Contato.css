@@ -108,3 +108,34 @@ form ::-webkit-input-placeholder{
     border-radius: 50%;
 
 }
+.erros{
+    display: list-item;
+    width: 30vw;
+    color: white;
+    text-align: center;
+    margin-top: 3vh;
+}
+.erros li{
+
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    list-style: none;
+    font-size: 1rem;
+    width: 100%;
+    background-color: 	#ed7d73;
+    border-radius: 6vh;
+    margin-bottom: 2vh;
+    margin-left: 0;
+    align-self: center;
+}
+.sucesso{
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    background-color: #008B8B;
+    color: white;
+    font-size: 2rem;
+    width: 30vw;
+    font-size: 1rem;
+    text-align: center;
+    display: none;
+}
