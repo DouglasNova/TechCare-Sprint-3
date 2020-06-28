@@ -14,6 +14,7 @@ function verificar_autenticacao() {
     if (login_usuario == undefined) {
         redirecionar_login();
     } else {
+        document.getElementById('b_usuario').innerHTML = nome_usuario;
         b_usuario.innerHTML = nome_usuario;
         img_perfil.src = foto_user;
         validar_sessao();

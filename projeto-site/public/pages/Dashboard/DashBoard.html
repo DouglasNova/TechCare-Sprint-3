@@ -66,7 +66,7 @@
         </div>
 
     </div>
-    <div class="graficos">
+    <div class="tabela">
         <div class="alas">
             <b id="filtro_title">Filtro:</b>
             <select onchange="obterDados(this.value, true)" id="selecionar_alas">
@@ -76,7 +76,7 @@
                 <option class="option_container" value="3">Alas críticas</option>
             </select>
             <span id="title_alas">Alas</span>
-            <span id="alas">Quantidade de alas: <b id="qtd_alas"></b></span>
+            <span id="span_alas">Quantidade de alas: <b id="qtd_alas"></b></span>
             <div id="campo_alas" class="quadro">
             </div>
         </div>
@@ -149,7 +149,7 @@
 
                     timer = setTimeout(() => {
                         obterDados(tipo, false);
-                    }, 5000);
+                    }, 60000);
 
                 });
             } else {

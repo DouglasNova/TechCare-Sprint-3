@@ -118,12 +118,12 @@ body{
     padding-right: 10px;
   }
   
-  label #sidebar_btn{
+  #sidebar_btn{
     z-index: 1;
     color: #fff;
     position: fixed;
     cursor: pointer;
-    left: 15px;
+    left: 20px;
     font-size: 20px;
     margin: 5px 0;
     transition: 0.5s;
@@ -131,7 +131,7 @@ body{
     transform: scale(2);
   }
   
-  label #sidebar_btn:hover{
+  #sidebar_btn:hover{
     color: #25aae1;
     transform: scale(2.1);
   }

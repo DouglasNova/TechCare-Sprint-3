@@ -115,34 +115,4 @@
         return false;
     }
 
-
-    // Logoff
-
-    function logoff() {
-        finalizar_sessao();
-        sessionStorage.clear();
-        redirecionar_login();
-    }
-
-    function finalizar_sessao() {
-        fetch(`/usuarios/sair/${login_usuario}`, { cache: 'no-store' });
-    }
-
-    function verificar_autenticacao() {
-        login_usuario = sessionStorage.login_usuario_meuapp;
-        nome_usuario = sessionStorage.nome_usuario_meuapp;
-        foto_user = sessionStorage.foto_user_meuapp;
-
-        if (login_usuario == undefined) {
-            redirecionar_login();
-        } else {
-            document.getElementById('b_usuario').innerHTML = nome_usuario;
-            document.getElementById('img_perfil').src = foto_user;
-        }
-    }
-
-    verificar_autenticacao();
-
-
-
 </script>

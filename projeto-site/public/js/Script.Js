@@ -30,12 +30,7 @@ function entrar() {
 
       } else {
 
-          console.log('Erro de login!');
-
-          response.text().then(texto => {
-              console.error(texto);
-              finalizar_aguardar(texto);
-          });
+          alert('Erro de login')
       }
   });
 
