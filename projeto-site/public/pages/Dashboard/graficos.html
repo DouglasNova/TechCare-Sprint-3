@@ -4,15 +4,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Graficos</title>
   <link rel="stylesheet" href="../../css/Graficos.css" />
   <link rel="stylesheet" href="../../css/Dashboard_menu.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="icon" href="../../css/img/favicon.ico" />
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <title>ala</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
   <script type="text/javascript" src="https://www.chartjs.org/dist/2.8.0/Chart.min.js"></script>
   <script type="text/javascript" src="https://www.chartjs.org/samples/latest/utils.js"></script>
 
@@ -66,9 +67,15 @@
           <div class="options-container2" id="selctSensor">
 
           </div>
-          <div class="selected2">
+          <div id="select2" class="selected2">
             Selecionar Sensor
           </div>
+        </div>
+        <div id="carregando">
+          <img src="../../css/img/Caregando.gif">
+        </div>
+        <div id="error">
+          <i class="fa fa-times-circle-o" style=""></i>
         </div>
         <!-- fim combobox-->
         <div class="cardContainer">
@@ -77,48 +84,108 @@
             <div class="grid item2">
               <img src="../../css/img/sun.png" alt="" />
             </div>
-            <div class="grid item3">28°C</div>
+            <div class="grid item3"><span id="TMax"></span>°C</div>
           </div>
           <div class="card CS2">
             <div class="grid item1">Temperatura Minima</div>
             <div class="grid item2">
               <img src="../../css/img/thermometer.png" alt="" />
             </div>
-            <div class="grid item3">10°C</div>
+            <div class="grid item3"><span id="TMin"></span>°C</div>
           </div>
           <div class="card CS3">
             <div class="grid item1">Temperatura Media</div>
             <div class="grid item2">
               <img src="../../css/img/thermometer (1).png" alt="" />
             </div>
-            <div class="grid item3">20°C</div>
+            <div class="grid item3"><span id="TMedia"></span>°C</div>
           </div>
           <div class="card CS4">
-            <div class="grid item1">Temperatura Media alas</div>
+            <div class="grid item1">Temperatura Atual </div>
             <div class="grid item2">
               <img src="../../css/img/thermometer (1).png" alt="" />
             </div>
-            <div class="grid item3">25°C</div>
+            <div class="grid item3"><span id="TAtual"></span>°C</div>
           </div>
           <div class="card CS5">
-            <div class="grid item1">Umidade Media</div>
+            <div class="grid item1">Umidade Atual</div>
             <div class="grid item2">
               <img src="../../css/img/humidity.png" alt="" />
             </div>
-            <div class="grid item3">60%</div>
+            <div class="grid item3"><span id="UAtual"></span>%</div>
           </div>
         </div>
         <div class="graficoContainer">
           <div class="grafico temperatura">
             <div>
-              <div id="div_aguarde">Dados sendo obtidos...</div>
+              <div id="div_aguarde">
+                <h3>Selecione a ala</h3>
+              </div>
               <canvas id="canvas_grafico"></canvas>
             </div>
           </div>
-          <div class="grafico umidade"></div>
+          <div class="grafico Quartil">
+            <div class="lt-grid-container">
+              <div class="lt-Quartil branco">
+                <h2>Quartil</h2>
+              </div>
+              <div class="lt-Umidade branco">
+                <h3>Umidade</h3>
+              </div>
+              <div class="lt-TIA Amarelo">
+                <h3>26.5°C</h3>
+              </div>
+              <div class="lt-UIA Amarelo">
+                <h3>57.5%</h3>
+              </div>
+              <div class="lt-TIdeal verde">
+                <h3>24°C</h3>
+              </div>
+              <div class="lt-UIdeal verde">
+                <h3>55%</h3>
+              </div>
+              <div class="lt-TIB Amarelo">
+                <h3>21.5°C</h3>
+              </div>
+              <div class="lt-UIB Amarelo">
+                <h3>52.5%</h3>
+              </div>
+              <div class="lt-Temp branco">
+                <h3>Temperatura</h3>
+              </div>
+              <div class="lt-TMin vermelho">
+                <h3> 19°C </h3>
+              </div>
+              <div class="lt-UMin vermelho">
+                <h3> 50% </h3>
+              </div>
+              <div class="lt-TMax vermelho">
+                <h3> 29°C </h3>
+              </div>
+              <div class="lt-UMax vermelho">
+                <h3> 60% </h3>
+              </div>
+              <div class="lt-CriticaMax branco">
+                <h3>Critica</h3>
+              </div>
+              <div class="lt-CriticaMin branco">
+                <h3>Critica</h3>
+              </div>
+              <div class="lt-Estavel branco">
+                <h3>Estável</h3>
+              </div>
+              <div class="lt-InstavelA branco">
+                <h3>Instável</h3>
+              </div>
+              <div class="lt-InstavelB branco">
+                <h3>Instável</h3>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+    <br>
     <!-- <div class="container-card-info">
 
         <div class="card-info">
@@ -207,10 +274,10 @@
 
   // neste JSON tem que ser 'labels', 'datasets' etc, 
   // porque é o padrão do Chart.js
-  var preset = {
-    ala: '', sensor: '', hospital: ''
+
+  var ala = {
+    sensores: []
   }
-  var ala = {}
   var sensor = {}
   var dados = {
     labels: [],
@@ -235,15 +302,16 @@
   };
 
   function escolherAla() {
+    error.style.display = 'none';
     fetch('/leituras/ala', { cache: 'no-store' }).then(function (response) {
       if (response.ok) {
         response.json().then(function (novoRegistro) {
 
           console.log(`Dados recebidos sobre as alas: ${JSON.stringify(novoRegistro)}`);
-          ala = novoRegistro
-          for (var cont = 0; cont < ala.length; cont++) {
+
+          for (var cont = 0; cont < novoRegistro.length; cont++) {
             const id = novoRegistro[cont].idAla;
-            selctAla.innerHTML += ` <div class="option" onclick="atualizarSensores('${id}')">
+            selctAla.innerHTML += ` <div id='ala_${id}' class="option" onclick="atualizarSensores('${id}')">
                                       <input type="radio" class="radio"  name="category" />
                                       <label for="Ala ${id}">Ala ${id}</label>
                                     </div>
@@ -251,48 +319,60 @@
           }
 
           combobox()
-
+          if (sessionStorage.idAla != undefined && sessionStorage.idAla != "") {
+            document.getElementById(`ala_${sessionStorage.idAla}`).click()
+            sessionStorage.idAla = "";
+          }
 
 
         });
       } else {
         console.error('Nenhum dado encontrado ou erro na API');
-
+        error.style.display = 'flex';
       }
     })
       .catch(function (error) {
         console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+        error.style.display = 'flex';
       });
   }
 
   function atualizarSensores(idAla) {
-
+    error.style.display = 'none';
     fetch(`/leituras/sensor/${idAla}`, { cache: 'no-store' }).then(function (response) {
       if (response.ok) {
         response.json().then(function (novoRegistro) {
           selctSensor.innerHTML = ''
+          var selecionar = {
+            sensores: []
+          }
           console.log(`Dados recebidos de Sensores: ${JSON.stringify(novoRegistro)}`);
           for (var cont = 0; cont < novoRegistro.length; cont++) {
             const id = novoRegistro[cont].idSensor;
+            selecionar.sensores.push(id);
             selctSensor.innerHTML += ` <div class="option2" onclick='idSensor = ${id}; obterDadosGrafico();'>
                                       <input type="radio" class="radio"  name="category" />
                                       <label for="Sensor ${id}">Sensor ${id}</label>
                                     </div>
                                     `
           }
-
+          select2.innerHTML = 'Selecionar Sensor'
           combobox2();
           box2.style.display = 'flex';
+          idSensor = ' '
+          idSensor = selecionar.sensores;
+          obterDadosGrafico();
 
 
         });
       } else {
         console.error('Nenhum dado encontrado ou erro na API');
-
+        error.style.display = 'flex';
       }
     })
       .catch(function (error) {
         console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+        error.style.display = 'flex';
       });
   }
 
@@ -313,23 +393,33 @@
           console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
 
           // tirando e colocando valores no gráfico
-          dados.labels.shift(); // apagar o primeiro
-          dados.labels.push(novoRegistro.momento_grafico); // incluir um novo momento
-          dados.datasets[0].data.shift();  // apagar o primeiro de temperatura
-          dados.datasets[1].data.shift();  // apagar o primeiro de umidade
-          dados.datasets[0].data.push(novoRegistro.Temperatura); // incluir uma nova leitura de temperatura
-          dados.datasets[1].data.push(novoRegistro.Umidade); // incluir uma nova leitura de umidade
-          window.grafico_linha.update();
+          if (dados.labels[6] != novoRegistro.momento_grafico) {
+            dados.labels.shift(); // apagar o primeiro
+            dados.labels.push(novoRegistro.momento_grafico); // incluir um novo momento
+            dados.datasets[0].data.shift();  // apagar o primeiro de temperatura
+            dados.datasets[1].data.shift();  // apagar o primeiro de umidade
+            dados.datasets[0].data.push(novoRegistro.Temperatura); // incluir uma nova leitura de temperatura
+            dados.datasets[1].data.push(novoRegistro.Umidade); // incluir uma nova leitura de umidade
+            window.grafico_linha.update();
 
+            TAtual.innerHTML = novoRegistro.Temperatura.toFixed(1)
+            UAtual.innerHTML = novoRegistro.Umidade.toFixed(1)
+
+            
+          }
+          obterDadosEstatiticas();
+          error.style.display = 'none';
           setTimeout(atualizarGrafico, 5000);
         });
       } else {
         console.error('Nenhum dado encontrado ou erro na API');
         setTimeout(atualizarGrafico, 5000);
+        error.style.display = 'flex';
       }
     })
       .catch(function (error) {
         console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+        error.style.display = 'flex';
       });
 
   }
@@ -371,8 +461,59 @@
 
   // altere aqui como os dados serão exibidos
   // e como são recuperados do BackEnd
-  function obterDadosGrafico() {
+  function obterDadosEstatiticas() {
+    error.style.display = 'none';
 
+    if (idSensor == 0) {
+      return;
+    }
+
+
+    fetch(`/leituras/Estastiticas/${idSensor}`, { cache: 'no-store' }).then(function (response) {
+      if (response.ok) {
+
+        response.json().then(function (resposta) {
+
+          console.log(`Dados recebidos para o sensor ${idSensor}: ${JSON.stringify(resposta)}`);
+
+
+
+
+          var registro = resposta;
+
+          // aqui, após 'registro.' use os nomes 
+          // dos atributos que vem no JSON 
+          // que gerou na consulta ao banco de dados
+
+          registro.momento_grafico
+          TMax.innerHTML = registro.tempMax.toFixed(1)
+          TMin.innerHTML = registro.tempMin.toFixed(1)
+          TMedia.innerHTML = registro.tempMedia.toFixed(1)
+
+
+          console.log(JSON.stringify(registro));
+
+
+
+          carregando.style.display = 'none';
+
+        });
+      } else {
+        console.error('Nenhum dado encontrado ou erro na API');
+        error.style.display = 'flex';
+        carregando.style.display = 'none';
+      }
+    })
+      .catch(function (error) {
+        console.error(`Erro na obtenção dos dados p/ estatiticos: ${error.message}`);
+        error.style.display = 'flex';
+        carregando.style.display = 'none';
+      });
+
+  }
+
+  function obterDadosGrafico() {
+    carregando.style.display = 'block';
     if (idSensor == 0) {
       return;
     }
@@ -380,7 +521,10 @@
     dados.labels = [];
     dados.datasets[0].data = [];
     dados.datasets[1].data = [];
-
+    TMax.innerHTML = ''
+    TMin.innerHTML = ''
+    TMedia.innerHTML = ''
+    error.style.display = 'none';
     try {
       window.grafico_linha.update();
     } catch (e) { }
@@ -405,19 +549,26 @@
 
             dados.datasets[0].data.push(registro.Temperatura);
             dados.datasets[1].data.push(registro.Umidade);
+            TAtual.innerHTML = registro.Temperatura.toFixed(1)
+            UAtual.innerHTML = registro.Umidade.toFixed(1)
           }
           console.log(JSON.stringify(dados));
 
           div_aguarde.style.display = 'none';
-
+          obterDadosEstatiticas();
           plotarGrafico(dados);
+
         });
       } else {
         console.error('Nenhum dado encontrado ou erro na API');
+        carregando.style.display = 'none';
+        error.style.display = 'flex';
       }
     })
       .catch(function (error) {
         console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+        carregando.style.display = 'none';
+        error.style.display = 'flex';
       });
 
   }
@@ -435,33 +586,35 @@
     setTimeout(atualizarGrafico, 5000);
   }
 
+
+
   // Logoff
 
-  function logoff() {
-        finalizar_sessao();
-        sessionStorage.clear();
-        redirecionar_login();
-    }
+  /*  function logoff() {
+         finalizar_sessao();
+         sessionStorage.clear();
+         redirecionar_login();
+     }
 
-    function finalizar_sessao() {
-        fetch(`/usuarios/sair/${login_usuario}`, { cache: 'no-store' });
-    }
+     function finalizar_sessao() {
+         fetch(`/usuarios/sair/${login_usuario}`, { cache: 'no-store' });
+     }
 
-    function verificar_autenticacao() {
-        login_usuario = sessionStorage.login_usuario_meuapp;
-        nome_usuario = sessionStorage.nome_usuario_meuapp;
-        foto_user = sessionStorage.foto_user_meuapp;
+     function verificar_autenticacao() {
+         login_usuario = sessionStorage.login_usuario_meuapp;
+         nome_usuario = sessionStorage.nome_usuario_meuapp;
+         foto_user = sessionStorage.foto_user_meuapp;
 
-        if (login_usuario == undefined) {
-            redirecionar_login();
-        } else {
-            document.getElementById('b_usuario').innerHTML = nome_usuario;
-            document.getElementById('img_perfil').src = foto_user;
-        }
-    }
+         if (login_usuario == undefined) {
+             redirecionar_login();
+         } else {
+             document.getElementById('b_usuario').innerHTML = nome_usuario;
+             document.getElementById('img_perfil').src = foto_user;
+         }
+     }
 
-    verificar_autenticacao();
-
+     verificar_autenticacao();
+  */
 
 
 

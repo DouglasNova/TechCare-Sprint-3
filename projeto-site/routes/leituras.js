@@ -21,7 +21,7 @@ router.get('/ultimas/:sensor', function (req, res, next) {
 						d.Data_hora,
 						FORMAT(d.Data_hora,'HH:mm:ss') as momento_grafico 
 						from Dados_do_sensor d,  Sensor s
-						where s.idSensor = ${sensor} 
+						where s.idSensor in (${sensor}) 
 						and d.fkSensor = s.idSensor 
 						 order by d.ID_dados_rows desc`;
 
@@ -40,6 +40,33 @@ router.get('/ultimas/:sensor', function (req, res, next) {
 
 
 // tempo real (último valor de cada leitura)
+router.get('/Estastiticas/:sensor', function (req, res, next) {
+
+	const sensor = req.params.sensor;
+
+	console.log(`Recuperando a última leitura`);
+
+	const instrucaoSql = `SELECT avg(Temperatura) as tempMedia,
+						min(Temperatura) as tempMin, max(Temperatura) as tempMax
+						FROM (select top 7 d.Temperatura
+						from Dados_do_sensor d,  Sensor s
+		 				where s.idSensor in (${sensor}) 
+						and d.fkSensor = s.idSensor 
+						order by d.ID_dados_rows desc
+						
+						)q;`;
+
+	sequelize.query(instrucaoSql, { type: sequelize.QueryTypes.SELECT })
+		.then(resultado => {
+			console.log(resultado)
+			res.json(resultado[0]);
+		}).catch(erro => {
+			console.error(erro);
+			res.status(500).send(erro.message);
+		});
+
+});
+
 router.get('/tempo-real/:sensor', function (req, res, next) {
 
 	const sensor = req.params.sensor;
@@ -52,7 +79,7 @@ router.get('/tempo-real/:sensor', function (req, res, next) {
 						d.Data_hora,
 						FORMAT(d.Data_hora,'HH:mm:ss') as momento_grafico 
 						from Dados_do_sensor d,  Sensor s
-						where s.idSensor = ${sensor} 
+						where s.idSensor in (${sensor})
 						and d.fkSensor = s.idSensor 
 						 order by d.ID_dados_rows desc`;
 
@@ -163,4 +190,15 @@ router.get('/dadosSensor', function (req, res, next) {
 });
 
 
+
+
+/* 
+SELECT avg(Temperatura)
+FROM (select top 7 d.Temperatura
+      from Dados_do_sensor d,  Sensor s
+	  where s.idSensor in (1, 2, 3) 
+	  and d.fkSensor = s.idSensor 
+	  order by d.ID_dados_rows desc
+      
+     )q; */
 module.exports = router;
