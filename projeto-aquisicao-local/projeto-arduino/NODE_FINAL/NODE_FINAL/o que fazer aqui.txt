@@ -1,0 +1,5 @@
+escrever no git bash:
+
+npm install -g mssql 
+
+depois nodemon --exec npm start

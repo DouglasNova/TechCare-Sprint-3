@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Graficos</title>
+  <link rel="stylesheet" href="../../css/Graficos.css" />
+  <link rel="stylesheet" href="../../css/Dashboard_menu.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" href="../../css/img/favicon.ico" />
+
+
+
+
+  <script type="text/javascript" src="https://www.chartjs.org/dist/2.8.0/Chart.min.js"></script>
+  <script type="text/javascript" src="https://www.chartjs.org/samples/latest/utils.js"></script>
+
+</head>
+
+<body>
+  <!-- Menu -->
+  <input type="checkbox" id="check">
+  <header>
+    <label for="check">
+      <i class="fas fa-bars" id="sidebar_btn"></i>
+    </label>
+    <center>
+      <div class="left_area">
+        <h3>Tech<span>Care</span></h3>
+      </div>
+    </center>
+    <div class="right_area">
+      <a href="../../index.html" class="logout_btn">Logout</a>
+    </div>
+  </header>
+
+  <div class="sidebar">
+    <center>
+      <img id="img_perfil" src="../../css/img/user.png" class="profile_image" alt="">
+      <div class="user_name">
+        <b id="b_usuario"></b>
+      </div>
+    </center>
+    <a href="Dashboard.html"><i class="fa fa-desktop" aria-hidden="true"></i><span>Dashboard</span></a>
+    <a href="cadastro.html"><i class="fa fa-user-plus" aria-hidden="true"></i><span>Cadastro</span></a>
+    <a class="active" href="#"><i class="fa fa-bar-chart" aria-hidden="true"></i><span>Gráficos</span></a>
+    <a href="Suporte.html"><i class="fa fa-question-circle" aria-hidden="true"></i><span>Suporte</span></a>
+  </div>
+  <!-- Menu -->
+
+  <div class="content">
+
+    <div class="corpo">
+      <div class="container">
+        <!-- combobox-->
+        <div class="select-box">
+          <div class="options-container" id="selctAla">
+
+          </div>
+          <div class="selected">
+            Selecionar ala
+          </div>
+        </div>
+        <div class="select-box2" id='box2'>
+          <div class="options-container2" id="selctSensor">
+
+          </div>
+          <div id="select2" class="selected2">
+            Selecionar Sensor
+          </div>
+        </div>
+        <div id="carregando">
+          <img src="../../css/img/Caregando.gif">
+        </div>
+        <div id="error">
+          <i class="fa fa-times-circle-o" style=""></i>
+        </div>
+        <!-- fim combobox-->
+        <div class="cardContainer">
+          <div class="card CS1">
+            <div class="grid item1">Temperatura Maxima</div>
+            <div class="grid item2">
+              <img src="../../css/img/sun.png" alt="" />
+            </div>
+            <div class="grid item3"><span id="TMax"></span>°C</div>
+          </div>
+          <div class="card CS2">
+            <div class="grid item1">Temperatura Minima</div>
+            <div class="grid item2">
+              <img src="../../css/img/thermometer.png" alt="" />
+            </div>
+            <div class="grid item3"><span id="TMin"></span>°C</div>
+          </div>
+          <div class="card CS3">
+            <div class="grid item1">Temperatura Media</div>
+            <div class="grid item2">
+              <img src="../../css/img/thermometer (1).png" alt="" />
+            </div>
+            <div class="grid item3"><span id="TMedia"></span>°C</div>
+          </div>
+          <div class="card CS4">
+            <div class="grid item1">Temperatura Atual </div>
+            <div class="grid item2">
+              <img src="../../css/img/thermometer (1).png" alt="" />
+            </div>
+            <div class="grid item3"><span id="TAtual"></span>°C</div>
+          </div>
+          <div class="card CS5">
+            <div class="grid item1">Umidade Atual</div>
+            <div class="grid item2">
+              <img src="../../css/img/humidity.png" alt="" />
+            </div>
+            <div class="grid item3"><span id="UAtual"></span>%</div>
+          </div>
+        </div>
+        <div class="graficoContainer">
+          <div class="grafico temperatura">
+            <div>
+              <div id="div_aguarde">
+                <h3>Selecione a ala</h3>
+              </div>
+              <canvas id="canvas_grafico"></canvas>
+            </div>
+          </div>
+          <div class="grafico Quartil">
+            <div class="lt-grid-container">
+              <div class="lt-Quartil branco">
+                <h2>Quartil</h2>
+              </div>
+              <div class="lt-Umidade branco">
+                <h3>Umidade</h3>
+              </div>
+              <div class="lt-TIA Amarelo">
+                <h3>26.5°C</h3>
+              </div>
+              <div class="lt-UIA Amarelo">
+                <h3>57.5%</h3>
+              </div>
+              <div class="lt-TIdeal verde">
+                <h3>24°C</h3>
+              </div>
+              <div class="lt-UIdeal verde">
+                <h3>55%</h3>
+              </div>
+              <div class="lt-TIB Amarelo">
+                <h3>21.5°C</h3>
+              </div>
+              <div class="lt-UIB Amarelo">
+                <h3>52.5%</h3>
+              </div>
+              <div class="lt-Temp branco">
+                <h3>Temperatura</h3>
+              </div>
+              <div class="lt-TMin vermelho">
+                <h3> 19°C </h3>
+              </div>
+              <div class="lt-UMin vermelho">
+                <h3> 50% </h3>
+              </div>
+              <div class="lt-TMax vermelho">
+                <h3> 29°C </h3>
+              </div>
+              <div class="lt-UMax vermelho">
+                <h3> 60% </h3>
+              </div>
+              <div class="lt-CriticaMax branco">
+                <h3>Critica</h3>
+              </div>
+              <div class="lt-CriticaMin branco">
+                <h3>Critica</h3>
+              </div>
+              <div class="lt-Estavel branco">
+                <h3>Estável</h3>
+              </div>
+              <div class="lt-InstavelA branco">
+                <h3>Instável</h3>
+              </div>
+              <div class="lt-InstavelB branco">
+                <h3>Instável</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <!-- <div class="container-card-info">
+
+        <div class="card-info">
+          <div class="title-card">Ala 1</div><span class="text-card">Temperatura <span class="values-card">23°C</span>
+            <br><br> Umidade <br> <span class="values-card">60%</span></span>
+        </div>
+
+        <div class="card-info">
+          <div class="title-card">Ala 2</div><span class="text-card">Temperatura <span class="values-card">25°C</span>
+            <br><br> Umidade <br> <span class="values-card">52%</span></span>
+        </div>
+
+        <div class="card-info">
+          <div class="title-card">Ala 3</div><span class="text-card">Temperatura <span class="values-card">20°C</span>
+            <br><br> Umidade <br><span class="values-card">70%</span></span>
+        </div>
+
+        <div class="card-info">
+          <div class="title-card">Ala 4</div><span class="text-card">Temperatura <span class="values-card">21°C</span>
+            <br><br> Umidade <br> <span class="values-card">49%</span></span>
+        </div>
+
+      </div> -->
+
+  </div>
+
+  </div>
+</body>
+
+</html>
+<script>
+
+  let idSensor = 0;
+
+  const selected = document.querySelector(".selected");
+  const optionsContainer = document.querySelector(".options-container");
+  selected.addEventListener("click", () => {
+    optionsContainer.classList.toggle("active");
+  });
+
+
+  const selected2 = document.querySelector(".selected2");
+  const optionsContainer2 = document.querySelector(".options-container2");
+  selected2.addEventListener("click", () => {
+    optionsContainer2.classList.toggle("active2");
+  });
+
+
+
+  function combobox() {
+
+    var optionsList = document.querySelectorAll(".option");
+
+
+
+
+
+    optionsList.forEach(o => {
+      o.addEventListener("click", () => {
+        selected.innerHTML = o.querySelector("label").innerHTML;
+        optionsContainer.classList.remove("active");
+      });
+    });
+
+
+  }
+  function combobox2() {
+
+
+    var optionsList2 = document.querySelectorAll(".option2");
+
+
+    optionsList2.forEach(o2 => {
+      o2.addEventListener("click", () => {
+        selected2.innerHTML = o2.querySelector("label").innerHTML;
+        optionsContainer2.classList.remove("active2");
+      });
+    });
+  }
+
+
+
+  window.onload = escolherAla;
+
+  //verificar_autenticacao();
+
+  // neste JSON tem que ser 'labels', 'datasets' etc, 
+  // porque é o padrão do Chart.js
+
+  var ala = {
+    sensores: []
+  }
+  var sensor = {}
+  var dados = {
+    labels: [],
+    datasets: [
+      {
+        yAxisID: 'y-temperatura',
+        label: 'Temperatura',
+        borderColor: window.chartColors.red,
+        backgroundColor: window.chartColors.red,
+        fill: false,
+        data: []
+      },
+      {
+        yAxisID: 'y-umidade',
+        label: 'Umidade',
+        borderColor: window.chartColors.blue,
+        backgroundColor: window.chartColors.blue,
+        fill: false,
+        data: []
+      }
+    ]
+  };
+
+  function escolherAla() {
+    error.style.display = 'none';
+    fetch('/leituras/ala', { cache: 'no-store' }).then(function (response) {
+      if (response.ok) {
+        response.json().then(function (novoRegistro) {
+
+          console.log(`Dados recebidos sobre as alas: ${JSON.stringify(novoRegistro)}`);
+
+          for (var cont = 0; cont < novoRegistro.length; cont++) {
+            const id = novoRegistro[cont].idAla;
+            selctAla.innerHTML += ` <div id='ala_${id}' class="option" onclick="atualizarSensores('${id}')">
+                                      <input type="radio" class="radio"  name="category" />
+                                      <label for="Ala ${id}">Ala ${id}</label>
+                                    </div>
+                                    `
+          }
+
+          combobox()
+          if (sessionStorage.idAla != undefined && sessionStorage.idAla != "") {
+            document.getElementById(`ala_${sessionStorage.idAla}`).click()
+            sessionStorage.idAla = "";
+          }
+
+
+        });
+      } else {
+        console.error('Nenhum dado encontrado ou erro na API');
+        error.style.display = 'flex';
+      }
+    })
+      .catch(function (error) {
+        console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+        error.style.display = 'flex';
+      });
+  }
+
+  function atualizarSensores(idAla) {
+    error.style.display = 'none';
+    fetch(`/leituras/sensor/${idAla}`, { cache: 'no-store' }).then(function (response) {
+      if (response.ok) {
+        response.json().then(function (novoRegistro) {
+          selctSensor.innerHTML = ''
+          var selecionar = {
+            sensores: []
+          }
+          console.log(`Dados recebidos de Sensores: ${JSON.stringify(novoRegistro)}`);
+          for (var cont = 0; cont < novoRegistro.length; cont++) {
+            const id = novoRegistro[cont].idSensor;
+            selecionar.sensores.push(id);
+            selctSensor.innerHTML += ` <div class="option2" onclick='idSensor = ${id}; obterDadosGrafico();'>
+                                      <input type="radio" class="radio"  name="category" />
+                                      <label for="Sensor ${id}">Sensor ${id}</label>
+                                    </div>
+                                    `
+          }
+          select2.innerHTML = 'Selecionar Sensor'
+          combobox2();
+          box2.style.display = 'flex';
+          idSensor = ' '
+          idSensor = selecionar.sensores;
+          obterDadosGrafico();
+
+
+        });
+      } else {
+        console.error('Nenhum dado encontrado ou erro na API');
+        error.style.display = 'flex';
+      }
+    })
+      .catch(function (error) {
+        console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+        error.style.display = 'flex';
+      });
+  }
+
+
+
+  // só mexer se quiser alterar o tempo de atualização
+  // ou se souber o que está fazendo!
+  function atualizarGrafico() {
+
+    if (idSensor == 0) {
+      return;
+    }
+
+    fetch(`/leituras/tempo-real/${idSensor}`, { cache: 'no-store' }).then(function (response) {
+      if (response.ok) {
+        response.json().then(function (novoRegistro) {
+
+          console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
+
+          // tirando e colocando valores no gráfico
+          if (dados.labels[6] != novoRegistro.momento_grafico) {
+            dados.labels.shift(); // apagar o primeiro
+            dados.labels.push(novoRegistro.momento_grafico); // incluir um novo momento
+            dados.datasets[0].data.shift();  // apagar o primeiro de temperatura
+            dados.datasets[1].data.shift();  // apagar o primeiro de umidade
+            dados.datasets[0].data.push(novoRegistro.Temperatura); // incluir uma nova leitura de temperatura
+            dados.datasets[1].data.push(novoRegistro.Umidade); // incluir uma nova leitura de umidade
+            window.grafico_linha.update();
+
+            TAtual.innerHTML = novoRegistro.Temperatura.toFixed(1)
+            UAtual.innerHTML = novoRegistro.Umidade.toFixed(1)
+
+            
+          }
+          obterDadosEstatiticas();
+          error.style.display = 'none';
+          setTimeout(atualizarGrafico, 5000);
+        });
+      } else {
+        console.error('Nenhum dado encontrado ou erro na API');
+        setTimeout(atualizarGrafico, 5000);
+        error.style.display = 'flex';
+      }
+    })
+      .catch(function (error) {
+        console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+        error.style.display = 'flex';
+      });
+
+  }
+
+  // altere aqui as configurações do gráfico
+  // (tamanhos, cores, textos, etc)
+  function configurarGrafico() {
+    var configuracoes = {
+      responsive: true,
+      animation: { duration: 500 },
+      hoverMode: 'index',
+      stacked: false,
+      title: {
+        display: true,
+        text: 'Histórico recente de temperatura e umidade'
+      },
+      scales: {
+        yAxes: [{
+          type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
+          display: true,
+          position: 'left',
+          id: 'y-temperatura',
+        }, {
+          type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
+          display: true,
+          position: 'right',
+          id: 'y-umidade',
+
+          // grid line settings
+          gridLines: {
+            drawOnChartArea: false, // only want the grid lines for one axis to show up
+          },
+        }],
+      }
+    };
+
+    return configuracoes;
+  }
+
+  // altere aqui como os dados serão exibidos
+  // e como são recuperados do BackEnd
+  function obterDadosEstatiticas() {
+    error.style.display = 'none';
+
+    if (idSensor == 0) {
+      return;
+    }
+
+
+    fetch(`/leituras/Estastiticas/${idSensor}`, { cache: 'no-store' }).then(function (response) {
+      if (response.ok) {
+
+        response.json().then(function (resposta) {
+
+          console.log(`Dados recebidos para o sensor ${idSensor}: ${JSON.stringify(resposta)}`);
+
+
+
+
+          var registro = resposta;
+
+          // aqui, após 'registro.' use os nomes 
+          // dos atributos que vem no JSON 
+          // que gerou na consulta ao banco de dados
+
+          registro.momento_grafico
+          TMax.innerHTML = registro.tempMax.toFixed(1)
+          TMin.innerHTML = registro.tempMin.toFixed(1)
+          TMedia.innerHTML = registro.tempMedia.toFixed(1)
+
+
+          console.log(JSON.stringify(registro));
+
+
+
+          carregando.style.display = 'none';
+
+        });
+      } else {
+        console.error('Nenhum dado encontrado ou erro na API');
+        error.style.display = 'flex';
+        carregando.style.display = 'none';
+      }
+    })
+      .catch(function (error) {
+        console.error(`Erro na obtenção dos dados p/ estatiticos: ${error.message}`);
+        error.style.display = 'flex';
+        carregando.style.display = 'none';
+      });
+
+  }
+
+  function obterDadosGrafico() {
+    carregando.style.display = 'block';
+    if (idSensor == 0) {
+      return;
+    }
+
+    dados.labels = [];
+    dados.datasets[0].data = [];
+    dados.datasets[1].data = [];
+    TMax.innerHTML = ''
+    TMin.innerHTML = ''
+    TMedia.innerHTML = ''
+    error.style.display = 'none';
+    try {
+      window.grafico_linha.update();
+    } catch (e) { }
+
+    fetch(`/leituras/ultimas/${idSensor}`, { cache: 'no-store' }).then(function (response) {
+      if (response.ok) {
+
+        response.json().then(function (resposta) {
+
+          console.log(`Dados recebidos para o sensor ${idSensor}: ${JSON.stringify(resposta)}`);
+
+          resposta.reverse();
+
+          for (i = 0; i < resposta.length; i++) {
+            var registro = resposta[i];
+
+            // aqui, após 'registro.' use os nomes 
+            // dos atributos que vem no JSON 
+            // que gerou na consulta ao banco de dados
+
+            dados.labels.push(registro.momento_grafico);
+
+            dados.datasets[0].data.push(registro.Temperatura);
+            dados.datasets[1].data.push(registro.Umidade);
+            TAtual.innerHTML = registro.Temperatura.toFixed(1)
+            UAtual.innerHTML = registro.Umidade.toFixed(1)
+          }
+          console.log(JSON.stringify(dados));
+
+          div_aguarde.style.display = 'none';
+          obterDadosEstatiticas();
+          plotarGrafico(dados);
+
+        });
+      } else {
+        console.error('Nenhum dado encontrado ou erro na API');
+        carregando.style.display = 'none';
+        error.style.display = 'flex';
+      }
+    })
+      .catch(function (error) {
+        console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+        carregando.style.display = 'none';
+        error.style.display = 'flex';
+      });
+
+  }
+
+  // só altere aqui se souber o que está fazendo!
+  function plotarGrafico(dados) {
+    console.log('iniciando plotagem do gráfico...');
+
+    var ctx = canvas_grafico.getContext('2d');
+    window.grafico_linha = Chart.Line(ctx, {
+      data: dados,
+      options: configurarGrafico()
+    });
+
+    setTimeout(atualizarGrafico, 5000);
+  }
+
+
+
+  // Logoff
+
+  /*  function logoff() {
+         finalizar_sessao();
+         sessionStorage.clear();
+         redirecionar_login();
+     }
+
+     function finalizar_sessao() {
+         fetch(`/usuarios/sair/${login_usuario}`, { cache: 'no-store' });
+     }
+
+     function verificar_autenticacao() {
+         login_usuario = sessionStorage.login_usuario_meuapp;
+         nome_usuario = sessionStorage.nome_usuario_meuapp;
+         foto_user = sessionStorage.foto_user_meuapp;
+
+         if (login_usuario == undefined) {
+             redirecionar_login();
+         } else {
+             document.getElementById('b_usuario').innerHTML = nome_usuario;
+             document.getElementById('img_perfil').src = foto_user;
+         }
+     }
+
+     verificar_autenticacao();
+  */
+
+
+
+
+</script>

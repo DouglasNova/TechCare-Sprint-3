@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Enviando... Feche esta pagina para parar
+    <div id="dstatus"></div>
+</body>
+</html>
+<script>
+    setInterval(() => {
+        fetch('/api/sendData', { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                dstatus.innerHTML="Funcionando :)"
+            } else {
+                dstatus.innerHTML=`Deu ruim! ${resposta}`
+            }
+        })
+        .catch(function (error) {
+           dstatus.innerHTML=`Erro na obtenção dos dados p/ gráfico: ${error.message}`;
+        });
+    }, 55000);
+</script>

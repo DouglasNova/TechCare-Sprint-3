@@ -1,0 +1,36 @@
+body {
+  max-width: 100%;
+  font-family: sans-serif;
+  width: 100%;
+  overflow: hidden;
+  color:#ffffff;
+}
+
+*.content{
+    margin-left: 250px;
+    background: url("../css/img/Img_Suporte.jpg");
+    background-position: center;
+    height: 100vh;
+    transition: 0.5s;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  
+
+  .arte{ 
+    margin-left: 250px;
+    background-position: center;
+     height: 110vh;
+    transition: 0.5s;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  #check:checked ~ .arte{
+    margin-left: 60px;
+  }
+
+  
+ 
+
