@@ -21,7 +21,7 @@ function validaContato(){
      sucesso.innerHTML = ''
      var erros = validaContato();
      mensagemErro.innerHTML = '';
-     if (erros.length > 0) {
+     if (erros.length > 0) {       sucesso.style.display = 'none'
          for (var a = 0; a < erros.length; a++) {
              var erro = erros[a];
              var li = document.createElement("li");

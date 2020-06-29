@@ -7,38 +7,18 @@ body {
 }
 
 .teste{
-    height: 98vh;
-    width: 84vw;
-    float: right;
-    margin-right: 25px;
+    margin-left: 215px;
+    height: 117vh;
     transition: 0.5s;
   }
 
-  .arte{ 
-    margin: 250px 0 0 400px;
-    background-position: center;
-    transition: 0.5s;
-    height: 30%;
-    display: none;
-  }
-
-  #check:checked ~ .arte{
-    margin-left: 60px;
-  }
+ 
 
   #check:checked ~ .teste{
-    height: 97vh;
-    width: 95vw;
+    margin-left: 60px;
+   
   }
 
-  #freshwidget-embedded-form {
-    margin-top: 100px;
-    padding: 30px;
-    float: right;
-    margin-right: 130px;
-    background: #c7ecee;
-    border-radius: 5px;
-  }
   
  
 
