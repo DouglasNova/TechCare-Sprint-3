@@ -3,7 +3,7 @@ let nome_usuario;
 let foto_user;
 
 function redirecionar_login() {
-    window.location.href = 'login.html';
+    window.location.href = 'http://localhost:3000/pages/login.html';
 }
 
 function verificar_autenticacao() {
