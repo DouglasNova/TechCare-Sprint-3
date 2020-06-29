@@ -44,6 +44,7 @@ body{
     color: #fff;
     transition: 0.5s;
     transition-property: background;
+    z-index: 9999;
   }
   
   .logout_btn:hover{
