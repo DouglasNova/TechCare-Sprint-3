@@ -1,85 +1,87 @@
 .quadro{
     width: 30vw;
-    min-height: 70vh;
-    background-color:	#008B8B	;
+    min-height: 80vh;
+    background-color:	#22a6b3;
     margin-top: 10vh;
     position: relative;
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 25px;
 }
+
 .quadro form{
     min-width: 328px;
     color: white;
     position: absolute;
     width: 25vw;
     margin-left: 2.5vw;
+    font-size: 1.5rem;
 }
+
 .space{
     width: 100%;
     padding-top: 100px;
 }
+
 .quadro form input{
     width: 100%;
-
     height: 4vh;
 }
+
 .quadro h1{
     text-align: center;
     color: 	white;
     padding-top: 2vh;
 }
+
 .content{
     margin: 0;
     align-items: center;
 }
+
 .quadro{
     margin: auto;
 }
-.quadro form input{
+
+.inpt_cadastro{
     margin-bottom: 2vh;
-    border: 2px solid black;
+    border: 2px solid #1e272e;
     background: none;
-    color: black;
     outline: none;
     border-radius: 2vw;
     background-color: white;
-    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.6);
+    box-shadow: 7px 7px 5px -5px #1e272e;
     font-size: 1.2rem;
     text-align: center;
 }
-.quadro form button{
-    width: 9vw;
-    height: 6vh;
-    margin-left: 8.25vw;
-    margin-bottom: 6vh;
-    color: black;
-    border: none;
-    margin-top: 2vh;
-    border: 2px solid black;
-    border-radius: 2vw;
+
+#btn_entrar {
+    width: 27%;
+    border-radius: 15px;
+    margin: 25px 0 0 170px;
+    font-size: 1.2rem;
+    color: #1e272e;
+    transition: 0.2s;
     outline: none;
-    font-size: 1.2rem;
-    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.6);
+    border: 2px solid #1e272e;
 }
-form ::-webkit-input-placeholder{
-    color: rgba(0, 0, 0, 0.7);
-    text-align: center;
-    font-size: 1.2rem;
+
+#btn_entrar:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: 0.2s;
+    border: 2px solid #25aae1;
 }
-.quadro form button:hover{
-    color: #25aae1;
-    border-color: #25aae1;
-}
-.quadro form{
-    font-size: 1.5rem;
-    color: black;
-}
+
 .quadro form input:focus{
     border: 2px solid #25aae1;
     border-radius: 2vw;
 }
+
 .quadro form label{
     text-align: center;
     color: white;
 }
+
 .erros{
     display: list-item;
     width: 30vw;
@@ -88,6 +90,7 @@ form ::-webkit-input-placeholder{
     text-align: center;
     margin-top: 3vh;
 }
+
 .erros li{
     list-style: none;
     font-size: 1rem;
@@ -98,6 +101,7 @@ form ::-webkit-input-placeholder{
     align-self: center;
     border-radius: 5vh;
 }
+
 .sucesso{
     background-color: #008B8B;
     color: white;
