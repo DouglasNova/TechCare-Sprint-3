@@ -7,44 +7,18 @@ body {
 }
 
 .teste{
-    height: 98vh;
-    width: 84vw;
-    float: right;
-    margin-right: 25px;
-    transition: 0.5s;
-  }
-
-  .arte{ 
-<<<<<<< HEAD
     margin-left: 215px;
-    background-position: center;
-    height: 120vh;
-=======
-    margin: 250px 0 0 400px;
-    background-position: center;
->>>>>>> 67ea2b4d5a4d0baf962dab5ce681dbb37ff63c28
+    height: 117vh;
     transition: 0.5s;
-    height: 30%;
-    display: none;
   }
 
-  #check:checked ~ .arte{
-    margin-left: 60px;
-  }
+ 
 
   #check:checked ~ .teste{
-    height: 97vh;
-    width: 95vw;
+    margin-left: 60px;
+   
   }
 
-  #freshwidget-embedded-form {
-    margin-top: 100px;
-    padding: 30px;
-    float: right;
-    margin-right: 130px;
-    background: #c7ecee;
-    border-radius: 5px;
-  }
   
  
 
