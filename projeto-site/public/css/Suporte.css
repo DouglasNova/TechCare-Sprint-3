@@ -19,9 +19,9 @@ body {
   
 
   .arte{ 
-    margin-left: 250px;
+    margin-left: 215px;
     background-position: center;
-     height: 110vh;
+    height: 120vh;
     transition: 0.5s;
     background-size: cover;
     background-repeat: no-repeat;
