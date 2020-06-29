@@ -8,6 +8,7 @@ function myFunction() {
 }
 const cards = document.querySelectorAll(".card");
 
+
 //Script do Login
 
 function entrar() {

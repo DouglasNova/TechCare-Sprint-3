@@ -1,22 +1,3 @@
-// function enviaCadastro() {
-//     sucesso.innerHTML = ''
-//     var erros = validaCadastro();
-//     mensagemErro.innerHTML = '';
-//     if (erros.length > 0) {
-//         for (var a = 0; a < erros.length; a++) {
-//             var erro = erros[a];
-//             var li = document.createElement("li");
-//             li.innerHTML = erro;
-//             mensagemErro.appendChild(li);
-
-//         }
-//     }
-//     else {
-//         sucesso.style.display = 'block'
-//         sucesso.innerHTML = 'Cadastro Criado com sucesso!'
-//     }
-// }
-
 function validaCadastro(){
     var erros = []
     if(!nome.value){
