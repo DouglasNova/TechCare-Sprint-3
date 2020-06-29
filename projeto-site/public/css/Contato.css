@@ -129,6 +129,7 @@ form ::-webkit-input-placeholder{
     align-self: center;
 }
 .sucesso{
+    border-radius: 6vh;
     padding-top: 1vh;
     padding-bottom: 1vh;
     background-color: #008B8B;
