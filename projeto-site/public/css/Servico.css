@@ -58,7 +58,7 @@
 }
 .show-case span {
   font-size: 1.70em;
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 .show-case li+li{
@@ -72,7 +72,7 @@
 
 .covid{
   padding: 5%;
-  font-weight: bolder;
+  /* font-weight: bolder; */
   
 }
 
