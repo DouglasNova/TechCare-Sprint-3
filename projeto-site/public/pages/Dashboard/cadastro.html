@@ -58,22 +58,22 @@
             <h1>Cadastre-se</h1>
             <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
                 <label>Nome:</label> <br>
-                <input class="inpt_cadastro" placeholder="Nome Completo" name="Nome_Func" type="text" maxlength="45" autofocus> <br>
+                <input class="inpt_cadastro" placeholder="Nome Completo" name="Nome_Func" type="text" maxlength="45" autofocus required> <br>
 
                 <label>Email:</label>
-                <input class="inpt_cadastro" placeholder="exemplo@xxxx.com.br" name="Email_func" type="text" maxlength="60">
+                <input class="inpt_cadastro" placeholder="exemplo@xxxx.com.br" name="Email_func" type="text" maxlength="60" required>
 
                 <label>Senha:</label>
-                <input class="inpt_cadastro" placeholder="senha" name="Senha" type="password" maxlength="20">
+                <input class="inpt_cadastro" placeholder="senha" name="Senha" type="password" maxlength="20" required>
 
                 <label for="c_senha">Repetir Senha:</label>
-                <input class="inpt_cadastro" placeholder="senha" id="c_senha" type="password" maxlength="20">
+                <input class="inpt_cadastro" placeholder="senha" id="c_senha" type="password" maxlength="20" required>
 
                 <label>CPF:</label>
-                <input class="inpt_cadastro" placeholder="xxx.xxx.xxx-xx" name="CPF" type="text" maxlength="12">
+                <input class="inpt_cadastro" placeholder="xxx.xxx.xxx-xx" name="CPF" type="text" maxlength="12" required>
 
                 <label>Foto do perfil:</label>
-                <input class="inpt_cadastro" placeholder="URL..." name="foto_perfil" type="text">
+                <input class="inpt_cadastro" placeholder="URL..." name="foto_perfil" type="text"required>
 
                 <input id="btn_entrar" type="submit" value="Cadastrar">
             </form>

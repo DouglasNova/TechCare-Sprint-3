@@ -85,6 +85,7 @@ body{
     outline: none;
     font-size: 1.2rem;
     background-color: white;
+    transition: 0.4s;
 
 }
 form ::-webkit-input-placeholder{
@@ -102,6 +103,8 @@ form ::-webkit-input-placeholder{
 .q1 form button:hover{
     color: turquoise;
     border: 2px solid turquoise;
+    cursor: pointer;
+    transition: 0.4s;
 }
 .q1 img:hover{
     border: 2px solid 	black;

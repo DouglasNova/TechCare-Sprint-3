@@ -6,15 +6,58 @@ body {
   color:#ffffff;
 }
 
-.teste{
-    margin-left: 215px;
+.conteudo{
+    padding-top: 50px;
+    margin-left: 265px;
     height: 117vh;
     transition: 0.5s;
+    background-size: 99%;
+    background-repeat: no-repeat;
+  }
+
+  #competencias {
+    padding-top: 150px;
+  }
+
+  #competencias2 {
+    padding-top: 150px;
+  }
+
+  #competencias li {
+    margin: 20px 0 0 50px;
+    float: left;
+    padding: 0;
+    color: #f9f9f9;
+    font-size: 230%;
+    text-align: justify;
+  }
+
+  #competencias2 li {
+    margin: 20px 0 0 50px;
+    float: right;
+    padding: 0;
+    color: #f9f9f9;
+    font-size: 230%;
+    text-align: justify;
+  }
+
+  #img_spp {
+    float: left;
+  }
+
+  #img_spp2 {
+    float: right;
+    margin-top: 100px;
+  }
+
+  .active {
+    color: #74b9ff;
+    font-weight: 700;
   }
 
  
 
-  #check:checked ~ .teste{
+  #check:checked ~ .conteudo{
     margin-left: 60px;
    
   }

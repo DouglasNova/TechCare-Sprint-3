@@ -3,28 +3,27 @@
   padding: 0;
 }
 
-.header {
-  margin-top: -10px;
-}
-
 .header ul {
-  margin-top: -10px;
-  padding-top: 10px;
   padding-left: 40px;
 }
-
 
 .nav-card {
   display: flex;
   justify-content: space-around;
-  padding-top: 10%;
+  margin-top: 5%;
   text-align: center;
   font-weight: bold;
   font-size: 1.20em;
   color: #25aae1;
 }
+
+.nav-card a {
+  text-decoration: none;
+  color: #25aae1;
+}
+
 .nav-card .card {
-  background-color: linear-gradient(135deg, #bdc3c7, #ecf0f1);
+  background: #f0f0f0;
   height: 40vh;
   width: 20vw;
   border: #25aae1 0.1px solid;
@@ -34,7 +33,6 @@
   transform-style: preserve-3d;
   box-sizing: border-box;
   transition: all 1s ease;
-  position: relative;
   justify-self: center;
 }
 
@@ -50,15 +48,19 @@
 .show-case {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  background: linear-gradient(135deg, #25aae1, #ecf0f1);
   margin-top: 8%;
-  height: 60vh;
-  box-shadow: 5px 5px 20px 10px rgba(44, 44, 44, 0.3);
+  height: 40vh;
+  width: 80%;
+  margin-left: 150px;
+  background: #2980b9;
+  color: #f9f9f9;
+  padding: 50px;
+  border-radius: 25px;
+  box-shadow: 5px 5px 20px 2px #222;
 
 }
 .show-case span {
   font-size: 1.70em;
-  /* font-weight: bold; */
 }
 
 .show-case li+li{
@@ -71,8 +73,9 @@
 }
 
 .covid{
-  padding: 5%;
-  /* font-weight: bolder; */
+  text-align: justify;
+  width: 80%;
+  align-items: center;
   
 }
 
@@ -94,49 +97,42 @@
   text-align: center;
 
 }
-.title-pag-card{
-  height: 150px;
-  width: 400px;
-  background: #25aae1;
-  border-radius: 3px;
-  border: #fff 0.1px solid;
-  margin-top: 10%;
-  margin-left: 5%;
-  box-shadow: 0px 5px 2px 5px rgba(44, 44, 44, 0.3);
-  font-style: italic;
-}
 
-.header{
-  position: relative !important;
+/* .title-pag-card{
+  height: 100px;
+  width: 400px;
+  background: #2980b9;
+  border-radius: 3px;
+  margin-top: 2%;
+  box-shadow: 10px 10px 10px -5px rgba(44, 44, 44, 0.3);
+  border-radius: 5px;
+  padding: 45px 20px 20px 20px;
 }
   
-.title-pag-card h1{
-  padding-top: 5%;
-}
+.title-pag-card h2{
+  margin: 0;
+  padding: 0;
+} */
 
-.card-info{
+/* .card-info{
   height: 300px;
   width: 500px;
-  background: #25aae1;
+  background: #2980b9;
   margin-left: 55%;
   margin-top: -12%;
   box-shadow: 0px 5px 2px 5px rgba(44, 44, 44, 0.3);
   border: #fff 0.1px solid;
   border-radius: 3px;
 
-}
+} */
 
-.card-info h1{
+/* .card-info h1{
 font-style: italic;
 padding-top: 5%;
-}
+} */
 
-.header {
-  margin-top: -10px;
-}
-
-.card-info p{
+/* .card-info p{
   font-size: 1.30em;
   font-weight: bolder;
 
-}
+} */

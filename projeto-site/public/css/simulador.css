@@ -2,10 +2,11 @@ body, html, h1{
     margin: 0;
     padding: 0;
 }
+
 body{
     background-repeat: no-repeat;
     background-color: #f5f5f5;
-} 
+}
 
 .img2{
 	position: fixed;
@@ -17,11 +18,6 @@ body{
     background-image: url(../css/img/simulador5.png);
     background-repeat: no-repeat;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif    ;
-}
-
-.container{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
 }
 
 
@@ -40,11 +36,8 @@ body{
     border: #192a56 solid 1px;
     border-radius: 5px;
     text-align: center;
+    outline: none;
 }
-
-
-
-
 
 .title-simulador{
     margin-top: 25%;
@@ -55,8 +48,6 @@ body{
     height: 300px;
     margin-left: 30%;
 } 
-
-
 
 /* inicio faixa */
 
@@ -78,11 +69,12 @@ body{
     font-size: 140%;
 }
 .container-card{
-    height: 200px;
+    height: 240px;
     width: 100%;
     display: flex;
     background: #192a56;
     border-radius: 25px;
+    align-items: center;
 
 }
 
@@ -91,12 +83,17 @@ body{
     text-align: center;
     color: #fff;
     margin: 2%;
+    font-size: 110%;
 }
 
 .card-icon i{
     font-size: 60px;
     color: #fff;
     margin-bottom: 20px;
+}
+
+.num {
+    font-size: 150%;
 }
 
 
@@ -139,19 +136,14 @@ body{
     font-weight: 600;
 }
 
-
-
 .card-simulador:hover .card-header{
     box-shadow: 0 0 0 10rem #0fbcf9;
     /* border-radius: 0 0 80px 80px; */
 }
 
-
-
 .card-simulador:hover, .card-simulador:hover .price{
     color: #0fbcf9; 
 }
-
 
 .order-btn{
     border: 2px solid #0fbcf9;
@@ -166,12 +158,16 @@ body{
     font-weight: 700;
     font-size: 15px;
     background-color: #fff;
+    outline: none;
+    transition: 0.4s;
 
 }
 
 .order-btn:hover{
     background-color: #0fbcf9;
     color: #fff;
+    cursor: pointer;
+    transition: 0.4s;
 }
 
 
