@@ -1,90 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Simulador financeiro</title>
+  <title>Simulador</title>
   <link rel="stylesheet" href="../../css/simulador.css">
-  <link rel="stylesheet" href="../../css/Style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="icon" href="../../css/img/favicon.ico">
-
+  <link rel="stylesheet" href="../../css/Style.css">
 </head>
 
 <body>
-
-  <div class="container">
-    <div class="img1"><img src="../../css/img/simulador6.svg" alt=""></div>
-
-    <div class="container-simulador">
-      <h1 class="title-simulador">Simulador de lucros </h1>
-      <h3 class="sub-title">Informe quantos leitos o hospital possui</h3>
-      <input class="input" placeholder="Quantidade" id="leitos"> <br><br>
-      <button class="btn" onclick="simular()">Simular</button>
+  <div class="corpo">
+    <div class="header">
+      <div class="container">
+        <div class="logo">
+          <a href="#"><img src="../../css/img/logo.png" alt="Logo" width="150"></a>
+        </div>
+        <form class="nav" id="myTopnav">
+          <ul class='topicos'>
+            <li class='menu_li'> <a href="../../index.html" class='menu_a'>HOME</a> </li>
+            <li class='menu_li'> <a href="../Sobre.html" class='menu_a'>TECHCARE</a> </li>
+            <li class='menu_li'> <a href="../servico.html" class='menu_a'>SERVIÇOS</a> </li>
+            <li class='menu_li'> <a href="../contato.html" class='menu_a'>CONTATO</a> </li>
+            <li class='menu_li'> <a href="simulador.html" class='menu_a active'>SIMULADOR</a> </li>
+            <li class='menu_li'> <a href="../login.html" class='btn_login'>LOGIN</a></li>
+          </ul>
+        </form>
+      </div>
     </div>
-
-
-    <!-- inicio faixa -->
-
-    <div class="faixa">
-      <div class="container-card">
-        <div class="card-icon">
-          <i class="fas fa-briefcase"></i>
-          <div id="resultado_calculo">
-            <span>R$ <b id="resultado" class="num">0</b></div>
-          Gasto mensal com enfermeiros
-          </span>
+    <div class="Conteudo">
+      <img class="img2" src="../../css/img/simulador5.png" alt="">
+      <div class="container-simulador">
+        <div class="img1"><img src="../../css/img/simulador8.svg" alt=""></div>
+        <div class="card-container">
+          <div class="card-simulador">
+            <h3 class="card-header">TechCare</h3>
+            <div class="title-after">Simular</div>
+            <div class="sub-title">
+              Informe quantos leitos possui o hospital
+            </div>
+            <input placeholder="Quantidade de Leitos" id="leitos" class="input" type="text">
+            <button onclick="simular()" href="#" class="order-btn">Simular</button>
+          </div>
         </div>
-        <div class="card-icon">
-          <i class="fas fa-user-nurse"></i>
-          <div id="resultado_calculo">
-            <span>R$ <b id="gasto_para_monitorar" class="num">0</b></div>
-          Gasto mensal com enfermeiros somente para monitorar as alas
-          </span>
+      </div>
+      <!-- inicio faixa -->
+      <div class="container-simu">
+        <div class="faixa">
+          <div class="container-card">
+            <div class="card-icon">
+              <i class="fas fa-briefcase"></i>
+              <div id="resultado_calculo">
+                <div>R$ <span id="resultado" class="num">0</span></div>
+                gasto mensal com enfermeiros
+              </div>
+            </div>
+            <div class="card-icon">
+              <i class="fas fa-user-nurse"></i>
+              <div id="resultado_calculo">
+                <div>R$ <span id="gasto_para_monitorar" class="num">0</span></div>
+                Gasto mensal com enfermeiros somente para monitorar a ala
+              </div>
+            </div>
+
+            <div class="card-icon">
+              <i class="fas fa-search-dollar"></i>
+              <div id="resultado_calculo">
+                <div>R$<span id="porcentagem_mensal" class="num"> 0</span></div>
+                Seu lucro no período de 6 meses utilizando o EC-19 System
+              </div>
+            </div>
+
+          </div>
         </div>
-
-
-        <div class="card-icon">
-          <i class="fas fa-search-dollar"></i>
-          <div id="resultado_calculo">
-            <span><b id="porcentagem_mensal" class="num">0</b>%</div>
-          Do gasto mensal com pagamento de salário, é para monitorar alas
-          </span>
+      </div>
+      <!-- termino faixa -->
+    </div>
+    <!-- INICIO do footer -->
+    <div class="footer">
+      <div class="container">
+        <div class="logoFooter">
+          <a href="../index.html"><img src="../../css/img/logo.png" alt="Logo" width="150"></a>
+        </div>
+        <div class="navFooter">
+          <ul>
+            <li><i class="fa fa-github-square fa-2x" aria-hidden="true"></i><a
+                href="https://github.com/DouglasNova/TechCare-Sprint-3"> Acesse nosso Git</a></li>
+          </ul>
+        </div>
+        <div class="newslatter">
+          <b> Assine nossa newslatter</b> <br>
+          <div class="text">
+            <input type="email" placeholder="Digite seu email">
+            <button class="btn-hover color-1">Assine</button>
+          </div>
+          <br>
+          <ul>
+            <li><a href="https://www.instagram.com/techcare_adsa/"><img src="../../css/img/insta.png"></a></li>
+            <li><a href="https://www.facebook.com/groups/242411177001759"><img src="../../css/img/face.png"></a></li>
+            <li><a href="https://twitter.com/TechCar38115432"><img src="../../css/img/twitter.png"></a></li>
+            <li><a href="https://www.linkedin.com/feed/?trk=onboarding-landing"><img
+                  src="../../css/img/linkedin.png"></a></li>
+          </ul>
         </div>
       </div>
     </div>
-  </div>
-
-  <!-- termino faixa -->
-
-
-
+    <!-- FIM do footer -->
 </body>
-
 </html>
+<script src="../../js/simulador.js"></script>
 
-<script>
-  function simular() {
-    let qtLeitos = Number(leitos.value);
-    let qtEnfermeiroLeito = qtLeitos / 4; // Média de 1 enfermeiro para cada 4 leitos 
-    let remuneracaoEnfermeiro = qtEnfermeiroLeito * 3150; // média salárial de um enfermeiro, multiplicada pela quantidade de profissionais no hospital
-    let gasto_mensal_monitoramento = qtEnfermeiroLeito * 286.24; // salário hora do enfermeiro multiplicado pelo tempo gasto mês monitorando alas 
-    let gasto_porcetagem_monitoramento = (gasto_mensal_monitoramento / remuneracaoEnfermeiro) * 100;
-
-    // Divisão do valor pago para enfermeiros monitorar a ala, pelo valor total gasto com salário dos enfermeiros. Multiplicando esse valor por 100 obtemos a porcentagem paga para enfermeiros monitorar alas
-    $(".num").counterUp({ delay: 8, time: 1000 });
-    porcentagem_mensal.innerHTML = gasto_porcetagem_monitoramento.toFixed(2);
-    resultado.innerHTML = remuneracaoEnfermeiro.toFixed(2);
-    gasto_para_monitorar.innerHTML = gasto_mensal_monitoramento.toFixed(2);
-
-    leitos.value = '';
-
-    resultado_calculo.style.display = 'block';
-
-  };
-</script>

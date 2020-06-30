@@ -1,5 +1,18 @@
-body, html{
+body, html, h1{
     margin: 0;
+    padding: 0;
+}
+body{
+    background-repeat: no-repeat;
+    background-color: #f5f5f5;
+} 
+
+.img2{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	height: 100%;
+	z-index: -1;
     padding: 0; 
     background-image: url(../css/img/simulador5.png);
     background-repeat: no-repeat;
@@ -8,45 +21,28 @@ body, html{
 
 .container{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 554px 1fr;
+    grid-template-columns: 1fr 1fr;
 }
+
 
 .container-simulador{
+   padding-top: 10%;
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   justify-items: center;
+
+} 
+
+.input{
+    height: 30px;
+    width: 250px;
     margin-top: 15%;
-    text-align: center;
-    height: 400px;
-    width: 430px;
-    background: rgba(41, 170, 226, 0.6);
-    border-radius: 15px;
-    color: #222;
-}
-
-.container-simulador input {
-    border: none;
+    border: #192a56 solid 1px;
     border-radius: 5px;
-    width: 30%;
     text-align: center;
-    height: 3vh;
-    border: 1px solid #222;
 }
 
-.container-simulador button {
-    border: none;
-    outline: none;
-    font-size: 110%;
-    width: 5vw;
-    height: 3vh;
-    border-radius: 5px;
-    transition: 0.4s;
-    border: 1px solid #222;
-}
 
-.container-simulador button:hover {
-    transform: scale(1.1);
-    cursor: pointer;
-    transition: 0.2s;
-}
 
 
 
@@ -54,26 +50,31 @@ body, html{
     margin-top: 25%;
 }
 
-.img1 img{
-    height: 400px;
-    margin-left: 25%;
-}
 
-.img1{
-    grid-column: span 2;
-}
+.img1 img{
+    height: 300px;
+    margin-left: 30%;
+} 
+
 
 
 /* inicio faixa */
 
 .faixa{
-    grid-column: span 3;
-    width: 90%;
-    float: left;
-    margin: 50px 0 0 90px;
+ width: 70%;
+ height: 200px;
+ background: #192a56;
+ margin-bottom: 20%;
+ margin-top: 5%;
+ border-radius: 20px;
 }
 
-.faixa span {
+.container-simu{
+    display: grid;
+    justify-items: center;
+}
+
+.faixa span{
     font-size: 140%;
 }
 .container-card{
@@ -82,6 +83,7 @@ body, html{
     display: flex;
     background: #192a56;
     border-radius: 25px;
+
 }
 
 .card-icon{
@@ -99,3 +101,84 @@ body, html{
 
 
 /* término faixa */
+
+
+
+/* CARD SIMULADOR */
+
+
+.card-simulador{
+ height: 400px;   
+ flex: 1;
+ max-width: 280px;
+ background: #fff;
+ margin: 20px 10px;
+ text-align: center;
+ cursor: pointer;
+ overflow: hidden;
+ color: #0fbcf9;
+ transition: .3s linear;
+}
+
+.card-header{
+    margin: 0;
+    background-color: #0fbcf9;
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 0 0 5px 5px;
+    font-size: 16px;
+    color: #fff;
+    font-size: 25px;
+    font-weight: 600;
+    transition: .2s linear;
+}
+
+.title-after{
+    font-size: 60px;
+    color: #fff;
+    font-weight: 600;
+}
+
+
+
+.card-simulador:hover .card-header{
+    box-shadow: 0 0 0 10rem #0fbcf9;
+    /* border-radius: 0 0 80px 80px; */
+}
+
+
+
+.card-simulador:hover, .card-simulador:hover .price{
+    color: #0fbcf9; 
+}
+
+
+.order-btn{
+    border: 2px solid #0fbcf9;
+    color: #0fbcf9;
+    padding: 10px;
+    width: 160px;
+    border-radius: 8px;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: .0.5s linear;
+    margin-top: 20%;
+    font-weight: 700;
+    font-size: 15px;
+    background-color: #fff;
+
+}
+
+.order-btn:hover{
+    background-color: #0fbcf9;
+    color: #fff;
+}
+
+
+
+.sub-title{
+    margin-top: 0%;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 0 10px;
+}
