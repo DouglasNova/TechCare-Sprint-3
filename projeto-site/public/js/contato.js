@@ -2,12 +2,15 @@ function validaContato(){
     var erros = []
     if(!nome.value){
         erros.push("Preencha seu Nome")
+        nome.value = ''
     }
     if((email.value.search("@") == -1) || (email.value.search(".") == -1) || (email.value.search(" ") >= 1)){
         erros.push("o formato de email é: email@exemplo.com")
+        email.value = ''
     }
-    if((!celular.value.length == 11) || (celular.value.search("-") == -1) || (celular.value[celular.value.length - 5 != "-"])){
+    if((!celular.value.length == 12) || (celular.value.search("-") == -1) || (celular.value[celular.value.length - 5 != "-"])){
         erros.push("O formato de Telefone é é DDD XXXX-XXXX")
+        celular.value = ''
     }
     if(!mensagem.value){
         erros.push("Preencha a mensagem")
